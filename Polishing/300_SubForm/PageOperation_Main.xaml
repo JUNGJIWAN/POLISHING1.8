@@ -1,0 +1,212 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageOperMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:userinterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="808" d:DesignWidth="1087"
+      Title="PageOper_Main" Background="White" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+        <!--
+        <Border BorderBrush="Black" BorderThickness="2" Margin="-1" Grid.RowSpan="5"></Border>
+        -->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Vision Image -->
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" x:Name="frame_Vision" Navigating="frame_Vision_Navigating"/>
+                <userinterface:UserGraph Grid.Row="1" x:Name="ug_LoadCellTop"
+                                             UGMinValue="-1"
+                                             UGMaxValue="5"
+                                             UGTitleZero="0"
+                                             UGTitleX="X"
+                                             UGTitle="Top Load Cell"
+                                             UGDataCount="100"
+                                             />
+            </Grid>
+            <!--<Grid Grid.Column="0" Margin="2,2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Background="Black" Content="VISION IMAGE" Foreground="White" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label Background="White" BorderBrush="LightGray" BorderThickness="2" Margin="2,2"/>
+                </Grid>
+            </Grid>-->
+
+
+            <!-- Control Map -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*"></RowDefinition>
+                    <RowDefinition Height="6*"></RowDefinition>
+                    <RowDefinition Height="6*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Name="lbRcp" Grid.Column="0" FontSize="15" Background="White" BorderBrush="Black" BorderThickness="1" Margin="2,0,0,0" FontWeight="DemiBold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="[Recipe]"/>
+                    <Label               Grid.Column="1" FontSize="15" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5"  Margin="-1,0" FontWeight="DemiBold" Foreground="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
+                        <TextBlock Name="lbCrntRcpName" Text="Recipe NAME"/>
+                    </Label>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3.5*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Border BorderThickness="2" BorderBrush="LightGray" Margin="0,2"/>
+                        <GroupBox Header="SPDL"     BorderThickness="2" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="95"  Margin="79,15,0,0"   VerticalAlignment="Top" Width="160"/>
+                        <GroupBox Header="TRANSFER" BorderThickness="2" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="155" Margin="113,121,0,0" VerticalAlignment="Top" Width="85"/>
+                        <GroupBox Header="POLISH"   BorderThickness="2" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="90"  Margin="13,121,0,0"  VerticalAlignment="Top" Width="85"/>
+                        <GroupBox Header="CLEAN"    BorderThickness="2" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="90"  Margin="218,121,0,0" VerticalAlignment="Top" Width="85"/>
+                        <ProgressBar x:Name="pbPoli" HorizontalAlignment="Left" Height="20" Margin="13,234,0,0"  VerticalAlignment="Top" Width="80" Foreground="Lime"/>
+                        <ProgressBar x:Name="pbClen" HorizontalAlignment="Left" Height="20" Margin="218,283,0,0" VerticalAlignment="Top" Width="80" Foreground="Lime"/>
+                        <TextBlock x:Name="tbPolibar" Text="{Binding ElementName=pbPoli, Path=Value, StringFormat={}{0:0}%}" Margin="45,236,0,0"  Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="tbClenbar" Text="{Binding ElementName=pbPoli, Path=Value, StringFormat={}{0:0}%}" Margin="245,283,0,0" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+                        <Label Name="lbSpdlPlate"   BorderBrush="Black" BorderThickness="1" Content="SPDL"  HorizontalAlignment="Left" Height="60" Width="60" Margin="95,37,0,0"   VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+                        <Label Name="lbSpdlTool"    BorderBrush="Black" BorderThickness="1" Content="PIN"   HorizontalAlignment="Left" Height="40" Width="40" Margin="180,39,0,0"  VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+                        <Label Name="lbReqPoli"     BorderBrush="Black" BorderThickness="1" Content="U"     HorizontalAlignment="Left" Height="25" Width="25" Margin="262,16,0,0"  VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" />
+                        <Label Name="lbSpdlToolFce" BorderBrush="Black" BorderThickness="1" Content="F"     HorizontalAlignment="Left" Height="25" Width="25" Margin="262,46,0,0"  VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" />
+                        <Label Name="lbNeedCheck"   BorderBrush="Black" BorderThickness="1" Content="C"     HorizontalAlignment="Left" Height="25" Width="25" Margin="262,76,0,0"  VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" />
+                        <Label Name="lbPoliPlate"   BorderBrush="Black" BorderThickness="1" Content="POLI"  HorizontalAlignment="Left" Height="60" Width="60" Margin="26,140,0,0"  VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+                        <Label Name="lbClenPlate"   BorderBrush="Black" BorderThickness="1" Content="CLEN"  HorizontalAlignment="Left" Height="60" Width="60" Margin="230,140,0,0" VerticalAlignment="Top" Background="LimeGreen" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+                        <Label Name="lbLoadPlate"   BorderBrush="Black" BorderThickness="1" Content="LOAD"  HorizontalAlignment="Left" Height="60" Width="60" Margin="126,141,0,0" VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+                        <Label Name="lbTransPlate"  BorderBrush="Black" BorderThickness="1" Content="TRANS" HorizontalAlignment="Left" Height="60" Width="60" Margin="126,206,0,0" VerticalAlignment="Top" Background="LightGray" HorizontalContentAlignment="Left"   VerticalContentAlignment="Top"    FontSize="11" />
+
+
+                        <Label Name="lbSpdlState"   FontSize="10" Content="SPDL"  HorizontalAlignment="Left" Height="30" Width="150" Margin="85,99,0,0"   VerticalAlignment="Top"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <Label Name="lbPoliState"   FontSize="10" Content="SPDL"  HorizontalAlignment="Left" Height="30" Width="99" Margin="14,203,0,0"   VerticalAlignment="Top"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <Label Name="lbClenState"   FontSize="10" Content="SPDL"  HorizontalAlignment="Left" Height="30" Width="99" Margin="218,203,0,0"  VerticalAlignment="Top"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <Label Name="lbTranState"   FontSize="10" Content="SPDL"  HorizontalAlignment="Left" Height="30" Width="99" Margin="113,269,0,0"  VerticalAlignment="Top"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1" Margin="3,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Content="[MAGAZINE]" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                        <UniformGrid Grid.Row="1" Columns="2">
+                            <Grid  x:Name="Magz01" Background="White" Margin="2,0"/>
+                            <Grid  x:Name="Magz02" Background="White" Margin="2,0"/>
+                        </UniformGrid>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" BorderThickness="2" BorderBrush="LightGray" Margin="0,2"/>
+
+                    <StackPanel Orientation="Vertical">
+                        <userinterface:UserParam x:Name="upLoadCell" UPTitle=" [BTM] LOAD CELL" Height="25" UPTitleWidth="150" FontSize="12" UPIsReadOnly="True" UPTitleBackground="NavajoWhite" UPUnitWidth="0" UPUnitBackground="NavajoWhite" BorderBrush="NavajoWhite" BorderThickness="1" UPUnit="N" Margin="11,5,-1,5"/>
+                        <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold">
+                            <TextBlock Name="lbLotNo" Text="LOT No : "/>
+                        </Label>
+
+                        <Label Name="lbStartTime"     Content="Start Time : 2020-02-12 09:00" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbEndTime"       Content="End Time : 2020-02-12 13:00"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbMillStartTime" Content="Start Time : 2020-02-12 09:00" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbMillEndTime"   Content="End Time : 2020-02-12 13:00"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+
+                        <Label Name="lbDCOM"          Content="DCOM : "                       HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbPoliCnt"       Content="POLISHING COUNT : "            HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+
+                        <Label Name="lbCrntFos"       Content="Current Force : 3.5"           HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbRPM"           Content="SPINDLE RPM : 3000 "           HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbUTLevel"       Content="UTIL LEVEL : "                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+
+                        <!--
+                        <Label Name="lbPostion"       Content="Position : L5"                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold" Visibility="Hidden"/>
+                        <Label Name="lbFlowMT1"   Content="[FLOW] POLISHING SLURY : "     HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbFlowMT2"   Content="[FLOW] POLISHING DI    : "     HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        <Label Name="lbFlowMT3"   Content="[FLOW] CLEANING  DI    : "     HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"/>
+                        -->
+                    </StackPanel>
+
+                    <Grid Grid.Column="1" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="[TOOL STORAGE]" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                        <UniformGrid  Grid.Row="1" Columns="2">
+                            <Grid x:Name="gdStorage"  Margin="2"/>
+                            <Grid x:Name="gdStorage1" Margin="2"/>
+                        </UniformGrid>
+
+                    </Grid>
+
+                </Grid>
+
+
+
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.8*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="ALARM"   Background="Azure" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2,0" BorderBrush="LightGray" BorderThickness="1" />
+                    <Label Grid.Column="1" Content="WARNING" Background="Azure" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2,0" BorderBrush="LightGray" BorderThickness="1" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox x:Name="lbAlarm" Grid.Column="0" Margin="2,1"/>
+                    <ListBox x:Name="lbWarn"  Grid.Column="1" Margin="2,1"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+
+</Page>

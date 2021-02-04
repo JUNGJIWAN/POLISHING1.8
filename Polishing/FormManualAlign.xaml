@@ -1,0 +1,94 @@
+﻿<Window x:Class="WaferPolishingSystem.FormManualAlign"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaferPolishingSystem"
+        xmlns:UserInterface="clr-namespace:UserInterface" 
+        mc:Ignorable="d"
+        Title="MESSAGE" Height="800" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" BorderBrush="Black" BorderThickness="1" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Border Background="Silver"/>
+            <Label Content="Manual Align" VerticalContentAlignment="Center" FontSize="20" Foreground="Black" Margin="20,0" PreviewMouseDown="Label_PreviewMouseDown"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <!--<UserInterface:ManualAlign x:Name="ac_Manual"/>-->
+            <UserInterface:AlignControl x:Name="ac_Manual"/>
+            <StackPanel Grid.Column="1">
+                <UniformGrid Columns="2" Rows="2" Height="50">
+                    <UserInterface:UserButton Content="One Shot"/>
+                    <UserInterface:UserButton Content="Live"/>
+                    <UserInterface:UserButton Content="Ruler"/>
+                    <UserInterface:UserButton Content="Open" Click="UserButton_Click"/>
+                </UniformGrid>
+                <GroupBox Grid.Column="1" Header="ROI Adjust" Height="300" FontSize="18">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <UserInterface:UserButton Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"    Content="◀" BorderThickness="2,2,0,0" CommandParameter="LL" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"    Content="▷" BorderThickness="2,1,0,2" CommandParameter="LR" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="3" Grid.Row="0" Grid.RowSpan="2"    Content="▶" BorderThickness="0,2,2,0" CommandParameter="RR" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="3" Grid.Row="2" Grid.RowSpan="2"    Content="◁" BorderThickness="0,1,2,2" CommandParameter="RL" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Content="▲" BorderThickness="1,2,1,0" CommandParameter="TT" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Content="▽" BorderThickness="1,1,1,0" CommandParameter="TB" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Content="△" BorderThickness="1,1,1,0" CommandParameter="BT" Click="bn_Click_ROI"/>
+                        <UserInterface:UserButton Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="▼" BorderThickness="1,1,1,2" CommandParameter="BB" Click="bn_Click_ROI"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1" Header="Theta Adustment" Height="150" FontSize="18" Margin="0,15,0,0">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <ComboBox VerticalContentAlignment="Center">
+                                <ComboBoxItem Content="PreAlignTheta"/>
+                                <ComboBoxItem Content="PolAlignTheta"/>
+                            </ComboBox>
+                        </Grid>
+                        <UniformGrid Grid.Row="1" Columns="2" Margin="5">
+                            <UserInterface:UserButton Content="CCW(+)" Margin="5"/>
+                            <UserInterface:UserButton Content="CW (-)" Margin="5"/>
+                        </UniformGrid>
+                    </Grid>
+
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <UniformGrid Columns="5">
+                <Button x:Name="btSave"  Content="SAVE"      FontSize="13" FontWeight="Bold" Click="btSave_Click" Margin="5,2"/>
+                <Label Content=""/>
+                <Label Content=""/>
+                <Label Content=""/>
+                <Button x:Name="btClose" Content="CLOSE"     FontSize="13" FontWeight="Bold" Click="btClose_Click" Margin="5,2"/>
+            </UniformGrid>
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>

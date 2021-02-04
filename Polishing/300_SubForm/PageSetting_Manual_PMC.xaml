@@ -1,0 +1,114 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_PMC"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Manul_PMC" Background="#FDF7F7F7" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Height="35" Width="352" Margin="1" Content="COMMAND" Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="1" Height="35" Width="525" Margin="1" Content="DATA"  Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  VerticalContentAlignment="Center" />
+        
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" x:Name="lbConnect" Content="Connect" Height="50" Width="120" FontSize="14" FontWeight="Bold" Background="Aquamarine" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <UserInterface:UserButton Grid.Row="1" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnConnect"      Content="Connect"  Click="bnConnect_Click"/>
+                <UserInterface:UserButton Grid.Row="2" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnDisconnect"   Content="Disconnect"        Click="bnDisconnect_Click"/>
+                <UserInterface:UserButton Grid.Row="3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnRecReset"     Content="Receive Reset"     Click="bnRecReset_Click"   />
+                <UserInterface:UserButton Grid.Row="4" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnSendReset"    Content="Send Reset"        Click="bnSendReset_Click"   />
+                <UserInterface:UserButton Grid.Row="5" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnSendTeset"    Content="Display On/OFF"    Click="bnSendTeset_Click"   />
+                <UserInterface:UserButton Grid.Row="6" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="bnHidePollDate" Content="Hide Polling Data" Click="bnHidePollDate_Click"   />
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <UserInterface:UserButton x:Name="ubComm1"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current State Send"  Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm2"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Data Send"   Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm3"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Alarm Send"          Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm4"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Mode Change Send"    Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm5"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm6"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm7"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm8"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm9"  Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm10" Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm11" Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm12" Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                    <UserInterface:UserButton x:Name="ubComm13" Margin="2" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Content="Current Recipe Send" Click="UserButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Row="0" Header="Receive Data">
+                    <ListBox x:Name="list_Receive"/>
+                </GroupBox>
+                <GroupBox Grid.Row="1" Header="Send Data">
+                    <ListBox x:Name="list_Send"/>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel>
+                <CheckBox x:Name="cbUsePollLog" Content="Use Display Polling Log"  Margin="10,0" FontSize="13" Height="25" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Click="cbUsePollLog_Click"/>
+                <CheckBox x:Name="cbDryRun"     Content="Dry Run Mode"             Margin="10,0" FontSize="13" Height="25" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Click="cbDryRun_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Rectangle Fill="LightGoldenrodYellow"/>
+                <WrapPanel>
+                <Label  Name="lbPortState" Content="Port Sate"     Width="150" VerticalContentAlignment="Center" FontSize="12"/>
+                <ComboBox x:Name="cbPortNo" Width="100" VerticalContentAlignment="Center" Margin="1"></ComboBox>
+                <ComboBox x:Name="cbPortState" Width="120" VerticalContentAlignment="Center" Margin="1"></ComboBox>
+                <UserInterface:UserButton x:Name="btPortSet" Content="PORT" Click="btPortSet_Click" Width="150" FontSize="12" Margin="1"/>
+                <Label Name="lbPorce" Content="Procee Sate"   Width="150" VerticalContentAlignment="Center" FontSize="12"/>
+                <ComboBox x:Name="cbProcNo" Width="100" VerticalContentAlignment="Center" Margin="1"></ComboBox>
+                <ComboBox x:Name="cbProcState" Width="120" VerticalContentAlignment="Center" Margin="1"></ComboBox>
+                <UserInterface:UserButton x:Name="btPrecSet" Content="PROCESS" Click="btPrecSet_Click" Width="150" FontSize="12" Margin="1"/>
+                <Label Name="lbControl" Content="Control Sate"  Width="150" VerticalContentAlignment="Center" FontSize="12"/>
+                <ComboBox x:Name="cbContState" Width="222" VerticalContentAlignment="Center" Margin="1"></ComboBox>
+                <UserInterface:UserButton x:Name="btContSet" Content="CONTROL" Click="btContSet_Click" Width="150" FontSize="12" Margin="1"/>
+
+            </WrapPanel>
+        </Grid>
+
+    </Grid>
+
+</Page>

@@ -1,0 +1,83 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_Utility"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Manual_Utility" Background="#FDF7F7F7" Loaded="Page_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Height="35" Width="352" Margin="1" Content="POLISHING" Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="1" Height="35" Width="352" Margin="1" Content="CLEANING"  Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  VerticalContentAlignment="Center" />
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <UserInterface:UserButton x:Name="bnSave"            Grid.Row="6" Content="Save"            FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Height="50" Width="120" Margin="5" Click="bnSave_Click"/>
+
+            </Grid>
+            <GroupBox Grid.Row="1" Grid.Column="1" BorderBrush="Black"/>
+            <WrapPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="SILICA No.1"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="SILICA No.2"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="SILICA No.3"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="DI WATER"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="DRAIN"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Row="1" Grid.Column="0" BorderBrush="Black"/>
+            <WrapPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="LIQUID SOAP"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="DI WATER"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+                <UserInterface:UserButton Margin="5" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Background="LightGray"  FontWeight="Bold" Content="DRAIN"/>
+                <TextBox                  Margin="5" Height="30" Width="80"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                    Margin="5" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="12" IsEnabled="True" FontWeight="Bold" Content="sec"/>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+    
+</Page>

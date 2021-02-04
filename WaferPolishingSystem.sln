@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaferPolishingSystem", "Polishing\WaferPolishingSystem.csproj", "{7ED81359-9756-4A10-9ABB-A55796BBA460}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5FD88388-8C03-4D78-BF07-75EBCAD6081B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolishingAlignCore", "PolishingAlignCore\PolishingAlignCore.vcxproj", "{933B9B36-C94F-4120-8625-67DD0FB0CE0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Debug|x64.Build.0 = Debug|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|ARM64.Build.0 = Release|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|x64.ActiveCfg = Release|Any CPU
+		{7ED81359-9756-4A10-9ABB-A55796BBA460}.Release|x64.Build.0 = Release|Any CPU
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|Any CPU.Build.0 = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|ARM64.ActiveCfg = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|ARM64.Build.0 = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|x64.ActiveCfg = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Debug|x64.Build.0 = Debug|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Release|Any CPU.ActiveCfg = Release|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Release|Any CPU.Build.0 = Release|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Release|ARM64.ActiveCfg = Release|Win32
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Release|x64.ActiveCfg = Release|x64
+		{933B9B36-C94F-4120-8625-67DD0FB0CE0B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCEEFE23-9B98-4BF8-945D-05B345FA232E}
+	EndGlobalSection
+EndGlobal

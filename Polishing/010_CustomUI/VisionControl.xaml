@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaferPolishingSystem.Define"
+        xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Define.VisionControl"
+        mc:Ignorable="d"
+        Title="VisionControl" Height="260" Width="250" WindowStyle="None" Topmost="True" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="1"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="1" Background="LightGray"/>
+            <Label Content="Light Control" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" PreviewMouseLeftButtonDown="Label_PreviewMouseLeftButtonDown"/>
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="1"/>
+            <UserInterface:UserButton Grid.Column="1" x:Name="bn_Hide" Content="X" FontSize="12" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Click="bn_Hide_Click" Margin="1"/>
+        </Grid>
+        <GroupBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Header="Light" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <Expander Header="Test">
+                        <Grid>
+                            <UserInterface:UserSlider x:Name="us_Light1" USTitle="Channel 1" USTitleForeground="Black" USTitleWidth="40" USValue="0" USValueWidth="40" USMinimum="0" USMaximum="255" PreviewMouseUp="us_Light_PreviewMouseUp" PreviewKeyDown="us_Light_PreviewKeyDown"/>
+                        </Grid>
+                    </Expander>
+                    <Expander Header="Test2">
+                        <Grid>
+                            <UserInterface:UserSlider x:Name="us_Light2" USTitle="Channel 2" USTitleForeground="Black" USTitleWidth="40" USValue="0" USValueWidth="40" USMinimum="0" USMaximum="255" PreviewMouseUp="us_Light2_PreviewMouseUp" PreviewKeyDown="us_Light2_PreviewKeyDown"/>
+                        </Grid>
+                    </Expander>
+                </StackPanel>
+                <UniformGrid Columns="2" Grid.Row="2">
+                    <UserInterface:UserButton Content="Conn"    Margin="3" CornerRadius="3" FontSize="12" Click="UserButton_Click"/>
+                    <UserInterface:UserButton Content="DisConn" Margin="3" CornerRadius="3" FontSize="12" Click="UserButton2_Click"/>
+                </UniformGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

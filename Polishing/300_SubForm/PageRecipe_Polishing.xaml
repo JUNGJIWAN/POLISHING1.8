@@ -1,0 +1,351 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageRecipe_Polishing"
+      mc:Ignorable="d" 
+      d:DesignHeight="674" d:DesignWidth="1058"
+      Title="PageRecipe_Polishing" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="Model List" FontWeight="Bold" BorderBrush="Gray">
+                <ListView Grid.Column="0" Grid.Row="1" x:Name="lv_Model" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="lv_Model_SelectionChanged">
+                    <ListView.Resources>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray"/>
+                            <Setter Property="BorderThickness" Value="1,1,0,1"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}" >
+                                        <Border x:Name="Border" Padding="2" SnapsToDevicePixels="true">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5"/>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="104"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="40"/>
+                                                </Grid.RowDefinitions>
+                                                <Border    Grid.Column="0" Grid.RowSpan="3" x:Name="bd_head"     Background="LightGray" Margin="0,0,1,0" IsEnabled="False"/>
+                                                <TextBlock Grid.Column="1" Grid.Row="0"     x:Name="tb_titleidx" Text="Index : "                 FontSize="12" Foreground="DarkGray"/>
+                                                <TextBlock Grid.Column="2" Grid.Row="0"     x:Name="tb_valueidx" Text="{Binding INDEX}"          FontSize="12" Foreground="Gray"/>
+                                                <TextBlock Grid.Column="1" Grid.Row="1"     x:Name="tb_titleeb"  Text="Enable : "                FontSize="12" Foreground="DarkGray"/>
+                                                <Grid Grid.Column="2" Grid.Row="1">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <CheckBox x:Name="cb_Enable" IsChecked="{Binding ENABLE}"    FontSize="12" Width="Auto" HorizontalAlignment="Left" IsEnabled="False"/>
+                                                    <TextBlock Grid.Column="1"/>
+                                                </Grid>
+                                                <TextBlock Grid.Column="1" Grid.Row="2"     x:Name="tb_titlename" Text="Name :"                   FontSize="12" Foreground="DarkGray"/>
+                                                <TextBlock Grid.Column="2" Grid.Row="2"     x:Name="tb_valuemodel" Text="{Binding MODEL}"         FontSize="14" TextWrapping="Wrap" />
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="true">
+                                                <Setter TargetName="Border"         Property="Background" Value="#FF42a2e7"/>
+                                                <Setter TargetName="tb_titleidx"    Property="Foreground" Value="Black"/>
+                                                <Setter TargetName="tb_valueidx"    Property="Foreground" Value="Black"/>
+                                                <Setter TargetName="tb_titleeb"     Property="Foreground" Value="Black"/>
+                                                <Setter TargetName="tb_titlename"   Property="Foreground" Value="Black"/>
+                                                <Setter TargetName="tb_valuemodel"  Property="Foreground" Value="Black"/>
+                                                <Setter                             Property="FontWeight" Value="Bold"/>
+                                                <Setter TargetName="bd_head"        Property="Background" Value="LightGreen"/>
+                                                <Setter TargetName="cb_Enable"      Property="IsEnabled"  Value="True"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.Resources>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Background="Transparent" Columns="1" Rows="10" Width="{Binding Width, ElementName=lv_Model}"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </GroupBox>
+
+
+        </Grid>
+        <Grid Grid.Column="1" x:Name="grid_Setting">
+
+            <GroupBox x:Name="gb_Milling" Header="Model Infomation" Grid.Row="0" BorderBrush="Gray">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Selected Model" Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <UserInterface:UserButton     Grid.Row="0" Grid.ColumnSpan="2" x:Name="bn_Save"     Content="Model Save" FontSize="14" FontWeight="Bold" Margin="3" CornerRadius="3" Click="bn_Save_Click"/>
+                            <TextBox x:Name="tb_SelModel" Grid.Row="1" Grid.ColumnSpan="2" Text="-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" IsEnabled="False"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <Grid  Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2.5*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Model Control">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <UniformGrid Grid.Row="0" Columns="2">
+                                        <Label Content="Copy From:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <Label x:Name="lb_Copyfrom" Content="-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    </UniformGrid>
+                                    <Grid Grid.Row="1">
+                                        <UniformGrid Grid.Column="0" Grid.ColumnSpan="2" Columns="1" Rows="4">
+                                            <UserInterface:UserButton x:Name="bn_Copy"       Content="Copy"  CornerRadius="3" Margin="3" FontSize="14" Click="bn_Copy_Click"/>
+                                            <UserInterface:UserButton x:Name="bn_Paste"      Content="Paste" CornerRadius="3" Margin="3" FontSize="14" Click="bn_Paste_Click" IsEnabled="False"/>
+                                            <UserInterface:UserButton x:Name="bn_Del"        Content="Del"   CornerRadius="3" Margin="3" FontSize="14" Click="bn_Del_Click"/>
+                                            <UserInterface:UserButton x:Name="bn_Edit"       Content="Edit"  CornerRadius="3" Margin="3" FontSize="14" Click="bn_Edit_Click"/>
+                                        </UniformGrid>
+                                        <UniformGrid Grid.Column="1"  Rows="2" Visibility="Hidden">
+                                            <UserInterface:UserButton x:Name="bn_SearchUp"   Content="Up"    CornerRadius="3" Margin="3" FontSize="14" Click="bn_SearchUp_Click"/>
+                                            <UserInterface:UserButton x:Name="bn_SearchDown" Content="Down"  CornerRadius="3" Margin="3" FontSize="14" Click="bn_SearchDown_Click"/>
+                                        </UniformGrid>
+                                    </Grid>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Row="1" Name="gb_MOC" Header="Optic Condition">
+                                <UniformGrid Margin="5" Columns="1">
+                                    <CheckBox x:Name="cb_OpticGlobalInspection" Content="Use Optic Global - EPD" Margin="0,7" Click="cbOpticCondition_Click"/>
+                                    <CheckBox x:Name="cb_OpticGlobalLoading"    Content="Use Optic Global - Pre"    Margin="0,7" Click="cbOpticCondition_Click"/>
+                                    <CheckBox x:Name="cb_OpticGlobalPolishing"  Content="Use Optic Global - Pol"  Margin="0,7" Click="cbOpticCondition_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+                            <UniformGrid Grid.Row="2" Rows="3" VerticalAlignment="Bottom">
+                                <UniformGrid.Resources>
+                                    <Style TargetType="{x:Type UserInterface:UserButton}">
+                                        <Setter Property="Margin" Value="0,5"/>
+                                    </Style>
+                                </UniformGrid.Resources>
+                                <UserInterface:UserButton Grid.Row="1" x:Name="bnEPDEdit"       Content="EPD Edit"         Click="bnEPDEdit_Click"        IsEnabled="{Binding ElementName=chk_EPD, Path=IsChecked}"     FontSize="14" CornerRadius="5" Height="40" VerticalAlignment="Bottom"/>
+                                <UserInterface:UserButton Grid.Row="1" x:Name="bnLoadingModify" Content="Pre Align Edit" Click="bnLoadingModify_Click"                                                                  FontSize="14" CornerRadius="5" Height="40" VerticalAlignment="Bottom"/>
+                                <UserInterface:UserButton Grid.Row="2" x:Name="bnMillingModify" Content="Polishing Align Edit"     Click="bnMillingModify_Click"                                                        FontSize="14" CornerRadius="5" Height="40" VerticalAlignment="Bottom"/>
+                            </UniformGrid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="2" x:Name="gridModelInfo">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Grid.Row="0"  Header="Model ROI Info" BorderBrush="Gray">
+                <UniformGrid Rows="4">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type UserInterface:UserParam}">
+                            <Setter Property="FontSize"                 Value="14"/>
+                            <Setter Property="UPValueHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleWidth"             Value="90"/>
+                            <Setter Property="UPUnitWidth"              Value="20"/>
+                            <Setter Property="UPIsReadOnly"             Value="True"/>
+                        </Style>
+                    </UniformGrid.Resources>
+                    <UserInterface:UserParam x:Name="up_ModelX"         UPTitle="X : "         UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_ModelY"         UPTitle="Y : "         UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_ModelWidth"     UPTitle="Width : "     UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_ModelHeight"    UPTitle="Height : "    UPUnit="px"  UPValue="0"/>
+                </UniformGrid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Header="Search ROI Info" BorderBrush="Gray">
+                <UniformGrid Rows="4">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type UserInterface:UserParam}">
+                            <Setter Property="FontSize"                 Value="14"/>
+                            <Setter Property="UPValueHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleWidth"             Value="90"/>
+                            <Setter Property="UPUnitWidth"              Value="20"/>
+                            <Setter Property="UPIsReadOnly"             Value="True"/>
+                        </Style>
+                    </UniformGrid.Resources>
+
+                    <UserInterface:UserParam x:Name="up_SearchX"         UPTitle="X : "         UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_SearchY"         UPTitle="Y : "         UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_SearchWidth"     UPTitle="Width : "     UPUnit="px"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_SearchHeight"    UPTitle="Height : "    UPUnit="px"  UPValue="0"/>
+                </UniformGrid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Header="Loading Plate Info" BorderBrush="Gray">
+                <UniformGrid Rows="4">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type UserInterface:UserParam}">
+                            <Setter Property="FontSize"                 Value="14"/>
+                            <Setter Property="UPValueHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleHorizontalAlign"   Value="Center"/>
+                            <Setter Property="UPTitleWidth"             Value="95"/>
+                            <Setter Property="UPUnitWidth"              Value="20"/>
+                            <Setter Property="UPIsReadOnly"             Value="True"/>
+                        </Style>
+                    </UniformGrid.Resources>
+                    <UserInterface:UserParam x:Name="up_LoadingWidth"  UPTitle="Width : "       UPUnit="px"   UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_LoadingHeight" UPTitle="Height : "      UPUnit="px"   UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_LoadingTheta"  UPTitle="Theta : "       UPUnit="  ˚"  UPValue="0"/>
+                    <UserInterface:UserParam x:Name="up_ThetaEnable"   UPTitle="Theta Enable : "         UPUnitWidth="0"/>
+                </UniformGrid>
+            </GroupBox>
+
+        </Grid>
+
+        <Grid x:Name="gridMilling" Grid.Column="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="bd_Milling" Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1" Background="White" PreviewKeyDown="bd_Milling_PreviewKeyDown" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+                    <UniformGrid Columns="2">
+                        <CheckBox IsChecked="{Binding Path=UtilFill, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Utility Fill"  VerticalContentAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Width="80" Text="Utility Type : "/>
+                            <ComboBox SelectedIndex="{Binding Path=UtilType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="90">
+                                <ComboBoxItem Content="Slurry 1"/>
+                                <ComboBoxItem Content="Slurry 2"/>
+                                <ComboBoxItem Content="Slurry 3"/>
+                                <ComboBoxItem Content="Soap"/>
+                                <ComboBoxItem Content="DI Water"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </UniformGrid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <CheckBox IsChecked="{Binding Path=Enable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Milling Enable" VerticalContentAlignment="Center"/>
+                        <GroupBox Grid.Row="1" Header="Milling Infomation" IsEnabled="{Binding Path=Enable}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <UniformGrid Columns="2">
+                                    <CheckBox IsChecked="{Binding Path=ToolChange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Tool Change" VerticalContentAlignment="Center"/>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" IsEnabled="{Binding Path=ToolChange}">
+                                    <TextBlock Width="80" Text="Tool Type : "/>
+                                    <ComboBox Name="cb_ToolType" SelectedIndex="{Binding Path=ToolType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="90">
+                                        <ComboBoxItem Content="Tool 1"/>
+                                        <ComboBoxItem Content="Tool 2"/>
+                                        <ComboBoxItem Content="Tool 3"/>
+                                        <ComboBoxItem Content="Tool 4"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </UniformGrid>
+                            <GroupBox Grid.Row="1" Header="Rectangle Info" Margin="10">
+                                <UniformGrid Columns="2">
+                                    <UserInterface:UserParam UPTitle="X :"        UPUnit="mm" UPValue="{Binding X     , StringFormat={}{0:#,#0.000}}"      UPIsReadOnly="True"  Margin="15,0" UPValueBorderBrush="DarkGray" VerticalContentAlignment="Center"/>
+                                    <UserInterface:UserParam UPTitle="Y :"        UPUnit="mm" UPValue="{Binding Y     , StringFormat={}{0:#,#0.000}}"      UPIsReadOnly="True"  Margin="15,0" UPValueBorderBrush="DarkGray" VerticalContentAlignment="Center"/>
+                                    <UserInterface:UserParam UPTitle="Width :"    UPUnit="mm" UPValue="{Binding Width , StringFormat={}{0:#,#0.000}}"      UPIsReadOnly="True"  Margin="15,0" UPValueBorderBrush="DarkGray" VerticalContentAlignment="Center"/>
+                                    <UserInterface:UserParam UPTitle="Height :"   UPUnit="mm" UPValue="{Binding Height, StringFormat={}{0:#,#0.000}}"      UPIsReadOnly="True"  Margin="15,0" UPValueBorderBrush="DarkGray" VerticalContentAlignment="Center"/>
+                                </UniformGrid>
+                            </GroupBox>
+                            <UniformGrid Grid.Row="2" Columns="2">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock Width="80" Text="Start Pos : "/>
+                                    <ComboBox SelectedIndex="{Binding StartPos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100">
+                                        <ComboBoxItem Content="Left Bottom"/>
+                                        <ComboBoxItem Content="Right Bottom"/>
+                                        <!--<ComboBoxItem Content="Left Top"/>
+                                        <ComboBoxItem Content="Right Top"/>-->
+                                    </ComboBox>
+                                </StackPanel>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Pitch :"      UPTitleWidth="80" UPUnit="mm"      UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Pitch,     Mode=TwoWay, UpdateSourceTrigger=LostFocus, StringFormat={}{0:#,#0.000}}" UPValueBorderBrush="DarkGray" UPIsReadOnly="True"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Cycle :"      UPTitleWidth="80" UPUnit=""        UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Cycle,     Mode=TwoWay, UpdateSourceTrigger=LostFocus}"                              UPValueBorderBrush="DarkGray"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Force :"      UPTitleWidth="80" UPUnit="N"       UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Force,     Mode=TwoWay, UpdateSourceTrigger=LostFocus, StringFormat={}{0:#,#0.000}}" UPValueBorderBrush="DarkGray"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Tilt :"       UPTitleWidth="80" UPUnit="deg"     UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Tilt,      Mode=TwoWay, UpdateSourceTrigger=LostFocus, StringFormat={}{0:#,#0.00}}"  UPValueBorderBrush="DarkGray"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="RPM :"        UPTitleWidth="80" UPUnit="RPM"     UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Rpm,       Mode=TwoWay, UpdateSourceTrigger=LostFocus}"                              UPValueBorderBrush="DarkGray"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Speed :"      UPTitleWidth="80" UPUnit="mm/s"    UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=Speed,     Mode=TwoWay, UpdateSourceTrigger=LostFocus, StringFormat={}{0:#,#0.00}}"  UPValueBorderBrush="DarkGray"/>
+                                <UserInterface:UserParam VerticalContentAlignment="Center" UPTitle="Path Count :" UPTitleWidth="80" UPUnit=""        UPUnitWidth="40" Height="35" Margin="15,0" UPValue="{Binding Path=PathCount, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"                              UPValueBorderBrush="DarkGray" UPIsReadOnly="True"/>
+                            </UniformGrid>
+
+                            
+                        </Grid>
+                    </GroupBox>
+                    </Grid>
+                    <UniformGrid Grid.Row="2" Columns="2">
+                        <CheckBox IsChecked="{Binding Path=UtilDrain,    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    Content="Utility Drain" VerticalContentAlignment="Center"/>
+                        <Label/>
+                        <CheckBox IsChecked="{Binding Path=MillingImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Milling Image" VerticalContentAlignment="Center"/>
+                        <CheckBox Name="chk_EPD" IsChecked="{Binding Path=EPD,          Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="EPD"           VerticalContentAlignment="Center" IsEnabled="{Binding Path=MillingImage}"/>
+                    </UniformGrid>
+
+                </Grid>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer x:Name="sv_MillingTab" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" BorderThickness="0">
+                    <StackPanel x:Name="sp_MillingList" Orientation="Horizontal">
+                        <UserInterface:UserButton Content="+" Width="60" CornerRadius="5,5,0,0" BorderBrush="DarkGray" Click="bn_MillingListAdd_Click" Background="LightGray"/>
+                    </StackPanel>
+                </ScrollViewer>
+                <UniformGrid Grid.Column="1" Columns="2">
+                    <UserInterface:UserButton Content="◁" Padding="0" Click="bn_Scroll_Click" CommandParameter="Left"   CornerRadius="2" FontSize="12"/>
+                    <UserInterface:UserButton Content="▷" Padding="0" Click="bn_Scroll_Click" CommandParameter="Right"  CornerRadius="2" FontSize="12"/>
+                </UniformGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

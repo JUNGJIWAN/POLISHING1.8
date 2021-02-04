@@ -1,0 +1,140 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_Loadcell"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Manul_Loadcell" Background="#FDF7F7F7" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Height="35" Width="352" Margin="1" Content="TOP LOADCELL"    Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="1" Height="35" Width="352" Margin="1" Content="BOTTOM LOADCELL" Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  VerticalContentAlignment="Center" />
+        
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+            
+                <WrapPanel Grid.Row="0" Orientation="Vertical">
+                    <RadioButton Margin="5" Content="TOP LOADCELL"    GroupName="LOAD" Name="cbTop"    Checked="cb_Checked" IsChecked="False" IsEnabled="False"/>
+                    <RadioButton Margin="5" Content="BOTTOM LOADCELL" GroupName="LOAD" Name="cbBottom" Checked="cb_Checked" IsChecked="True"/>
+                    <RadioButton Margin="5" Content="BOTH LOADCELL"   GroupName="LOAD" Name="cbBoth"   Checked="cb_Checked" IsChecked="False" IsEnabled="False"/>
+                </WrapPanel>
+                
+                <Grid Grid.Row="1">
+                    <UserInterface:UserButton x:Name="bnGetSerial"       Content="Get Serial No."  FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnGetSerial_Click"/>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <UserInterface:UserButton x:Name="bnConnect"         Content="Connect"         FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnConnect_Click"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <UserInterface:UserButton x:Name="bnDisconnect"      Content="Disconect"       FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnDisconnect_Click"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <!--
+                    <UserInterface:UserButton x:Name="bnSetzero"         Content="Set Zero"        FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnSetzero_Click"/>
+                    -->
+                </Grid>
+                <Grid Grid.Row="5">
+                    <UserInterface:UserButton x:Name="bnSetCalibration"  Content="Set Calibration" FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnSetCalibration_Click"/>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <UserInterface:UserButton x:Name="bnGetValue"        Content="Get Value"       FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnGetValue_Click"/>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <UserInterface:UserButton x:Name="bnSave"            Content="Save"            FontSize="14" FontWeight="Bold" Margin="5,10" Click="bnSave_Click"/>
+                </Grid>
+            </Grid>
+
+
+            <GroupBox Grid.Row="1" Grid.Column="1" BorderBrush="Black"/>
+            <WrapPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Serial No."/>
+                <TextBox x:Name="textSerialNo"           Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="OffsetDefault"/>
+                <TextBox x:Name="textOffsetDefault"      Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Loaded"/>
+                <TextBox x:Name="textFullScaleLoaded"    Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Load Value"/>
+                <TextBox x:Name="textFullScaleLoadValue" Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Offset"/>
+                <TextBox x:Name="textOffset"             Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Value"/>
+                <TextBox x:Name="textFullScaleValue"     Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Decimal Point"/>
+                <TextBox x:Name="textDecimalPoint"       Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Unit Code"/>
+                <TextBox x:Name="textUnitCode"           Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Normal Data"/>
+                <TextBox x:Name="textNormalData"         Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Calculated Value"/>
+                <TextBox x:Name="textCalculatedValue"    Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Tare Value"/>
+                <TextBox x:Name="textTareValue"          Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" FontWeight="Bold" Content="Value"/>
+                <TextBox x:Name="textValue"              Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Row="1" Grid.Column="0" BorderBrush="Black"/>
+            <WrapPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Serial No."/>
+                <TextBox x:Name="_textSerialNo"           Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="OffsetDefault"/>
+                <TextBox x:Name="_textOffsetDefault"      Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Loaded"/>
+                <TextBox x:Name="_textFullScaleLoaded"    Margin="5" Height="25" Width="80"  IsEnabled="True" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Load Value"/>
+                <TextBox x:Name="_textFullScaleLoadValue" Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Offset"/>
+                <TextBox x:Name="_textOffset"             Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Full Scale Value"/>
+                <TextBox x:Name="_textFullScaleValue"     Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Decimal Point"/>
+                <TextBox x:Name="_textDecimalPoint"       Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Unit Code"/>
+                <TextBox x:Name="_textUnitCode"           Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Normal Data"/>
+                <TextBox x:Name="_textNormalData"         Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Calculated Value"/>
+                <TextBox x:Name="_textCalculatedValue"    Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" Content="Tare Value"/>
+                <TextBox x:Name="_textTareValue"          Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Label                                   Margin="5" Height="25" Width="190" FontSize="12" FontWeight="Bold" Content="Value"/>
+                <TextBox x:Name="_textValue"              Margin="5" Height="25" Width="80"  IsEnabled="False" FontSize="12" PreviewTextInput="TextBox_PreviewTextInput"/>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+    
+</Page>

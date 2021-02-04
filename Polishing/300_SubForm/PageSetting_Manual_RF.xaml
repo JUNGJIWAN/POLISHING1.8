@@ -1,0 +1,87 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_RF"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Manul_PMC" Background="#FDF7F7F7" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Margin="1" Content="COMMAND" Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="1" Content="DATA"    Background="LightGray" FontWeight="Bold" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        
+        <Grid Grid.Row="1" Grid.Column="0">
+            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" x:Name="lbConnect" Content="Connect" Height="50" Width="120" FontSize="14" FontWeight="Bold" Background="Red" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <UserInterface:UserButton Content="Connect"     Click="bnConnect_Click"    Grid.Row="1" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="btConnect"    />
+                <UserInterface:UserButton Content="Disconnect"  Click="bnDisconnect_Click" Grid.Row="2" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="btDisconnect" />
+                <UserInterface:UserButton Content="READ"        Click="btRead_Click"       Grid.Row="3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="btRead"       />
+                <UserInterface:UserButton Content="WRITE"       Click="btWrite_Click"      Grid.Row="4" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" Margin="5" x:Name="btWrite"      />
+                
+                <Label Grid.Row="5" x:Name="lbState" Content="state" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <Grid Grid.Row="6">
+                    <StackPanel Orientation="Horizontal">
+                        <UniformGrid Columns="2" VerticalAlignment="Center" Margin="3">
+                            <Label     Content="IP"                        FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox   Text="192.168.0.79" Name="tbRFIDIP" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+                        </UniformGrid>
+                        <Button x:Name="btRFSave" Content="IP SAVE"  FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="80" Height="30" Click="btRFSave_Click" Margin="3"/>
+                    </StackPanel>
+                </Grid>
+                <Button Grid.Row="7" x:Name="btClear" Content="Data Clear"  FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btClear_Click" Margin="10"/>
+
+            </Grid>
+        </Grid>
+ 
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Row="0" Header="READ DATA">
+                    <ListBox x:Name="list_Read"/>
+                </GroupBox>
+                <GroupBox Grid.Row="1" Header="WRITE DATA">
+                    <TextBox x:Name="tbWriteData"/>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+        </Grid>
+
+    </Grid>
+
+</Page>

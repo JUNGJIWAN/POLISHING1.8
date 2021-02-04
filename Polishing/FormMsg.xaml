@@ -1,0 +1,42 @@
+﻿<Window x:Class="WaferPolishingSystem.FormMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaferPolishingSystem"
+        xmlns:UserInterface="clr-namespace:UserInterface" 
+        mc:Ignorable="d"
+        Title="MESSAGE" Height="250" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#ff414141" 
+        Closing="Window_Closing" WindowStyle="None" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0"></Grid>
+        
+        <Grid Grid.Row="1">
+            <Label Grid.Column="0" x:Name="lbMsg" Content="TEST" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="18" BorderThickness="1" BorderBrush="#FFB6B2B2" Margin="10,10,10,10"/>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <UserInterface:UserButton IsDefault ="True"  Grid.Column="0" x:Name="menuOk"     Content="OK"     CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuOk_Click"     Margin="10,10,10,10"/>
+            <UserInterface:UserButton IsDefault ="True"  Grid.Column="1" x:Name="menuOk_1"   Content="OK"     CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuOk_Click"     Margin="10,10,10,10"/>
+            <UserInterface:UserButton IsCancel  ="True"  Grid.Column="2" x:Name="menuCancel" Content="CANCEL" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuCancel_Click" Margin="10,10,10,10"/>
+
+        </Grid>
+        
+        
+
+
+
+    </Grid>
+</Window>

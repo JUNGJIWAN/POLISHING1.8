@@ -1,0 +1,532 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageMotion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:userinterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1280"
+      Title="PageMotion" Background="#ff414141" Loaded="Page_Loaded" Unloaded="Page_Unloaded" KeyDown="Page_KeyDown" KeyUp="Page_KeyUp">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="GridSub" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <!--
+            <Grid Grid.Row="0"  Background="LightCyan"/>
+            <Grid Grid.Row="1"  Background="LightCyan"/>
+            <Grid Grid.Row="2"  Background="LightCyan"/>
+            <Grid Grid.Row="3"  Background="HotPink"/>
+            <Grid Grid.Row="4"  Background="HotPink"/>
+            <Grid Grid.Row="5"  Background="HotPink"/>
+            <Grid Grid.Row="6"  Background="HotPink"/>
+            <Grid Grid.Row="7"  Background="LightCyan"/>
+            <Grid Grid.Row="8"  Background="LightCyan"/>
+            <Grid Grid.Row="9"  Background="HotPink"/>
+            <Grid Grid.Row="10" Background="LightCyan"/>
+            <Grid Grid.Row="11" Background="LightCyan"/>
+            <Grid Grid.Row="12" Background="LightCyan"/>
+            <Grid Grid.Row="13" Background="#dee3f7"/>
+            <Grid Grid.Row="14" Background="#dee3f7"/>
+-->
+            <userinterface:UserButton x:Name="ubMotr01" Grid.Row="0"  Content="SPD__X"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr02" Grid.Row="1"  Content="SPD__Z"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr03" Grid.Row="2"  Content="SPD__Z1" Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr04" Grid.Row="3"  Content="POL__Y"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr05" Grid.Row="4"  Content="POL__TH" Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr06" Grid.Row="5"  Content="POL__TI" Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr07" Grid.Row="6"  Content="POL__Z"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr08" Grid.Row="7"  Content="CLN__Y"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr09" Grid.Row="8"  Content="CLN__R"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr10" Grid.Row="9"  Content="STR__Y"  Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+            <userinterface:UserButton x:Name="ubMotr11" Grid.Row="10" Content="LOD__TH" Click="ubMotr01_Click" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" />
+
+            <userinterface:UserButton                   Grid.Row="14" Content="SAVE"  Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="UserButton_Click"/>
+        </Grid>
+
+        <Grid x:Name="GridSub1" Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10,10,10,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"   Name="lbSelMotor"   Margin="2" Content="SPINDLE" Background="LightGray" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Grid  Grid.Column="1" x:Name="gdMotorState" Margin="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <DataGrid Grid.Column="0" Name="dg_MotrPosData" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="LightCyan" AutoGenerateColumns="False" Margin="10,8,10,12" LoadingRow="dg_MotrPos_LoadingRow" CanUserAddRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="50" RowHeaderWidth="40" HeadersVisibility="Column" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" SelectedCellsChanged="dg_MotrPosData_SelectedCellsChanged">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width ="8*" Header="Position Name" CanUserSort="False"  IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background"                 Value="LightYellow"/>
+                                    <Setter Property="BorderBrush"                Value="LightGray"/>
+                                    <Setter Property="BorderThickness"            Value="1,1,1,1"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="VerticalContentAlignment"   Value="Center"/>
+                                    <Setter Property="FontSize"                   Value="14"/>
+                                    <Setter Property="FontWeight"                 Value="Bold"/>
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Label Content="{Binding Path=NAME}" FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightYellow"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width ="3*" Header="Position" CanUserSort="False">
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background"                 Value="LightYellow"/>
+                                    <Setter Property="BorderBrush"                Value="LightGray"/>
+                                    <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="FontSize"                   Value="14"/>
+                                    <Setter Property="FontWeight"                 Value="Bold"/>
+
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox IsEnabled="{Binding ENABLE}" Text="{Binding Path=POSITION, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0" TextChanged="TextBox_TextChanged" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width ="2*" Header="Unit" CanUserSort="False" IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="LightYellow"/>
+                                    <Setter Property="BorderBrush" Value="LightGray"/>
+                                    <Setter Property="BorderThickness" Value="0,1,1,1"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="FontSize"                   Value="14"/>
+                                    <Setter Property="FontWeight"                 Value="Bold"/>
+
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Label Content="{Binding Path=UNIT}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width ="1.5*" Header="MOVE" CanUserSort="False"  IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background"                 Value="LightYellow"/>
+                                    <Setter Property="BorderBrush"                Value="LightGray"/>
+                                    <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="FontSize"                   Value="14"/>
+                                    <Setter Property="FontWeight"                 Value="Bold"/>
+
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding Path=MOVE}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Move_Click" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Grid.Column="1" Margin="0,10,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" x:Name="btJogP" Content="JOG P(+)" Margin="2" FontSize="13" Click="btJogP_Click" PreviewMouseDown="JOGP_PreviewMouseDown" PreviewMouseUp="JOGButton_MouseUp">
+                        <!--
+                        <StackPanel Orientation="Vertical">
+                            <Image x:Name="imgJogP" Source="/030_Image/Right.ico" Height="35"/>
+                            <TextBlock Text="JOG P" VerticalAlignment="Center" PreviewMouseDown="JOGP_PreviewMouseDown" PreviewMouseUp="JOGButton_MouseUp"/>
+                        </StackPanel>
+                    -->
+                    </Button>
+
+                    <Button Grid.Row="1" x:Name="btJogN" Content="JOG N(-)" Margin="2" FontSize="13" Click="btJogP_Click" PreviewMouseDown="JOGN_PreviewMouseDown" PreviewMouseUp="JOGButton_MouseUp">
+                        <!--                        
+                        <StackPanel Orientation="Vertical">
+                            <Image x:Name="imgJogN" Source="/030_Image/Left.ico" Height="35"/>
+                            <TextBlock Text="JOG N" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        -->
+                    </Button>
+
+                    <Button Grid.Row="2" x:Name="btStop" Content="STOP" Margin="2" FontSize="13" Click="btStop_Click">
+                        <!--
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/030_Image/stop.ico" Height="35"/>
+                            <TextBlock Text="STOP" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        -->
+                    </Button>
+                    <Grid Grid.Row="3">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btMoveP" Content="+0.1" Margin="2" FontSize="13" Width="70" Click="btMoveP_Click"/>
+                            <Button x:Name="btMoveN" Content="-0.1" Margin="2" FontSize="13" Width="70" Click="btMoveP_Click"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btMoveP1" Content="+1.0" Margin="2" FontSize="13" Width="70" Click="btMoveP_Click"/>
+                            <Button x:Name="btMoveN1" Content="-1.0" Margin="2" FontSize="13" Width="70" Click="btMoveP_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+
+            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" Margin="5,10">
+                <Grid Background="#FFEFFFFF">
+                    <Grid.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="5,10"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+
+
+                    <Grid Grid.Row="0" Margin="5,5,5,0" >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Name="lbSelPart1" Content="SPINDLE"   BorderBrush="Black" Background="CornflowerBlue" FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="1" Name="lbSelPart2" Content="POLISHING" BorderBrush="Black"                             FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="2" Name="lbSelPart3" Content="CLEANING"  BorderBrush="Black"                             FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="3" Name="lbSelPart4" Content="STORAGE"   BorderBrush="Black"                             FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="4" Name="lbSelPart5" Content="TRASNFER"  BorderBrush="Black"                             FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Height="40">
+                        <UniformGrid Columns="5">
+                            <userinterface:UserButton x:Name="btOneCyle01" Content="ONE CYCLE01" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle02" Content="ONE CYCLE02" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle03" Content="ONE CYCLE03" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle04" Content="ONE CYCLE04" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle05" Content="ONE CYCLE05" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                        </UniformGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Height="40">
+                        <UniformGrid Columns="5">
+                            <userinterface:UserButton x:Name="btOneCyle06" Content="ONE CYCLE06" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle07" Content="ONE CYCLE07" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle08" Content="ONE CYCLE08" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle09" Content="ONE CYCLE09" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle10" Content="ONE CYCLE10" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                        </UniformGrid>
+
+                        <ComboBox x:Name="cbPlatePick" Background="Aqua" Style="{DynamicResource ComboBoxStyle}" FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="426,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="CornflowerBlue"/>
+                                    <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+
+                            <ComboBoxItem Content="LOAD"/>
+                            <ComboBoxItem Content="POLISHING"/>
+                            <ComboBoxItem Content="CLEANING"/>
+                        </ComboBox>
+
+                        <ComboBox x:Name="cbPlatePlce" Background="Aqua" Style="{DynamicResource ComboBoxStyle}"  FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="639,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="Aquamarine"/>
+                                    <Setter Property="BorderBrush" Value="Aquamarine"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                            <ComboBoxItem Content="LOAD"/>
+                            <ComboBoxItem Content="POLISHING"/>
+                            <ComboBoxItem Content="CLEANING"/>
+                        </ComboBox>
+                        
+                        <ComboBox x:Name="cbPickMagaNo" Background="Aqua" Style="{DynamicResource ComboBoxStyle}" FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="426,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="CornflowerBlue"/>
+                                    <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+
+                            <ComboBoxItem Content="MA01-1st slot"/>
+                            <ComboBoxItem Content="MA01-2nd slot"/>
+                            <ComboBoxItem Content="MA01-3rd slot"/>
+                            <ComboBoxItem Content="MA01-4th slot"/>
+                            <ComboBoxItem Content="MA01-5th slot"/>
+                            <ComboBoxItem Content="MA01-6th slot"/>
+                            <ComboBoxItem Content="MA01-7th slot"/>
+                            <ComboBoxItem Content="MA01-8th slot"/>
+                            <ComboBoxItem Content="MA01-9th slot"/>
+                            <ComboBoxItem Content="MA01-10th slot"/>
+                            <ComboBoxItem Content="MA01-11th slot"/>
+                            <ComboBoxItem Content="MA01-12th slot"/>
+                            <ComboBoxItem Content="MA01-13th slot"/>
+                            <ComboBoxItem Content="MA01-14th slot"/>
+                            <ComboBoxItem Content="MA01-15th slot"/>
+
+                            <ComboBoxItem Content="MA02-1st slot"/>
+                            <ComboBoxItem Content="MA02-2nd slot"/>
+                            <ComboBoxItem Content="MA02-3rd slot"/>
+                            <ComboBoxItem Content="MA02-4th slot"/>
+                            <ComboBoxItem Content="MA02-5th slot"/>
+                            <ComboBoxItem Content="MA02-6th slot"/>
+                            <ComboBoxItem Content="MA02-7th slot"/>
+                            <ComboBoxItem Content="MA02-8th slot"/>
+                            <ComboBoxItem Content="MA02-9th slot"/>
+                            <ComboBoxItem Content="MA02-10th slot"/>
+                            <ComboBoxItem Content="MA02-11th slot"/>
+                            <ComboBoxItem Content="MA02-12th slot"/>
+                            <ComboBoxItem Content="MA02-13th slot"/>
+                            <ComboBoxItem Content="MA02-14th slot"/>
+                            <ComboBoxItem Content="MA02-15th slot"/>                           
+                        </ComboBox>
+                        
+                        <ComboBox x:Name="cbPlceMagaNo" Background="Aqua" Style="{DynamicResource ComboBoxStyle}"  FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="639,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="Aquamarine"/>
+                                    <Setter Property="BorderBrush" Value="Aquamarine"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                            <ComboBoxItem Content="MA01-1st slot"/>
+                            <ComboBoxItem Content="MA01-2nd slot"/>
+                            <ComboBoxItem Content="MA01-3rd slot"/>
+                            <ComboBoxItem Content="MA01-4th slot"/>
+                            <ComboBoxItem Content="MA01-5th slot"/>
+                            <ComboBoxItem Content="MA01-6th slot"/>
+                            <ComboBoxItem Content="MA01-7th slot"/>
+                            <ComboBoxItem Content="MA01-8th slot"/>
+                            <ComboBoxItem Content="MA01-9th slot"/>
+                            <ComboBoxItem Content="MA01-10th slot"/>
+                            <ComboBoxItem Content="MA01-11th slot"/>
+                            <ComboBoxItem Content="MA01-12th slot"/>
+                            <ComboBoxItem Content="MA01-13th slot"/>
+                            <ComboBoxItem Content="MA01-14th slot"/>
+                            <ComboBoxItem Content="MA01-15th slot"/>
+
+                            <ComboBoxItem Content="MA02-1st slot"/>
+                            <ComboBoxItem Content="MA02-2nd slot"/>
+                            <ComboBoxItem Content="MA02-3rd slot"/>
+                            <ComboBoxItem Content="MA02-4th slot"/>
+                            <ComboBoxItem Content="MA02-5th slot"/>
+                            <ComboBoxItem Content="MA02-6th slot"/>
+                            <ComboBoxItem Content="MA02-7th slot"/>
+                            <ComboBoxItem Content="MA02-8th slot"/>
+                            <ComboBoxItem Content="MA02-9th slot"/>
+                            <ComboBoxItem Content="MA02-10th slot"/>
+                            <ComboBoxItem Content="MA02-11th slot"/>
+                            <ComboBoxItem Content="MA02-12th slot"/>
+                            <ComboBoxItem Content="MA02-13th slot"/>
+                            <ComboBoxItem Content="MA02-14th slot"/>
+                            <ComboBoxItem Content="MA02-15th slot"/>
+
+                        </ComboBox>
+
+                        <ComboBox x:Name="cbForceWhere" Background="Aqua" Style="{DynamicResource ComboBoxStyle}" FontSize="13" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,0,0,0" Visibility="Visible"><ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="CornflowerBlue"/>
+                                    <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                            
+                            <ComboBoxItem Content="POLISHING"/>
+                            <ComboBoxItem Content="CLEANING"/>
+                            <ComboBoxItem Content="LOADCELL"/>
+                        </ComboBox>
+                        
+                        <ComboBox x:Name="cbForceDCOM" Background="Aqua" Style="{DynamicResource ComboBoxStyle}" FontSize="13" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,0,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="CornflowerBlue"/>
+                                    <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+
+                            <ComboBoxItem Content="DCOM: 1"/>
+                            <ComboBoxItem Content="DCOM: 2"/>
+                            <ComboBoxItem Content="DCOM: 3"/>
+                            <ComboBoxItem Content="DCOM: 4"/>
+                            <ComboBoxItem Content="DCOM: 5"/>
+                            
+                            
+                        </ComboBox>
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="3" Height="40">
+                        <UniformGrid Columns="5">
+                            <userinterface:UserButton x:Name="btOneCyle11" Content="ONE CYCLE11" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle12" Content="ONE CYCLE12" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle13" Content="ONE CYCLE13" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle14" Content="ONE CYCLE14" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                            <userinterface:UserButton x:Name="btOneCyle15" Content="ONE CYCLE15" FontSize="12" Width="200" HorizontalAlignment="Left" Click="btOneCyle01_Click"/>
+                        </UniformGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="4" >
+                        <Grid.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Margin" Value="5,2"/>
+                            </Style>
+                        </Grid.Resources>
+                        <UniformGrid Columns="5" >
+                            <GroupBox Margin="0" Header="CYLIND 01" x:Name="gbCyl01">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btCyl01_B" Content="OPEN"  Click="btCyl01_B_Click"/>
+                                    <Button x:Name="btCyl01_F" Content="CLOSE" Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <GroupBox Margin="0" Header="CYLIND 02" x:Name="gbCyl02">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btCyl02_B" Content="BWD" Click="btCyl01_B_Click" />
+                                    <Button x:Name="btCyl02_F" Content="FWD" Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <GroupBox Margin="0" Header="CYLIND 02" x:Name="gbCyl03">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btCyl03_B" Content="BWD"  Click="btCyl01_B_Click" />
+                                    <Button x:Name="btCyl03_F" Content="FWD"  Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <GroupBox Margin="0" Header="CYLIND 02" x:Name="gbCyl04">
+                                <UniformGrid Columns="2"  Margin="2,0,2,0">
+                                    <Button x:Name="btCyl04_B" Content="BWD" Click="btCyl01_B_Click" />
+                                    <Button x:Name="btCyl04_F" Content="FWD" Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <GroupBox Margin="0" Header="TOOL CLAMP" x:Name="gbCyl10">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btToolUnClamp" Content="RELEASE"  Click="btToolUnClamp_Click" />
+                                    <Button x:Name="btToolClamp"   Content="HOLD"     Click="btToolUnClamp_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+                        </UniformGrid>
+
+
+                        <ComboBox x:Name="cbCupPick" Background="Aqua" Style="{DynamicResource ComboBoxStyle}" FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="426,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="CornflowerBlue"/>
+                                    <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+
+                            <ComboBoxItem Content="STORAGE"/>
+                            <ComboBoxItem Content="POLISHING"/>
+                        </ComboBox>
+
+                        <ComboBox x:Name="cbCupPlce" Background="Aqua" Style="{DynamicResource ComboBoxStyle}"  FontSize="13" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="639,-18,0,0" Visibility="Visible">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Background"  Value="Aquamarine"/>
+                                    <Setter Property="BorderBrush" Value="Aquamarine"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                            <ComboBoxItem Content="STORAGE"/>
+                            <ComboBoxItem Content="POLISHING"/>
+                        </ComboBox>
+
+
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="5">
+                        <UniformGrid  Columns="5">
+
+                            <GroupBox Margin="0" Header="CYLIND 02" x:Name="gbCyl05">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btCyl05_B" Content="BWD" Margin ="5,2" Click="btCyl01_B_Click" />
+                                    <Button x:Name="btCyl05_F" Content="FWD" Margin ="5,2" Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <GroupBox Margin="0" Header="CYLIND 02" x:Name="gbCyl06">
+                                <UniformGrid Columns="2" Margin="2,0,2,0">
+                                    <Button x:Name="btCyl06_B" Content="BWD" Margin ="5,2" Click="btCyl01_B_Click" />
+                                    <Button x:Name="btCyl06_F" Content="FWD" Margin ="5,2" Click="btCyl01_F_Click"/>
+                                </UniformGrid>
+                            </GroupBox>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="TOOL [X0150]" x:Name="lbToolExist"  Margin="3,2" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0" BorderBrush="Black" />
+                                <Label Content="PLATE[X0152]" x:Name="lbPlateExist" Margin="3,2" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0" BorderBrush="Black" />
+                            </StackPanel>
+
+                            <Button x:Name="btSetSoftLimit" Content="SET SOFT LIMT(+)" Margin="5,2" Click="btSetSoftLimit_Click"/>
+                            <Button x:Name="btSetCurrPos"   Content="SET CURRENT POS." Margin="5,2" Click="btSetCurrPos_Click"/>
+                        </UniformGrid>
+                    </Grid>
+                    
+                    <Grid Grid.Row="6">
+                        
+                    </Grid>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,73 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageLog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:userinterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1280"
+      Title="PageLog" Background="#ff414141" FontSize="14" Loaded="Page_Loaded" KeyDown="Page_KeyDown" KeyUp="Page_KeyUp">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" x:Name="GridSub">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/> 
+                <RowDefinition Height="1*"/> 
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <userinterface:UserButton x:Name="bn_Trace"    Grid.Row="0" Content="TRACE"      Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <userinterface:UserButton x:Name="bn_Event"    Grid.Row="1" Content="EVENT"      Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <userinterface:UserButton x:Name="bn_Jam"      Grid.Row="2" Content="ALARM"      Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <userinterface:UserButton x:Name="bn_Lot"      Grid.Row="3" Content="LOT"        Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <userinterface:UserButton x:Name="bn_Vision"   Grid.Row="4" Content="VISION"     Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <!--
+            <userinterface:UserButton x:Name="bn_Transfer" Grid.Row="5" Content="TRANSFER"   Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            <userinterface:UserButton x:Name="bn_PMC"      Grid.Row="6" Content="PMC"        Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="MenuChange"/>
+            -->
+
+            <userinterface:UserButton x:Name="bn_FileOpen" Grid.Row="9"  Content="File Open"  Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="bn_FileOpen_Click"/>
+            <userinterface:UserButton x:Name="bn_CSVFile"  Grid.Row="10" Content="Export CSV" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="bn_CSVFile_Click"/>
+            
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Log List -->
+            <Grid Grid.Column="0">
+                <ListView x:Name="lvLogList" Margin="5,5,4,5" Background="AliceBlue" SelectionChanged="dtLogList_SelectionChanged" >
+                    
+                </ListView>
+            </Grid>
+
+            <!-- Log Info. -->
+            <Grid Grid.Column="1">
+                <ListBox x:Name="lbLogInfo" Margin="1,5,5,5">
+                    
+                </ListBox>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Page>

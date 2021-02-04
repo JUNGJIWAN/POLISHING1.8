@@ -1,0 +1,34 @@
+﻿<Window x:Class="WaferPolishingSystem.FormMessage_Change"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaferPolishingSystem"
+        mc:Ignorable="d"
+        Title="FormMessage_Change" Height="400" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="Black" BorderThickness="1" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Name="grid_Title" Grid.Row="0" MouseDown="Grid_MouseDown" Background="Gray">
+            <TextBlock Text="{Binding Path=Title}" FontWeight="Bold" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Text="{Binding Path=Message}" Margin="10" TextWrapping="Wrap"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <GroupBox Header="Change List" Margin="5">
+                <ListBox ItemsSource="{Binding Path=ListChange}" Margin="5" IsEnabled="False"/>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Width="100" Margin="5" Content="OK"    IsDefault="True" Click="bn_Ok_Click"/>
+                <Button Width="100" Margin="5" Content="Cancel" IsCancel="True" Click="bn_Cancel_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

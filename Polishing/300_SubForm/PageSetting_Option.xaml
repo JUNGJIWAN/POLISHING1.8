@@ -1,0 +1,299 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageSetting_Option"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Option" Background="#FF414141" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <GroupBox Header="[MACHINE OPTION]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <WrapPanel>
+                        <Label     Width="100" Margin="1" Content="Machine Name" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="text_MachineName" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100" Margin="1" Content="Machine No."  FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="text_MachineNo"   Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100" Margin="1" Content="Log Path"     FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="text_LogPath"     Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    </WrapPanel>
+                </GroupBox>
+                <!--
+                <GroupBox Header="[RUN MODE(PMC)]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <StackPanel>
+                        <RadioButton Content="AUTO(Remote)"  Name="rbRemote"  GroupName="runmode" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <RadioButton Content="MANUAL(Local)" Name="rbLocal"   GroupName="runmode" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <RadioButton Content="OFFLINE"       Name="rbOffline" GroupName="runmode" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+                -->
+            
+                <GroupBox Header="[RUN OPTION]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <StackPanel>
+                        <CheckBox x:Name="cbOption1"     Content="Use Cleaning Air Blow"            Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbOption2"     Content="Use Light On at Run"              Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbOption3"     Content="Use Polishing Cup"                Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbOption4"     Content="Use Auto Slurry Supply"           Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+
+                        <CheckBox x:Name="cbSpdFirstDir" Content="Use Spindle 1st Direction - BWD"  Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbSpdDir_FWD"  Content="Use Spindle Direction - Only FWD" Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbSpdDir_BWD"  Content="Use Spindle Direction - Only BWD" Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbPoilOneway"  Content="Use Polishing One Direction"      Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbSkipAlignP"  Content="Use By-pass Vision Align"         Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                        <CheckBox x:Name="cbSkipAlignE"  Content="Use Skip Vision Error"            Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+
+
+                    </StackPanel>
+                </GroupBox>
+               
+                <GroupBox Header="[OPTION]" FontWeight="Bold"  BorderBrush="Gray" Margin="5">
+                    <WrapPanel>
+                        <UserInterface:UserParam x:Name="upWaterLvlPol"   FontSize="13"  UPTitleBackground="LightGray" UPTitleHorizontalAlign="Center" UPTitleWidth="160" UPValueWidth="100" UPUnitWidth="0"  Height="30" UPUnit="min"   UPTitle="Polish Bath UTIL Level" PreviewTextInput="TextBox_PreviewTextInput"  />
+                        <UserInterface:UserParam x:Name="upSoftLimit"     FontSize="13"  UPTitleBackground="LightGray" UPTitleHorizontalAlign="Center" UPTitleWidth="160" UPValueWidth="100" UPUnitWidth="50" Height="30" UPUnit="mm"    UPTitle="Main-Z axis Soft Limit" PreviewTextInput="TextBox_PreviewTextInput"  />
+                        <CheckBox x:Name="cbUseSoftLimt" VerticalAlignment="Center"/>
+                        <UserInterface:UserParam x:Name="upTargetForce"   FontSize="13"  UPTitleBackground="LightGray" UPTitleHorizontalAlign="Center" UPTitleWidth="160" UPValueWidth="100" UPUnitWidth="50" Height="30" UPUnit="gram"  UPTitle="[LOADCELL]Target Force" PreviewTextInput="TextBox_PreviewTextInput"  />
+                        <UserInterface:UserParam x:Name="upSpindleOffCnt" FontSize="13"  UPTitleBackground="LightGray" UPTitleHorizontalAlign="Center" UPTitleWidth="160" UPValueWidth="100" UPUnitWidth="50" Height="30" UPUnit="count" UPTitle="SPINDLE OFF COUNT"      PreviewTextInput="TextBox_PreviewTextInput"  />
+                    </WrapPanel>
+                </GroupBox>
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <GroupBox Header="[WARMING UP]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <StackPanel>
+                        <StackPanel>
+                            <CheckBox x:Name="cbWarmingup" Margin="10" FontSize="12" Content=" Use Warming Up" Height="40" VerticalContentAlignment="Center"/>
+                            <UserInterface:UserParam x:Name="upInterval" UPTitleBackground="LightGray" UPTitleHorizontalAlign="Center" Height="30" UPUnit="min" UPTitle="Interval" PreviewTextInput="TextBox_PreviewTextInput" />
+                        </StackPanel>
+                        <GroupBox Header="MOTOR" FontWeight="Bold" BorderBrush="Gray" FontSize="11" Margin="5">
+                            <WrapPanel>
+                                <CheckBox x:Name="cbWarmMOT_0"  Content="Spindle X"      MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_1"  Content="Spindle Z"      MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_2"  Content="Plate Z"        MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_3"  Content="Polishing Y"    MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_4"  Content="Polishing TH"   MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_5"  Content="Polishing Tilt" MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_6"  Content="Cleaning Y"     MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_7"  Content="Cleaning R"     MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_8"  Content="Storage Y"      MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_9"  Content="Transfer TH 1"  MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_10" Content="Transfer TH 2"  MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbWarmMOT_11" Content="Transfer TH 2"  MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center" Visibility="Hidden"/>
+
+                                <Label   Margin="1"  Content="Repeat" FontSize="11" Width="130" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox x:Name="text_RepeatMOT" Width="180" Margin="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                            </WrapPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="CLAMP" FontWeight="Bold" BorderBrush="Gray" FontSize="11" Margin="5">
+                            <WrapPanel>
+                                <CheckBox x:Name="cbSpindleclamp"    Content="Spindle Clamp"                        MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbPolishingclamp"  Content="Polishing Clamp"                      MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbCleaningclamp"   Content="Cleaning Clamp"                       MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbCleaningSpare"   Content="Spare"           Visibility="Hidden"  MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+
+                                <Label   Margin="1"  Content="Repeat" FontSize="11" Width="130" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox x:Name="text_RepeatCLAMP" Width="180" Margin="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                            </WrapPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="UTIL" FontWeight="Bold" BorderBrush="Gray" FontSize="11" Margin="5">
+                            <WrapPanel>
+                                <CheckBox x:Name="cbPolishing"  Content="Polishing"    MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <CheckBox x:Name="cbCleaning"   Content="Cleaning"     MinHeight="30" Width="150" FontSize="11" Foreground="Black" Height="20" VerticalContentAlignment="Center"/>
+                                <Label   Margin="1"  Content="Supply Time" FontSize="11" Width="130" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox x:Name="tbSplyTime" Width="180" Margin="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                                <Label   Margin="1"  Content="Repeat" FontSize="11" Width="130" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox x:Name="text_RepeatUTIL" Width="180" Margin="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                            </WrapPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Offset [Vision Coordinate] " FontWeight="Bold"  BorderBrush="Gray" Margin="5">
+                    <StackPanel>
+                        <GroupBox Header="Polishing Offset " FontWeight="Bold" BorderBrush="Gray">
+                            <WrapPanel>
+                                <Label     Width="70" Content="X (mm)"                    Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox   Width="80" x:Name="text_POL_X_Offset"     Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                                <Label     Width="70" Content="Y (mm)"                    Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox   Width="80" x:Name="text_POL_Y_Offset"     Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                                <Label     Width="70" Content="Tilt ( ˚ )"                 Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox   Width="80" x:Name="text_POL_Tilt_Offset"  Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                                <Label     Width="70" Content="Theta ( ˚ )"                Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox   Width="80" x:Name="text_POL_Theta_Offset" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox Header="Cleaning Offset " FontWeight="Bold" BorderBrush="Gray">
+                            <WrapPanel>
+                                <Label     Width="70" Content="Rotation R"           Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <TextBox   Width="80" x:Name="text_CLN_R_Offset"     Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                            </WrapPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </GroupBox>
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="2" >
+            <StackPanel>
+                <GroupBox Header="STORAGE" FontWeight="Bold" BorderBrush="Gray" Margin="10,3">
+                    <WrapPanel>
+                        <Label     Width="70" Content="Row Count"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_STRowCount" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Col Count"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_STColCount" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Row Pitch"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_STRowPitch" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Col Pitch"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_STColPitch" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    </WrapPanel>
+                </GroupBox>
+
+                <GroupBox Header="MAGAZINE" FontWeight="Bold" BorderBrush="Gray" Margin="10,3">
+                    <WrapPanel>
+                        <Label     Width="70" Content="Row Count"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="tbMAGARowCnt"    Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Col Count"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="tbMAGAColCnt"    Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Row Pitch"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="tbMAGARowPitch"  Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Col Pitch"      Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="tbMAGAColPitch"  Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    </WrapPanel>
+                </GroupBox>
+<!--
+                <GroupBox Header=" Offset " FontWeight="Bold" BorderBrush="Gray" Margin="10,3">
+                    <WrapPanel>
+                        <Label     Width="70" Content="Tilt T"               Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_POL_TiltT_Offset" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="70" Content="Rotation R"           Margin="1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="90" x:Name="text_CLN_R_Offset"     Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    </WrapPanel>
+                </GroupBox>
+-->
+                <GroupBox Header=" Time Out " FontWeight="Bold" BorderBrush="Gray" Margin="10,3">
+                    <WrapPanel>
+                        <Label     Width="130" Content="Milling"             Margin="1" FontSize="11" Foreground="Black"    Background="LightGray"              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="130" x:Name="text_POL_MillingTime" Margin="1" Text="" IsReadOnly="False"          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="50" Content="[min]"                Margin="1" FontSize="11" Foreground="Black"    HorizontalContentAlignment="Left"   VerticalContentAlignment="Center"/>
+                        <Label     Width="130" Content="Cleaning"            Margin="1" FontSize="11" Foreground="Black"    Background="LightGray"              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="130" x:Name="text_CLN_MillingTime" Margin="1" Text="" IsReadOnly="False"          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="50" Content="[min]"                Margin="1" FontSize="11" Foreground="Black"    HorizontalContentAlignment="Left"   VerticalContentAlignment="Center"/>
+                    </WrapPanel>
+                </GroupBox>
+
+                <WrapPanel>
+                    <Label   Margin="1"  Content="Storage Process Direction" FontSize="11" Width="200" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <ComboBox Name="cbStogDir" Width="150">
+                        <ComboBoxItem Content="Top Left"/>
+                        <ComboBoxItem Content="Top Right"/>
+                        <ComboBoxItem Content="Bottom Left"/>
+                        <ComboBoxItem Content="Bottom Right"/>
+                    </ComboBox>
+                </WrapPanel>
+
+
+                <GroupBox Header="[TOOL TYPE / COLOR]" FontWeight="Bold" BorderBrush="Gray" Margin="10">
+                    <WrapPanel>
+                        <Label     Width="120" Margin="1" Content="Tool Name #1" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="160" x:Name="tbToolName1" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Button    x:Name="btToolType01" Content="..." Width="40" Click="btToolType01_Click"/>
+
+                        <Label     Width="120" Margin="1" Content="Tool Name #2" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="160" x:Name="tbToolName2" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Button    x:Name="btToolType02" Content="..." Width="40" Click="btToolType02_Click"/>
+                        
+                        <Label     Width="120" Margin="1" Content="Cleaning Tool" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label     Width="162"/>
+                        <Button    x:Name="btCleanTool" Content="..." Width="40" Click="btCleanTool_Click"/>
+                        <Button    x:Name="btDefault"   Content="Set Defalut" Width="325" Click="btDefault_Click"/>
+
+                    </WrapPanel>
+                </GroupBox>
+                
+                <GroupBox Header="[AUTO SUPPLY INFO]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <WrapPanel>
+                        <Label     Width="100"                                    Margin="1" Content="LIST"   FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label     Width="110"                                    Margin="1" Content="SLURRY" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label     Width="110"                                    Margin="1" Content="SOAP"   FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        
+                        <Label     Width="100"                                    Margin="1" Content="IP" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyIp"            Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyIp1"           Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100"                                    Margin="1" Content="PORT"          FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyPort"          Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyPort1"         Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100"                                    Margin="1" Content="START ADDRESS" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyAdd"           Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyAdd1"          Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100"                                    Margin="1" Content="EQP ID"        FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyID"            Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox   Width="110" x:Name="tbAutoSupplyID1"           Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+                    </WrapPanel>
+                </GroupBox>
+                
+                <GroupBox Header="[REST API INFO]" FontWeight="Bold" BorderBrush="Gray" Margin="5">
+                    <WrapPanel>
+                        <Label     Width="100"                                    Margin="1" Content="API URL"        FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="tbRestApiUrl"              Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+                    </WrapPanel>
+                </GroupBox>
+
+
+                <!--
+                <GroupBox Header="[PMC INFO]" FontWeight="Bold" BorderBrush="Gray" Margin="5" Visibility="Hidden">
+                    <WrapPanel>
+                        <Label     Width="100" Margin="1" Content="IP" FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="tbPMCIp" Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <Label     Width="100" Margin="1" Content="PORT"  FontSize="11" Foreground="Black" Background="LightGray"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox   Width="220" x:Name="tbPMCPort"   Margin="1" Text="" IsReadOnly="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    </WrapPanel>
+                </GroupBox>
+                -->
+                
+                <GroupBox Header=" LEVEL : Operation " FontWeight="Bold" BorderBrush="Gray" FontSize="11" Margin="5">
+                    <WrapPanel>
+                        <CheckBox x:Name="cbOpMotion"   Content="MOTION"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbOpSetting"  Content="SETTING"  FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbOpRecipe"   Content="RECIPE"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbOpLog"      Content="LOG"      FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbOpMaster"   Content="MASTER"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbOpExit"     Content="EXIT"     FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                    </WrapPanel>
+                </GroupBox>
+                <GroupBox Header=" LEVEL : Engineer " FontWeight="Bold" BorderBrush="Gray" FontSize="11" Margin="5">
+                    <WrapPanel>
+                        <CheckBox x:Name="cbEnMotion"   Content="MOTION"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbEnSetting"  Content="SETTING"  FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbEnRecipe"   Content="RECIPE"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbEnLog"      Content="LOG"      FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbEnMaster"   Content="MASTER"   FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                        <CheckBox x:Name="cbEnExit"     Content="EXIT"     FontSize="11" Foreground="Black" Height="30" Width="100" VerticalContentAlignment="Center"/>
+                    </WrapPanel>
+                </GroupBox>
+
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+
+
+</Page>

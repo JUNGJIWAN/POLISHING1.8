@@ -1,0 +1,364 @@
+#SI
+Network System Name:          Automatic Setup Configuration
+Controller Firmware Version:  2.70
+Controller Serial Number:     CT501222D
+Controller Part Number:       CMnt2721N0N16GGXNNNS
+
+Hardware:
+  MPU board:                  Nexcom EBC240 1.46GHz
+  MPU board ID:               12
+  MPU number:                 3165X2D
+  BIOS Date:                  03/12/2019
+  BIOS Version:               E240-010 X64
+  System Version:		      20CF
+  System Serial Number:		 TBBJ61020239
+  CPU Speed:                  1460MHz
+  CPU Type:                   Intel(R) Atom(TM) CPU E3826 @ 1.46GHz
+  CPU Number Of Cores:        2
+  Master Shift:               Enabled
+  Ethernet Adapter:           Intel 82575/I350/I210
+     ID:                      7
+     IP Address:              10.0.0.100
+     MAC Address:             00 10 F3 8B 65 E2
+  EtherCAT Adapter:           Intel 82574 compatible
+     ID:                      4
+     MAC Address:             00 10 F3 8B 65 E3
+
+Axes:
+  Dummy:                      none
+  DC Brush:                   0,1,2
+  DC Brushless:               0,1,2
+  P/D Stepper:                none
+  Laser Control:              none
+  Linear drives:              none
+  PWM drives:                 0,1,2
+  NanoPWM drives:             none
+  Digital Current Loop:       0,1,2
+  Integrated drives:          0,1,2
+                  Axis (0):     7.5A continuous/15.0A peak
+                  Axis (1):     7.5A continuous/15.0A peak
+                  Axis (2):     2.5A continuous/5.0A peak
+  Remote HSSI drives:         0,1
+  Dual loop:                  0,1,2
+  Position Event Generation (PEG):
+     PEG pulse:               0,1,2
+     PEG states:              0,1,2
+  Absolute Encoders:
+     EnDAT 2.2:               0,1,2
+     Smart-Abs:               0,1,2
+     Sanyo Denki:             none
+     Panasonic:               0,1,2
+     BiSS     :               2
+     SSI      :               2
+     HIPERFACE:               0,1
+     Resolver :               0,1
+
+Options:
+  Total Number of Axes:                             16
+  Total Number of ACSPL+ Buffers:                   16
+  SIN-COS Encoders (up to 500kHz):                  0
+  Controller Cycle:                                 2kHz
+  Input Shaping:                                    No
+  SPiiPlus G-Code:                                  No
+  MotionBoost:                                      No
+  XLScan Units:                                     0
+  Enhanced Network Failure Detection & Recovery:    No
+  Flexible Configuration:                           No
+  Axes with Customized Servo Algorithms:            0
+  Customized Servo Algorithms Mask:                 0x0000
+  Non-ACS Servo Axes:                               16
+  Non-ACS Stepper Axes:                             16
+  Non-ACS I/O Nodes:                                64
+
+Network Unit 0:
+  ID:                         0
+  DIP:                        0
+  Ordering Part Number:       CMnt2721N0N16GGXNNNS
+  Vendor ID:                  0x00000540
+  Product ID:                 0x06010000
+  Revision:                   1
+  Serial Number:              501222
+
+  FPGA ID:                    0x056E
+  FPGA rev. :                 0x0011
+  HW rev. :                   0x00D0
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 2
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            0,1
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.16,0.17
+     Digital outputs (OUT):   0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
+     Analog inputs (AIN):     0,1,2,3
+     Analog outputs (AOUT):   0,1
+     HSSI channels:           1
+     Ext. inputs (EXTIN):     0,1,2,3
+     Ext. outputs (EXTOUT):   0,1,2,3
+
+  Integrated Component "CMnt-2-x-x-1":
+     Type:                    Controller (12)
+     Address:                 0x007
+     Subsystems:              1
+     Production date:         09/07/20
+     HW revision:             D
+     S/N:                     CT501222
+
+  Integrated Component "PWR-2-320V-7.5/15A":
+     Type:                    PWM drive (5)
+     Address:                 0x003
+     Subsystems:              2
+     Axes:                    0,1
+         Drive 0:   Axis 0
+         Drive 1:   Axis 1
+     Voltage:                 320V - 320V
+     Nominal current:         7.500000A
+     Peak current:            15.000000A
+     RMS Protection Time:     3476.000000
+     Production date:         07/07/20
+     HW revision:             B3
+     S/N:                     DCM51154
+
+Network Unit 1:
+  ID:                         1
+  DIP:                        0
+  Ordering Part Number:       UDMnt1A110N0S
+  Vendor ID:                  0x00000540
+  Product ID:                 0x030C0000
+  Revision:                   1
+  Serial Number:              52035
+
+  FPGA ID:                    0x0A79
+  FPGA rev. :                 0x0004
+  HW rev. :                   0x00B0
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 1
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            2
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     1.0,1.1,1.2,1.3,1.16,1.17,1.18,1.19
+     Digital outputs (OUT):   1.0,1.1
+     Analog inputs (AIN):     4,5
+     Analog outputs (AOUT):   2
+
+  Integrated Component "UDMnt-1-A-1":
+     Type:                    Single-Slot Unit (14)
+     Address:                 0x107
+     Subsystems:              1
+     Axes:                    2
+         Drive 0:   Axis 2
+     Voltage:                 60V - 60V
+     Nominal current:         2.500000A
+     Peak current:            5.000000A
+     RMS Protection Time:     3476.000000
+     Production date:         30/06/20
+     HW revision:             B
+     S/N:                     UDM52035
+
+Network Unit 2:
+  ID:                         2
+  DIP:                        0
+  Vendor ID:                  0x00000539
+  Product ID:                 0x02200301
+  Revision:                   524308
+  Serial Number:              0
+
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 0
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            3
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     2.0,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31
+     Digital outputs (OUT):   2.0,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31
+     Analog inputs (AIN):     none
+     Analog outputs (AOUT):   none
+
+  Integrated Component "SGD7S-xxxxA0x EtherCAT(CoE) SERVOP":
+     Type:                    Single-Slot Unit (13)
+     Address:                 0x207
+     Subsystems:              1
+     Axes:                    3
+         Drive 0:   Axis 3
+     Production date:         
+     HW revision:             0x00080014
+     S/N:                     
+
+Network Unit 3:
+  ID:                         3
+  DIP:                        0
+  Vendor ID:                  0x00000539
+  Product ID:                 0x02200301
+  Revision:                   524308
+  Serial Number:              0
+
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 0
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            4
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     3.0,3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,3.10,3.11,3.12,3.13,3.14,3.15,3.16,3.17,3.18,3.19,3.20,3.21,3.22,3.23,3.24,3.25,3.26,3.27,3.28,3.29,3.30,3.31
+     Digital outputs (OUT):   3.0,3.1,3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,3.10,3.11,3.12,3.13,3.14,3.15,3.16,3.17,3.18,3.19,3.20,3.21,3.22,3.23,3.24,3.25,3.26,3.27,3.28,3.29,3.30,3.31
+     Analog inputs (AIN):     none
+     Analog outputs (AOUT):   none
+
+  Integrated Component "SGD7S-xxxxA0x EtherCAT(CoE) SERVOP":
+     Type:                    Single-Slot Unit (13)
+     Address:                 0x307
+     Subsystems:              1
+     Axes:                    4
+         Drive 0:   Axis 4
+     Production date:         
+     HW revision:             0x00080014
+     S/N:                     
+
+Network Unit 4:
+  ID:                         4
+  DIP:                        0
+  Vendor ID:                  0x00000539
+  Product ID:                 0x02200301
+  Revision:                   524308
+  Serial Number:              0
+
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 0
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            5
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     4.0,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12,4.13,4.14,4.15,4.16,4.17,4.18,4.19,4.20,4.21,4.22,4.23,4.24,4.25,4.26,4.27,4.28,4.29,4.30,4.31
+     Digital outputs (OUT):   4.0,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,4.10,4.11,4.12,4.13,4.14,4.15,4.16,4.17,4.18,4.19,4.20,4.21,4.22,4.23,4.24,4.25,4.26,4.27,4.28,4.29,4.30,4.31
+     Analog inputs (AIN):     none
+     Analog outputs (AOUT):   none
+
+  Integrated Component "SGD7S-xxxxA0x EtherCAT(CoE) SERVOP":
+     Type:                    Single-Slot Unit (13)
+     Address:                 0x407
+     Subsystems:              1
+     Axes:                    5
+         Drive 0:   Axis 5
+     Production date:         
+     HW revision:             0x00080014
+     S/N:                     
+
+Network Unit 5:
+  ID:                         5
+  DIP:                        0
+  Vendor ID:                  0x00000539
+  Product ID:                 0x02200301
+  Revision:                   524308
+  Serial Number:              0
+
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 0
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            6
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     5.0,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,5.10,5.11,5.12,5.13,5.14,5.15,5.16,5.17,5.18,5.19,5.20,5.21,5.22,5.23,5.24,5.25,5.26,5.27,5.28,5.29,5.30,5.31
+     Digital outputs (OUT):   5.0,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,5.10,5.11,5.12,5.13,5.14,5.15,5.16,5.17,5.18,5.19,5.20,5.21,5.22,5.23,5.24,5.25,5.26,5.27,5.28,5.29,5.30,5.31
+     Analog inputs (AIN):     none
+     Analog outputs (AOUT):   none
+
+  Integrated Component "SGD7S-xxxxA0x EtherCAT(CoE) SERVOP":
+     Type:                    Single-Slot Unit (13)
+     Address:                 0x507
+     Subsystems:              1
+     Axes:                    6
+         Drive 0:   Axis 6
+     Production date:         
+     HW revision:             0x00080014
+     S/N:                     
+
+Network Unit 6:
+  ID:                         6
+  DIP:                        0
+  Vendor ID:                  0x00000539
+  Product ID:                 0x02200301
+  Revision:                   524307
+  Serial Number:              0
+
+
+  Options:
+     SIN-COS Encoders (up to 500kHz): 0
+     SIN-COS Encoders (up to 10MHz):  0
+     Motor Type Limitations:          None
+     Absolute Encoders:               0
+     Absolute Encoders Type:          None
+
+  Axes Assignment:            7
+
+  Inputs/Outputs Assignment:
+     Digital inputs (IN):     6.0,6.1,6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9,6.10,6.11,6.12,6.13,6.14,6.15,6.16,6.17,6.18,6.19,6.20,6.21,6.22,6.23,6.24,6.25,6.26,6.27,6.28,6.29,6.30,6.31
+     Digital outputs (OUT):   6.0,6.1,6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9,6.10,6.11,6.12,6.13,6.14,6.15,6.16,6.17,6.18,6.19,6.20,6.21,6.22,6.23,6.24,6.25,6.26,6.27,6.28,6.29,6.30,6.31
+     Analog inputs (AIN):     none
+     Analog outputs (AOUT):   none
+
+  Integrated Component "SGD7S-xxxxA0x EtherCAT(CoE) SERVOP":
+     Type:                    Single-Slot Unit (13)
+     Address:                 0x607
+     Subsystems:              1
+     Axes:                    7
+         Drive 0:   Axis 7
+     Production date:         
+     HW revision:             0x00080014
+     S/N:                     
+
+SP0 Program Info:
+  Monitor version:4
+  Creation Date: Tue Apr 16 14:05:29 2019
+  Saving Tool: SPiiPlus NT Servo Application File Generator v.6.68.00.00
+  SPiiPlus CMnt / UDMpm Servo Processor Program
+
+  Date = April 16, 2019
+  Version  = 2.70
+  Firmware = 2.70
+
+  ACS Motion Control Ltd.
+  Control and Applications Development
+  Copyright (c) 2019. All Rights Reserved
+SP1 Program Info:
+  Monitor version:4
+  Creation Date: Tue Apr 16 14:11:19 2019
+  Saving Tool: SPiiPlus NT Servo Application File Generator v.6.68.00.00
+  SPiiPlus UDMnt (v2) Servo Processor Program.
+
+  Date = April 16, 2019
+  Version  = 2.70
+  Firmware = 2.70
+
+  ACS Motion Control Ltd.
+  Control and Applications Development
+  Copyright (c) 2019. All Rights Reserved:

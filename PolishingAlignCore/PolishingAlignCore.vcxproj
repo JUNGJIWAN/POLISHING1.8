@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{933B9B36-C94F-4120-8625-67DD0FB0CE0B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Dll1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PolishingAlignCore</ProjectName>
+    <TargetFramework>
+    </TargetFramework>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DLL1_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include\;$(SolutionDir)Include\Mil\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;DLL1_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include\;$(SolutionDir)Include\Mil\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)bin\Dll\"
+copy "$(SolutionDir)Lib\opencv_world420d.dll" "$(SolutionDir)bin\Dll\"
+copy "$(SolutionDir)Lib\MIL\Mil.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mil3dmap.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milbead.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milBlob.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCacheInfo.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milcal.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCode.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCodec.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milcolor.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mildig.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilDisplay.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mildmr.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\miledge.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milfpga.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilGrabc.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milim.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milMeas.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milmetrol.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milmod.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilMP.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milocr.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milpat.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MILPerf.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MILQSVEngine.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milreg.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milstr.dll" $(SolutionDir)bin\Dll\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;DLL1_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;DLL1_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include\;$(SolutionDir)Include\Mil\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)bin\Dll\"
+copy "$(SolutionDir)Lib\opencv_world420.dll" "$(SolutionDir)bin\Dll\"
+copy "$(SolutionDir)Lib\MIL\Mil.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mil3dmap.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milbead.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milBlob.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCacheInfo.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milcal.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCode.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilCodec.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milcolor.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mildig.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilDisplay.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\mildmr.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\miledge.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milfpga.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilGrabc.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milim.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milMeas.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milmetrol.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milmod.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MilMP.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milocr.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\Milpat.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MILPerf.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\MILQSVEngine.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milreg.dll" $(SolutionDir)bin\Dll\
+copy "$(SolutionDir)Lib\MIL\milstr.dll" $(SolutionDir)bin\Dll\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CFunction.h" />
+    <ClInclude Include="CMilAlign.h" />
+    <ClInclude Include="CParam.h" />
+    <ClInclude Include="IncludeHeader.h" />
+    <ClInclude Include="WpfDll.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CMilAlign.cpp" />
+    <ClCompile Include="WpfDll.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

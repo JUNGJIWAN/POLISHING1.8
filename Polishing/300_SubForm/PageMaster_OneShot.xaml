@@ -1,0 +1,138 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageMaster_OneShot"
+      mc:Ignorable="d" 
+      d:DesignHeight="848" d:DesignWidth="1097"
+      Title="FLAG" Background="#fff7f7f7" Loaded="Page_Loaded" Unloaded="Page_Unloaded" Margin="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Title -->
+        <Grid Grid.Row="0" Grid.Column="0" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName01" Content="SPINDLE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName02" Content="POLISHING" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName03" Content="CLEANING" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="3" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName04" Content="STORAGE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName05" Content="TRANSFER" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName06" Content="SYSTEM" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="2" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName07" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="3" Background="LightBlue" Margin="0,3,0,0">
+            <Label Name="lbFlagName08" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+
+
+        <!-- Grid -->
+        <Grid Grid.Row="1" Grid.Column="0">
+        <ScrollViewer BorderBrush="Black" BorderThickness="1" >
+            <Grid x:Name="gdOneShot01" Margin="3"/>
+        </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <ScrollViewer BorderBrush="Black" BorderThickness="1">
+                <Grid x:Name="gdOneShot02" Margin="3"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2">
+            <ScrollViewer BorderBrush="Black" BorderThickness="1">
+                <Grid x:Name="gdOneShot03" Margin="3"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="3">
+            <ScrollViewer BorderBrush="Black" BorderThickness="1">
+                <Grid x:Name="gdOneShot04" Margin="3"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="0">
+            <ScrollViewer BorderBrush="Black" BorderThickness="1">
+                <Grid x:Name="gdOneShot05" Margin="3"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1">
+            <ScrollViewer BorderBrush="Black" BorderThickness="1">
+                <Grid x:Name="gdOneShot06" Margin="3"/>
+            </ScrollViewer>
+        </Grid>
+        
+        
+        <!-- Button -->
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset1"  Content="Reset"    Width="120" Tag="0" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot1" Content="One Shot" Width="120" Tag="0" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset2"  Content="Reset"    Width="120" Tag="1" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot2" Content="One Shot" Width="120" Tag="1" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="2">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset3"  Content="Reset"    Width="120" Tag="2" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot3" Content="One Shot" Width="120" Tag="2" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="3">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset4"  Content="Reset"    Width="120" Tag="3" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot4" Content="One Shot" Width="120" Tag="3" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset5"  Content="Reset"    Width="120" Tag="4" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot5" Content="One Shot" Width="120" Tag="4" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btReset6"  Content="Reset"    Width="120" Tag="5" Click="btReset1_Click" />
+                <Label Width="10" />
+                <Button x:Name="btOnShot6" Content="One Shot" Width="120" Tag="5" PreviewMouseDown="btOnShot1_Click" PreviewMouseUp="btOnShot1_PreviewMouseUp" />
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+    
+    
+    
+</Page>

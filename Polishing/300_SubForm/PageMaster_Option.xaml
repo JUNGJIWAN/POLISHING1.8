@@ -1,0 +1,244 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageMaster_Option"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      mc:Ignorable="d" 
+      d:DesignHeight="824" d:DesignWidth="1097"
+      Title="MASTER OPTION" Background="#FF414141" Margin="0" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Margin="2">
+            <GroupBox Header=" [SYSTEM OPTION] " BorderThickness="1" BorderBrush="LightGray" Margin="0,5">
+                <StackPanel Margin="3">
+                    
+                    <CheckBox Content="Use Skip Door"               x:Name="cbSkipDoor"   Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Leak"               x:Name="cbSkipLeak"   Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Fan"                x:Name="cbSkipFan"    Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Main Air"           x:Name="cbSkipAir"    Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Water Level"        x:Name="cbSkipWtLvl"  Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Water Leak"         x:Name="cbSkipWtLeak" Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Accura"             x:Name="cbSkipAccura" Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    <CheckBox Content="Use Skip Different Pressure" x:Name="cbSkipDP"     Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                    
+                    <CheckBox Content="Use PMC"              x:Name="cbUsePMC"     Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press" Visibility="Hidden"/>
+
+                    <CheckBox Content="Online"               x:Name="cbOnline"   Visibility="Hidden" Height="30" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+        
+        <Grid Grid.Row="0" Grid.Column="1" Margin="2" Grid.RowSpan="3">
+            <StackPanel Margin="3">
+                <GroupBox Header=" [RUN OPTION] " BorderThickness="1" BorderBrush="LightGray" Margin="5">
+                    <StackPanel Margin="3">
+                        <RadioButton x:Name="rbAuto" Content="AUTO RUN"             GroupName="RUN" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <RadioButton x:Name="rbTEST" Content="TEST RUN(with out)"   GroupName="RUN" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        <RadioButton x:Name="rbMAN"  Content="MANUAL RUN"           GroupName="RUN" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+                
+                
+                
+                <!--
+                <CheckBox x:Name="cbUseAutoSlry"  Content="Use Auto Slurry" Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press"/>
+                -->
+                <GroupBox Header=" [PART OPTION] " BorderBrush="LightGray" BorderThickness="1" Margin="5">
+                    <WrapPanel Margin="3" >
+                        <Label Content="Drain Time(sec)"              Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbDrainTime"                 Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center" />
+                        <Label Content="Seperator Blow Time(sec)"     Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbSepBlowTime"               Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="Suck Back Time(sec)"          Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbSuckBackTime"              Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="-------------------------------------------------------------" Height="20" Width="300" VerticalContentAlignment="Center" Margin = "2"/>
+                        <Label Content="Transfer Pick Offset(Top)"    Height="30" Width="200" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbTrPickOffset"              Height="30" Width="100" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="Transfer Place Offset(Btm)"   Height="30" Width="200" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbTrPlaceOffset"             Height="30" Width="100" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="-------------------------------------------------------------" Height="20" Width="300" VerticalContentAlignment="Center" Margin = "2"/>
+                        <Label Content="Utility Supply Time Out(sec)" Height="30" Width="200" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbUtilTimeout"               Height="30" Width="100" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+
+                        <Label Content="-------------------------------------------------------------" Height="20" Width="300" VerticalContentAlignment="Center" Margin = "2"/>
+                        <Label Content="[BTM/DCOM] Slope"             Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbYSlope"                    Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="[BTM/DCOM] Intercept"         Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbYIntercept"                Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                                                                      
+                        <Label Content="[DOCM/BTM] Offset"            Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbforceOffset"               Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+
+                        <Label Content="-------------------------------------------------------------" Height="20" Width="300" VerticalContentAlignment="Center" Margin = "2"/>
+                        <Label Content="[TOP/BTM] Slope"              Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbYSlopeBT"                  Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                        <Label Content="[TOP/BTM] Intercept"          Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbYInterceptBT"              Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+
+                        <Label Content="-------------------------------------------------------------" Height="20" Width="300" VerticalContentAlignment="Center" Margin = "2"/>
+                        <Label Content="[SPINDLE] Offset (rpm)"       Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                        <TextBox x:Name="tbSpdOffset"                 Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+
+                    </WrapPanel>
+
+
+                </GroupBox>
+                
+                
+                
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="2" Margin="2">
+            <StackPanel Margin="3">
+                <GroupBox Header=" [AUTO RUN OFF] " BorderThickness="1" BorderBrush="LightGray" Margin="0,5">
+                    <StackPanel Margin="3">
+                        <CheckBox Name="cbOffAR0"  Content="NONE" Height="30" VerticalContentAlignment="Center"/>
+                        <CheckBox Name="cbOffAR1"  Content="NONE" Height="30" VerticalContentAlignment="Center"/>
+                        <CheckBox Name="cbOffAR2"  Content="NONE" Height="30" VerticalContentAlignment="Center"/>
+                        <CheckBox Name="cbOffAR3"  Content="NONE" Height="30" VerticalContentAlignment="Center"/>
+                        <CheckBox Name="cbOffAR4"  Content="NONE" Height="30" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header=" [ Atuo Function ] " BorderThickness="1" BorderBrush="LightGray" Margin="0,5" Visibility="Hidden">
+                    <StackPanel Margin="3">
+                        <Button x:Name="btToolCal"      Content="Tool Storage Auto Calibration"  Height="35" Click="btToolCal_Click"/>
+                    </StackPanel>
+                </GroupBox>
+
+
+
+
+
+                <!--
+                <GroupBox Header=" [Analog Data] " Margin="2">
+                    <WrapPanel Margin="3" VerticalAlignment="Bottom">
+                        <Label Name="lbAI01" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI02" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI03" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI04" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI05" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI06" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI07" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI08" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI09" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI10" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI11" Content="AI0000" Width="150"/>
+                        <Label Name="lbAI12" Content="AI0000" Width="150"/>
+                        
+                        <Label Name="lbAO01" Content="AO0000" Width="150"/>
+                        <Label Name="lbAO02" Content="AO0000" Width="150"/>
+                        <Label Name="lbAO03" Content="AO0000" Width="150"/>
+                        <Label Name="lbAO04" Content="AO0000" Width="150"/>
+                    </WrapPanel>
+                </GroupBox>
+                -->
+
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="2" Grid.RowSpan="2">
+            <GroupBox Header=" [MASTER OPTION] " BorderThickness="1" BorderBrush="LightGray" >
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="Height"                       Value="23"/>
+                            <Setter Property="VerticalContentAlignment"     Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment"   Value="Left"/>
+                            <Setter Property="FontSize"                     Value="13"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <CheckBox x:Name="cbSkipTool"    Content="Use Tool Skip"                ClickMode="Press"/>
+                    <CheckBox x:Name="cbSkipPlate"   Content="Use Plate Skip"               ClickMode="Press"/>
+                    <CheckBox x:Name="cbSkipStrg"    Content="Use Storage Skip"             ClickMode="Press"/>
+                    <CheckBox x:Name="cbSkipMaga"    Content="Use Magazine Skip"            ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseVisn"     Content="Use Vision Align"             ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseDirPos"   Content="Use Storage Direct Pos"       ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseCalFoc"   Content="Use Calibration Force at 1st" ClickMode="Press"/>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="cbUseDCOMRst"  Content="Use DCOM RESET"           Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" ClickMode="Press" Width="150"/>
+                        <TextBox  x:Name="tbDCOMRatio"                                      Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="50"/>
+                        <Label Content="% / "/>
+                        <TextBox  x:Name="tbDCOMCnt"                                        Height="25" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="50"/>
+                        <Label Content="Count"/>
+                    </StackPanel>
+                    <CheckBox x:Name="cbUseREST"             Content="Use REST API"                           ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseOnlyDI"           Content="Use DI @ Polishing(for Test)"           ClickMode="Press"/>
+                    <CheckBox x:Name="cbEPDOnlyMeasure"      Content="EPD Only Measure(EPD Always false)"     ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseMOC"              Content="Use Model Optic Condition"              ClickMode="Press"/>
+                </StackPanel>
+            </GroupBox>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Margin="5">
+            <WrapPanel Margin="3" >
+                <Button x:Name="btLoadCellSet" Content="SET LOAD CELL OFFSET" Height="40" Width="200" Click="btLoadCellSet_Click"/>
+                <Label x:Name="lbLoadOffset"   Content="CELL : 1111g" Height="40" Width="130" VerticalContentAlignment="Center" />
+                <Label x:Name="lbTopForce"     Content="CELL : 1111g" Height="40" Width="300" VerticalContentAlignment="Center" />
+
+                <Button x:Name="lbTopOffset" Content="SET UTILITY OFFSET" Height="30" Width="150" VerticalContentAlignment="Center" Click="lbTopOffset_Click" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbTopOffset" Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+
+                <Button  x:Name="btForceTest" Content="Force TEST(g)" Height="30" Width="150" VerticalContentAlignment="Center" Click="btForceTest_Click" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbTarget"   Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <Button  x:Name="btWait"     Content="Move Wait" Height="30" Width="300" VerticalContentAlignment="Center" Click="btWait_Click" HorizontalContentAlignment="Center"/>
+
+                <Button x:Name="btAutoCal"      Content="Auto Cal(DCOM/BTM/TOP)" Width="200" Height="35" Click="btAutoCal_Click"/>
+                <TextBox x:Name="lbCalCycle"    Text="1"   Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <TextBox x:Name="tbCalStart"    Text="1.0" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <Label    Name="lbAutoCalStep"  Content="[10]9/10" VerticalContentAlignment="Center" Width="150" HorizontalContentAlignment="Center"/>
+
+                <!-- JUNG/200827/delete
+                <Label Content="[LOADCELL] Bottm Offset" Height="30" Width="150" VerticalContentAlignment="Center" Margin = "2"/>
+                <TextBox x:Name="tbLDCBtmOffset"         Height="30" Width="120" VerticalContentAlignment="Center" Margin = "2" HorizontalContentAlignment="Center"/>
+                <Label Content="%"                       Height="30" Width="30"  VerticalContentAlignment="Center" Margin = "2"/>
+                -->
+
+
+
+            </WrapPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="5" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                
+            </Grid.RowDefinitions>
+            
+        
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1" Margin="1">
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="2" Margin="5">
+            <StackPanel Margin="3" VerticalAlignment="Bottom">
+                
+                <Button x:Name="btIdleSet"      Content="IDLE SET"               Height="35" Click="btIdleSet_Click"/>
+                <Button x:Name="btSafetyBypass" Content="Safety Bypass"          Height="35" Click="btSafetyBypass_Click"/>
+                <Button x:Name="btMillingTest"  Content="Milling TEST"           Height="35" Click="btMillingTest_Click"/>
+                <Button x:Name="btHomeOffset"   Content="Clear ACS Home Offset"  Height="35" Click="btHomeOffset_Click"/>
+                <Button x:Name="btACSReboot"    Content="ACS Reboot"             Height="35" Click="btACSReboot_Click"/>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</Page>

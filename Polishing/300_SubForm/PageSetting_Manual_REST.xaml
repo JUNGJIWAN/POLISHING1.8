@@ -1,0 +1,78 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_REST"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_Manual_REST" Background="LightBlue" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Label Content="REST API" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Label Content="DATA" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <Button    x:Name="btConnect"  Content="[GET] Connect"         Click="btConnect_Click" FontSize="13" Height="50" Margin="5"/>
+                <Button    x:Name="btVersion"  Content="[GET] Version"         Click="btConnect_Click" FontSize="13" Height="50" Margin="5"/>
+                <Button    x:Name="btRFIDInfo" Content="[GET] Plate RFID Info" Click="btConnect_Click" FontSize="13" Height="50" Margin="5"/>
+                <WrapPanel Orientation="Horizontal">
+                    <TextBox   x:Name="tbPlatNo"   Text="No" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Height="50" Margin="5" Width="300"/>
+                    <Button    x:Name="btResdRFID" Content="RED RFID" Click="btConnect_Click" FontSize="13" Height="50" Margin="5" Width="105"/>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <Label    Name="lbConnect"  Content="Disconnect"    VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Height="50" Margin="5"/>
+                <Label    Name="lbVersion"  Content="VERSION"       VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13" Height="50" Margin="5"/>
+                
+                <UniformGrid Rows="2">
+                    <GroupBox Header=" Specimen Info. " FontSize="15">
+                        <UniformGrid Rows="7" Columns="2" >
+                            <Label Name="lbItem01" Content="SizeX"   FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem01" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem02" Content="SizeY"   FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem02" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem03" Content="ShotPos" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem03" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem04" Content="ChipPos" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem04" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem05" Content="MatPos"  FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem05" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem06" Content="MatLoc"  FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem06" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem07" Content="Type"    FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem07" FontSize="12" VerticalContentAlignment="Center"/>
+                        </UniformGrid>
+                    </GroupBox>
+                    
+                    <GroupBox Header=" Wafer Info. " FontSize="15">
+                        <UniformGrid Rows="6" Columns="2">
+                            <Label Name="lbItem11" Content="Device"       FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem11" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem12" Content="Process Step" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem12" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem13" Content="Version"      FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem13" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem14" Content="Lot ID"       FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem14" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem15" Content="Wafer Number" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem15" FontSize="12" VerticalContentAlignment="Center"/>
+                            <Label Name="lbItem16" Content="Angle"        FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem16" FontSize="12" VerticalContentAlignment="Center"/>
+                        </UniformGrid>
+                    </GroupBox>
+                </UniformGrid>
+                
+                <Label Name="lbState" Content="DATA ERROR!!!" FontSize="15" VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+    
+</Page>

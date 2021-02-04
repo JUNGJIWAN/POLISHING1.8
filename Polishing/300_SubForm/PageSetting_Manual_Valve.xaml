@@ -1,0 +1,66 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_Manual_Valve"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="900"
+      Title="PageSetting_Manual_Valve" Background="#FDF7F7F7" Loaded="Page_Loaded" Unloaded="Page_Unloaded" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Label Content="POLISHING" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Label Content="CLEANING" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Border Background="LightBlue"/>
+            <WrapPanel>
+                <Button x:Name="btUtil01"    Content="SLURRY 01"            Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btUtil02"    Content="SLURRY 02"            Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btUtil03"    Content="SLURRY 03"            Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                
+                <Button x:Name="btDIPol"     Content="Polishing DI"         Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                                                                            
+                <Button x:Name="btUtilStop"  Content="STOP UTIL"            Click="btUtil01_Click" Width="410" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btDrainPol"  Content="Drain Polishing"      Click="btUtil01_Click" Width="410" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btLeakDrain" Content="Polishing Leak Drain" Click="btUtil01_Click" Width="410" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btSuckBack"  Content="Suck Back"            Click="btUtil01_Click" Width="410" FontSize="15" Height="50" Margin="5"/>
+
+                <Button x:Name="btSlurryDI"  Content="SLURRY-DI"            Click="btUtil01_Click" Width="110" FontSize="15" Height="50" Margin="5" Background="LightPink"/>
+                
+            </WrapPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Border Background="LightSteelBlue"/>
+            <WrapPanel>
+                <Button x:Name="btDICln"    Content="Washing DI"      Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btSoap"     Content="SOAP"            Click="btUtil01_Click" Width="200" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btDrainCln" Content="Drain Cleaning"  Click="btUtil01_Click" Width="410" FontSize="15" Height="50" Margin="5"/>
+                <Button x:Name="btSoapDI"   Content="SOAP-DI"         Click="btUtil01_Click" Width="110" FontSize="15" Height="50" Margin="5" Background="LightPink"/>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
+            <Label Name="lbUseAutoSupply" Content="USE AUTO SUPPLY MACHINE" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White"/>
+        </Grid>
+
+    </Grid>
+</Page>

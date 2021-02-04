@@ -1,0 +1,84 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageToolStorage"
+      mc:Ignorable="d" 
+      d:DesignHeight="788" d:DesignWidth="1087"
+      Title="PageToolStorage"  Background="#fff7f7f7" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="Align">
+                <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <UserInterface:UserButton Margin="5" Content="Auto Tool Align" Click="bn_AutoToolAlign_Click" Width="300"/>
+                        <TextBox x:Name="tbCalCnt" Text="1" Width="50" VerticalAlignment="Center" TextAlignment="Center"/>
+                        <UniformGrid Rows="2" Margin="10,0,0,0">
+                            <UserInterface:UserParam x:Name="up_HWOffsetX" UPTitle="H/W Offset X:" UPUnit="mm" UPValueWidth="50"/>
+                            <UserInterface:UserParam x:Name="up_HWOffsetY" UPTitle="H/W Offset Y:" UPUnit="mm" UPValueWidth="50"/>
+                        </UniformGrid>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Name="gb_Control" Header="Test Control" IsEnabled="False">
+                <WrapPanel>
+                    <TextBlock Text="Lot Name :" VerticalAlignment="Center"/>
+                    <TextBox Name="tb_LotName" Width="200"/>
+                    <UserInterface:UserButton FontSize="14" Content="Lot Name Test" Click="bn_LotNameTest_Click"/>
+                    <UserInterface:UserButton FontSize="14" Content="Function Test" Click="bn_FunctionTest_Click"/>
+                    <UserInterface:UserButton FontSize="14" Content="Test1"          Click="bn_Test1_Click"/>
+                    <UserInterface:UserButton FontSize="14" Content="Test2"          Click="bn_Test2_Click"/>
+                    <Grid>
+                        <DataGrid MaxWidth="500" Name="dg_Data" AutoGenerateColumns="False" Margin="5,3" SelectionMode="Single" CanUserAddRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="30" HeadersVisibility="Column" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Dir"          Binding="{Binding Path=Dir}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Tool Pos X"   Binding="{Binding Path=ToolPosX,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <DataGridTextColumn Header="Tool Pos Y"   Binding="{Binding Path=ToolPosY,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <DataGridTextColumn Header="Search Pos X" Binding="{Binding Path=SearchPosX}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Search Pos Y" Binding="{Binding Path=SearchPosY}" IsReadOnly="True"/>
+                                <DataGridTemplateColumn Header="Image Path">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button    Content="Set" Click="bnImagePath_Click"/>
+                                                <TextBlock Text="{Binding Path=ImagePath}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Name="gb_Image" Header="Image" IsEnabled="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <UniformGrid Rows="1">
+                        <UserInterface:UserButton FontSize="14" Content="Open" Click="bnOpen_Click"/>
+                        <UserInterface:UserButton FontSize="14" Content="Search Test" Click="bnSearch_Click"/>
+                    </UniformGrid>
+                    <UserInterface:AlignControl Grid.Row="1" x:Name="ac_Align"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox Grid.Column="1" Name="gb_Message" Header="Message" Margin="10" IsEnabled="False">
+            <ListBox Name="listMsg"/>
+        </GroupBox>
+    </Grid>
+</Page>

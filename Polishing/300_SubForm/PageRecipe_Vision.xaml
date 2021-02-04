@@ -1,0 +1,269 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageRecipe_Vision"
+      mc:Ignorable="d" 
+      d:DesignHeight="793" d:DesignWidth="1060"
+      Title="PageRecipe_Vision" Background="#FFF7F7F7" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Column="0" Grid.Row="0" Header="Models">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <UserInterface:UserButton Grid.Column="0" x:Name="bn_ModelsAdd" CornerRadius="3" Content="Add" Margin="5" Click="bn_ModelsAdd_Click" FontSize="12"/>
+                        <UserInterface:UserButton Grid.Column="1" x:Name="bn_ModelsDel" CornerRadius="3" Content="Del" Margin="5" Click="bn_ModelsDel_Click" FontSize="12"/>
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Sel : " HorizontalContentAlignment="Right"/>
+                            <Label Grid.Column="1" x:Name="lb_ModelsSel" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="L : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Model_Left" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="T : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Model_Top" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="R : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Model_Right" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="B : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Model_Bottom" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                    </Grid>
+                    <ListView x:Name="lv_Models" Grid.Column="1" Grid.Row="1" Margin="2" SelectionMode="Single" SelectionChanged="lv_Models_SelectionChanged">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding Icon}" Width="50" Height="50"/>
+                                    <TextBlock Text="{Binding Text}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="0" Grid.Row="1" Header="Millings" Visibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <UserInterface:UserButton Grid.Column="0" x:Name="bn_MillingsAdd" CornerRadius="3" Content="Add" Margin="5" Click="bn_MillingsAdd_Click" FontSize="12"/>
+                        <UserInterface:UserButton Grid.Column="1" x:Name="bn_MillingsDel" CornerRadius="3" Content="Del" Margin="5" Click="bn_MillingsDel_Click" FontSize="12"/>
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Sel : " HorizontalContentAlignment="Right"/>
+                            <Label Grid.Column="1" x:Name="lb_MilSel" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding SelectedIndex, ElementName=lv_Millings}"/>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="L : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Milling_Left" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="T : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Milling_Top" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="R : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Milling_Right" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                        <Grid Grid.Column="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="B : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <TextBox Grid.Column="1" x:Name="tb_Milling_Bottom" VerticalContentAlignment="Center" Margin="2,2,2,2"/>
+                        </Grid>
+                    </Grid>
+                    <ListView x:Name="lv_Millings" Grid.Column="1" Grid.Row="1" Margin="2" SelectionMode="Single" SelectionChanged="lv_Millings_SelectionChanged">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding Icon}" Width="50" Height="50"/>
+                                    <TextBlock Text="{Binding Text}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Header="Vision System Parameter">
+
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="UserInterface:UserParam">
+                            <Setter Property="UPTitleWidth" Value="100"/>
+                            <Setter Property="UPUnitWidth" Value="30"/>
+                        </Style>
+                    </Grid.Resources>
+                    <UserInterface:UserParam x:Name="uc_VisionResolutionX"   UPTitle="ResolutionX:"  UPValue="0" UPUnit="um" Margin="10,10,208,122"  Height="20"/>
+                    <UserInterface:UserParam x:Name="uc_VisionResolutionY"   UPTitle="ResolutionY:"  UPValue="0" UPUnit="um" Margin="215,10,3,122"  Height="20"/>
+                    <UserInterface:UserParam x:Name="uc_SpindleOffsetX"     UPTitle="Spindle X :"   UPValue="0" UPUnit="mm" Margin="10,35,208,97"    Height="20"/>
+                    <UserInterface:UserParam x:Name="uc_SpindleOffsetY"     UPTitle="Spindle Y :"   UPValue="0" UPUnit="mm" Margin="215,35,3,97"    Height="20"/>
+
+                    <Label Content="ThetaCalibration :" Margin="10,60,0,0" Height="18"  VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" HorizontalContentAlignment="Center"/>
+                    <ComboBox x:Name="cb_ThetaCalibration" Text="-"  Margin="110,60,0,0" Width="100" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Padding="0">
+                        <ComboBoxItem Content="NO"/>
+                        <ComboBoxItem Content="YES"/>
+                    </ComboBox>
+                    <UserInterface:UserParam x:Name="uc_ThetaValue" UPTitle="ThetaValue :" UPValue="0" UPUnit=" ˚" Margin="215,60,3,72" Height="20"/>
+                    <UserInterface:UserParam x:Name="uc_LightValue" UPTitle="LightValue :" UPValue="0" UPUnit="%" Margin="10,85,208,47" Height="20"/>                    
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Grid.Row="1" Header="Tool Storage">
+                <Grid>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="20">
+                            <Label Content="" Width="80"/>
+                            <Label Content="X" Width="90" HorizontalContentAlignment="Center" Padding="0"/>
+                            <Label Content="Y" Width="90" HorizontalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <UserInterface:UserParam x:Name="uc_LTX" UPTitle="Left Top :" UPValue="0" UPUnit="mm" UPTitleWidth="90" UPValueWidth="60"  Margin="0"      />
+                            <UserInterface:UserParam x:Name="uc_LTY" UPTitle="" UPValue="0" UPUnit="mm" UPTitleWidth="0" UPValueWidth="60"             Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <UserInterface:UserParam x:Name="uc_RTX" UPTitle="Right Top :" UPValue="0" UPUnit="mm" UPTitleWidth="90" UPValueWidth="60" Margin="0"      />
+                            <UserInterface:UserParam x:Name="uc_RTY" UPTitle="" UPValue="0" UPUnit="mm" UPTitleWidth="0" UPValueWidth="60"             Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <UserInterface:UserParam x:Name="uc_RBX" UPTitle="Right Bottom :" UPValue="0" UPUnit="mm" UPTitleWidth="90" UPValueWidth="60"  Margin="0"      />
+                            <UserInterface:UserParam x:Name="uc_RBY" UPTitle="" UPValue="0" UPUnit="mm" UPTitleWidth="0" UPValueWidth="60"                 Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <UserInterface:UserParam x:Name="uc_LBX" UPTitle="Left Bottom :" UPValue="0" UPUnit="mm" UPTitleWidth="90" UPValueWidth="60"   Margin="0"      />
+                            <UserInterface:UserParam x:Name="uc_LBY" UPTitle="" UPValue="0" UPUnit="mm" UPTitleWidth="0" UPValueWidth="60"                 Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <UserInterface:UserParam x:Name="uc_AngleAllow" UPTitle="Angle Allow :" UPValue="0" UPUnit=" ˚" UPTitleWidth="85" UPValueWidth="60"/>
+                    </StackPanel>
+
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Column="0" Grid.Row="0" Header="Tool Tray ROI">
+                <Image x:Name="imgTool" Margin="5"/>
+            </GroupBox>
+            <GroupBox Grid.Column="0" Grid.Row="1" Header="Polishing ROI">
+                <Image x:Name="imgPol"  Margin="5"/>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Grid.RowSpan="2" Header="Algorithm Parameter">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <UserInterface:UserButton Grid.Column="0" x:Name="bn_Models"    Content="Model Finder"      Margin="5,5,0,5" Click="bn_Models_Click"  FontSize="12" Padding="0" Width="130"/>
+                        <UserInterface:UserButton Grid.Column="1" x:Name="bn_Pattern"   Content="Pattern Matching"  Margin="5,5,0,5" Click="bn_Pattern_Click" FontSize="12" Padding="0" Width="130"/>
+                    </StackPanel>
+
+                    <Frame Grid.Row="1" x:Name="frame"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Page>

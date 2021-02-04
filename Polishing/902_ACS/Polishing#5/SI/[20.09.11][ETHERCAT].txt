@@ -1,0 +1,1080 @@
+#ETHERCAT
+EtherCAT Master is in OP state.
+EtherCAT Bus Scan Found 35 Nodes:
+Node 0:
+========
+Name:        Device 0  (SPiiPlus CMnt-2-x-x-1-xx/SPiiPlus UDMpm-2-xxx-x-1-xx-x-1-x)
+Vendor ID:   0x00000540    Product ID:   0x06010000    Revision:   0x00000001
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x03E9    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset   72.0 Size  134
+PD OUT:      Offset   72.0 Size  136
+State:       OP
+Node 1:
+========
+Name:        Device 1  (EK1100)
+Vendor ID:   0x00000002    Product ID:   0x044C2C52    Revision:   0x00120000
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x03EA    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(EBUS) - ON    C(MII/RMII) - ON
+Type:        Mandatory
+State:       OP
+Node 2:
+========
+Name:        Device 2  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03EB    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  625.0 Size    2
+State:       OP
+Node 3:
+========
+Name:        Device 3  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03EC    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  627.0 Size    2
+State:       OP
+Node 4:
+========
+Name:        Device 4  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03ED    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  629.0 Size    2
+State:       OP
+Node 5:
+========
+Name:        Device 5  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03EE    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  631.0 Size    2
+State:       OP
+Node 6:
+========
+Name:        Device 6  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03EF    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  633.0 Size    2
+State:       OP
+Node 7:
+========
+Name:        Device 7  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F0    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  635.0 Size    2
+State:       OP
+Node 8:
+========
+Name:        Device 8  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F1    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  637.0 Size    2
+State:       OP
+Node 9:
+========
+Name:        Device 9  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F2    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  639.0 Size    2
+State:       OP
+Node 10:
+========
+Name:        Device 10  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F3    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  641.0 Size    2
+State:       OP
+Node 11:
+========
+Name:        Device 11  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F4    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  643.0 Size    2
+State:       OP
+Node 12:
+========
+Name:        Device 12  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F5    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  645.0 Size    2
+State:       OP
+Node 13:
+========
+Name:        Device 13  (EL1889)
+Vendor ID:   0x00000002    Product ID:   0x07613052    Revision:   0x00130000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F6    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  647.0 Size    2
+State:       OP
+Node 14:
+========
+Name:        Device 14  (EL9410)
+Vendor ID:   0x00000002    Product ID:   0x24C23052    Revision:   0x00110000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F7    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  649.0 Size    0
+State:       OP
+Node 15:
+========
+Name:        Device 15  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F8    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  452.0 Size    2
+State:       OP
+Node 16:
+========
+Name:        Device 16  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03F9    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  454.0 Size    2
+State:       OP
+Node 17:
+========
+Name:        Device 17  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FA    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  456.0 Size    2
+State:       OP
+Node 18:
+========
+Name:        Device 18  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FB    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  458.0 Size    2
+State:       OP
+Node 19:
+========
+Name:        Device 19  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FC    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  460.0 Size    2
+State:       OP
+Node 20:
+========
+Name:        Device 20  (EL2889)
+Vendor ID:   0x00000002    Product ID:   0x0B493052    Revision:   0x00120000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FD    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD OUT:      Offset  462.0 Size    2
+State:       OP
+Node 21:
+========
+Name:        Device 21  (EL3164)
+Vendor ID:   0x00000002    Product ID:   0x0C5C3052    Revision:   0x00140000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FE    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  577.0 Size   16
+State:       OP
+Node 22:
+========
+Name:        Device 22  (EL3164)
+Vendor ID:   0x00000002    Product ID:   0x0C5C3052    Revision:   0x00140000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x03FF    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  593.0 Size   16
+State:       OP
+Node 23:
+========
+Name:        Device 23  (EL3164)
+Vendor ID:   0x00000002    Product ID:   0x0C5C3052    Revision:   0x00140000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x0400    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - ON
+Type:        Mandatory
+PD IN:       Offset  609.0 Size   16
+State:       OP
+Node 24:
+========
+Name:        Device 24  (EL4104)
+Vendor ID:   0x00000002    Product ID:   0x10083052    Revision:   0x03FC0000
+ESC Type:    ET1200    ESC Revision:   1    ESC Build:   1
+Phys. Addr:  0x0401    Alias:   0x0000
+Ports:       A(EBUS) - ON    B(EBUS) - OFF
+Type:        Mandatory
+PD OUT:      Offset  400.0 Size    8
+State:       OP
+Node 25:
+========
+Name:        Device 25  (SGD7S-xxxxA0x CoE Drive)
+Vendor ID:   0x00000539    Product ID:   0x02200301    Revision:   0x00080014
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   24
+Phys. Addr:  0x0402    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  476.0 Size   16
+PD OUT:      Offset  408.0 Size    6
+State:       OP
+Node 26:
+========
+Name:        Device 26  (SGD7S-xxxxA0x CoE Drive)
+Vendor ID:   0x00000539    Product ID:   0x02200301    Revision:   0x00080014
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   24
+Phys. Addr:  0x0403    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  492.0 Size   16
+PD OUT:      Offset  414.0 Size    6
+State:       OP
+Node 27:
+========
+Name:        Device 27  (SGD7S-xxxxA0x CoE Drive)
+Vendor ID:   0x00000539    Product ID:   0x02200301    Revision:   0x00080014
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   24
+Phys. Addr:  0x0404    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  508.0 Size   16
+PD OUT:      Offset  420.0 Size    6
+State:       OP
+Node 28:
+========
+Name:        Device 28  (SGD7S-xxxxA0x CoE Drive)
+Vendor ID:   0x00000539    Product ID:   0x02200301    Revision:   0x00080014
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   24
+Phys. Addr:  0x0405    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  524.0 Size   16
+PD OUT:      Offset  426.0 Size    6
+State:       OP
+Node 29:
+========
+Name:        Device 29  (SGD7S-xxxxA0x CoE Drive)
+Vendor ID:   0x00000539    Product ID:   0x02200301    Revision:   0x00080013
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   24
+Phys. Addr:  0x0406    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  540.0 Size   16
+PD OUT:      Offset  432.0 Size   10
+State:       OP
+Node 30:
+========
+Name:        Device 30  (JXCE1)
+Vendor ID:   0x00000114    Product ID:   0x0100003F    Revision:   0x00010001
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x0407    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  208.0 Size   20
+PD OUT:      Offset  208.0 Size   36
+State:       OP
+Node 31:
+========
+Name:        Device 31  (JXCE1)
+Vendor ID:   0x00000114    Product ID:   0x0100003F    Revision:   0x00010001
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x0408    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  244.0 Size   20
+PD OUT:      Offset  244.0 Size   36
+State:       OP
+Node 32:
+========
+Name:        Device 32  (JXCE1)
+Vendor ID:   0x00000114    Product ID:   0x0100003F    Revision:   0x00010001
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x0409    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  280.0 Size   20
+PD OUT:      Offset  280.0 Size   36
+State:       OP
+Node 33:
+========
+Name:        Device 33  (UDMnt-1-x-1-x-xx-x)
+Vendor ID:   0x00000540    Product ID:   0x030C0000    Revision:   0x00000001
+ESC Type:    ET1100    ESC Revision:   0    ESC Build:   3
+Phys. Addr:  0x040A    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - ON
+Type:        Mandatory
+PD IN:       Offset  316.0 Size   58
+PD OUT:      Offset  316.0 Size   72
+State:       OP
+Node 34:
+========
+Name:        Device 34  (Flexi Soft EtherCAT Gateway)
+Vendor ID:   0x01000056    Product ID:   0x00002301    Revision:   0x00010000
+ESC Type:    NETX100_500    ESC Revision:   1    ESC Build:   17
+Phys. Addr:  0x040B    Alias:   0x0000
+Ports:       A(MII/RMII) - ON    B(MII/RMII) - OFF
+Type:        Mandatory
+PD IN:       Offset  556.0 Size   21
+PD OUT:      Offset  442.0 Size   10
+State:       OP
+
+
+Network variables:
+==================
+Offset  Size  Dir  ObjectIndex  SubIndex  PdoIndex   Name
+  72.0   32   In    0x6000		0x01     0x1600    Command response1
+  76.0   32   In    0x6000		0x02     0x1600    Command response2
+  80.0   32   In    0x6000		0x04     0x1600    Command response3
+  84.0   32   In    0x6000		0x04     0x1600    Command response4
+  88.0   32   In    0x6000		0x05     0x1600    Command response5
+  92.0   32   In    0x6000		0x06     0x1600    Command response6
+  96.0   32   In    0x6000		0x07     0x1600    Command response7
+ 100.0   32   In    0x6000		0x08     0x1600    Command response8
+ 104.0   32   In    0x6000		0x09     0x1600    Feedback Position1
+ 108.0   32   In    0x6000		0x0A     0x1600    Reference Position1
+ 112.0   32   In    0x6000		0x0B     0x1600    Drive status1
+ 116.0   32   In    0x6000		0x0C     0x1600    GP data 1A
+ 120.0   32   In    0x6000		0x0D     0x1600    GP data 1B
+ 124.0   32   In    0x6000		0x0E     0x1600    Feedback Position2
+ 128.0   32   In    0x6000		0x0F     0x1600    Reference Position2
+ 132.0   32   In    0x6000		0x10     0x1600    Drive status2
+ 136.0   32   In    0x6000		0x11     0x1600    GP data 2A
+ 140.0   32   In    0x6000		0x12     0x1600    GP data 2B
+ 144.0   32   In    0x6000		0x13     0x1600    Feedback Position3
+ 148.0   32   In    0x6000		0x14     0x1600    Reference Position3
+ 152.0   32   In    0x6000		0x15     0x1600    Drive status3
+ 156.0   32   In    0x6000		0x16     0x1600    GP data 3A
+ 160.0   32   In    0x6000		0x17     0x1600    GP data 3B
+ 164.0   32   In    0x6000		0x18     0x1600    Feedback Position4
+ 168.0   32   In    0x6000		0x19     0x1600    Reference Position4
+ 172.0   32   In    0x6000		0x1A     0x1600    Drive status4
+ 176.0   32   In    0x6000		0x1B     0x1600    GP data 4A
+ 180.0   32   In    0x6000		0x1C     0x1600    GP data 4B
+ 184.0   16   In    0x6000		0x1D     0x1600    Digital inputs
+ 186.0   16   In    0x6000		0x1E     0x1600    FPGA status
+ 188.0   16   In    0x6000		0x1F     0x1600    HSSI 1
+ 190.0   16   In    0x6000		0x20     0x1600    HSSI 2
+ 192.0   16   In    0x6000		0x21     0x1600    HSSI 3
+ 194.0   16   In    0x6000		0x22     0x1600    HSSI 4
+ 196.0   16   In    0x6000		0x23     0x1600    HSSI 5
+ 198.0   16   In    0x6000		0x24     0x1600    HSSI 6
+ 200.0   16   In    0x6000		0x25     0x1600    HSSI 7
+ 202.0   16   In    0x6000		0x21     0x1600    HSSI 8
+ 204.0   16   In    0x6000		0x26     0x1600    Sync Counter
+ 662.0   32   In    0x7000		0x01     0x1601    DC1
+ 666.0   32   In    0x7000		0x01     0x1601    DC2
+ 670.0   32   In    0x7000		0x01     0x1601    DC3
+ 674.0   32   In    0x7000		0x01     0x1601    DC4
+ 678.0   32   In    0x7000		0x01     0x1601    DC5
+ 682.0   32   In    0x7000		0x01     0x1601    DC6
+ 686.0   32   In    0x7000		0x01     0x1601    DC7
+ 690.0   32   In    0x7000		0x01     0x1601    DC8
+ 694.0   32   In    0x7000		0x01     0x1601    DC9
+ 698.0   32   In    0x7000		0x01     0x1601    DC10
+ 702.0   32   In    0x7000		0x01     0x1601    DC11
+ 706.0   32   In    0x7000		0x01     0x1601    DC12
+ 710.0   32   In    0x7000		0x01     0x1601    DC13
+ 714.0   32   In    0x7000		0x01     0x1601    DC14
+ 718.0   32   In    0x7000		0x01     0x1601    DC15
+ 722.0   32   In    0x7000		0x01     0x1601    DC16
+ 726.0   32   In    0x7000		0x01     0x1601    DC17
+ 730.0   32   In    0x7000		0x01     0x1601    DC18
+ 734.0   32   In    0x7000		0x01     0x1601    DC19
+ 738.0   32   In    0x7000		0x01     0x1601    DC20
+ 742.0   32   In    0x7000		0x01     0x1601    DC21
+ 746.0   32   In    0x7000		0x01     0x1601    DC22
+ 750.0   32   In    0x7000		0x01     0x1601    DC23
+ 754.0   32   In    0x7000		0x01     0x1601    DC24
+ 758.0   32   In    0x7000		0x01     0x1601    DC25
+ 762.0   32   In    0x7000		0x01     0x1601    DC26
+ 766.0   32   In    0x7000		0x01     0x1601    DC27
+ 770.0   32   In    0x7000		0x01     0x1601    DC28
+ 774.0   32   In    0x7000		0x01     0x1601    DC29
+ 778.0   32   In    0x7000		0x01     0x1601    DC30
+ 782.0   32   In    0x7000		0x01     0x1601    DC31
+ 786.0   32   In    0x7000		0x01     0x1601    DC32
+ 790.0   32   In    0x7000		0x01     0x1601    DC33
+ 794.0   32   In    0x7000		0x01     0x1601    DC34
+ 798.0   32   In    0x7000		0x01     0x1601    DC35
+ 802.0   32   In    0x7000		0x01     0x1601    DC36
+ 806.0   32   In    0x7000		0x01     0x1601    DC37
+ 810.0   32   In    0x7000		0x01     0x1601    DC38
+ 814.0   32   In    0x7000		0x01     0x1601    DC39
+ 818.0   32   In    0x7000		0x01     0x1601    DC40
+ 625.0   1   In    0x6000		0x01     0x1A00    Input
+ 625.1   1   In    0x6010		0x01     0x1A01    Input
+ 625.2   1   In    0x6020		0x01     0x1A02    Input
+ 625.3   1   In    0x6030		0x01     0x1A03    Input
+ 625.4   1   In    0x6040		0x01     0x1A04    Input
+ 625.5   1   In    0x6050		0x01     0x1A05    Input
+ 625.6   1   In    0x6060		0x01     0x1A06    Input
+ 625.7   1   In    0x6070		0x01     0x1A07    Input
+ 626.0   1   In    0x6080		0x01     0x1A08    Input
+ 626.1   1   In    0x6090		0x01     0x1A09    Input
+ 626.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 626.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 626.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 626.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 626.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 626.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 627.0   1   In    0x6000		0x01     0x1A00    Input
+ 627.1   1   In    0x6010		0x01     0x1A01    Input
+ 627.2   1   In    0x6020		0x01     0x1A02    Input
+ 627.3   1   In    0x6030		0x01     0x1A03    Input
+ 627.4   1   In    0x6040		0x01     0x1A04    Input
+ 627.5   1   In    0x6050		0x01     0x1A05    Input
+ 627.6   1   In    0x6060		0x01     0x1A06    Input
+ 627.7   1   In    0x6070		0x01     0x1A07    Input
+ 628.0   1   In    0x6080		0x01     0x1A08    Input
+ 628.1   1   In    0x6090		0x01     0x1A09    Input
+ 628.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 628.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 628.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 628.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 628.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 628.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 629.0   1   In    0x6000		0x01     0x1A00    Input
+ 629.1   1   In    0x6010		0x01     0x1A01    Input
+ 629.2   1   In    0x6020		0x01     0x1A02    Input
+ 629.3   1   In    0x6030		0x01     0x1A03    Input
+ 629.4   1   In    0x6040		0x01     0x1A04    Input
+ 629.5   1   In    0x6050		0x01     0x1A05    Input
+ 629.6   1   In    0x6060		0x01     0x1A06    Input
+ 629.7   1   In    0x6070		0x01     0x1A07    Input
+ 630.0   1   In    0x6080		0x01     0x1A08    Input
+ 630.1   1   In    0x6090		0x01     0x1A09    Input
+ 630.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 630.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 630.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 630.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 630.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 630.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 631.0   1   In    0x6000		0x01     0x1A00    Input
+ 631.1   1   In    0x6010		0x01     0x1A01    Input
+ 631.2   1   In    0x6020		0x01     0x1A02    Input
+ 631.3   1   In    0x6030		0x01     0x1A03    Input
+ 631.4   1   In    0x6040		0x01     0x1A04    Input
+ 631.5   1   In    0x6050		0x01     0x1A05    Input
+ 631.6   1   In    0x6060		0x01     0x1A06    Input
+ 631.7   1   In    0x6070		0x01     0x1A07    Input
+ 632.0   1   In    0x6080		0x01     0x1A08    Input
+ 632.1   1   In    0x6090		0x01     0x1A09    Input
+ 632.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 632.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 632.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 632.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 632.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 632.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 633.0   1   In    0x6000		0x01     0x1A00    Input
+ 633.1   1   In    0x6010		0x01     0x1A01    Input
+ 633.2   1   In    0x6020		0x01     0x1A02    Input
+ 633.3   1   In    0x6030		0x01     0x1A03    Input
+ 633.4   1   In    0x6040		0x01     0x1A04    Input
+ 633.5   1   In    0x6050		0x01     0x1A05    Input
+ 633.6   1   In    0x6060		0x01     0x1A06    Input
+ 633.7   1   In    0x6070		0x01     0x1A07    Input
+ 634.0   1   In    0x6080		0x01     0x1A08    Input
+ 634.1   1   In    0x6090		0x01     0x1A09    Input
+ 634.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 634.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 634.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 634.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 634.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 634.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 635.0   1   In    0x6000		0x01     0x1A00    Input
+ 635.1   1   In    0x6010		0x01     0x1A01    Input
+ 635.2   1   In    0x6020		0x01     0x1A02    Input
+ 635.3   1   In    0x6030		0x01     0x1A03    Input
+ 635.4   1   In    0x6040		0x01     0x1A04    Input
+ 635.5   1   In    0x6050		0x01     0x1A05    Input
+ 635.6   1   In    0x6060		0x01     0x1A06    Input
+ 635.7   1   In    0x6070		0x01     0x1A07    Input
+ 636.0   1   In    0x6080		0x01     0x1A08    Input
+ 636.1   1   In    0x6090		0x01     0x1A09    Input
+ 636.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 636.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 636.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 636.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 636.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 636.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 637.0   1   In    0x6000		0x01     0x1A00    Input
+ 637.1   1   In    0x6010		0x01     0x1A01    Input
+ 637.2   1   In    0x6020		0x01     0x1A02    Input
+ 637.3   1   In    0x6030		0x01     0x1A03    Input
+ 637.4   1   In    0x6040		0x01     0x1A04    Input
+ 637.5   1   In    0x6050		0x01     0x1A05    Input
+ 637.6   1   In    0x6060		0x01     0x1A06    Input
+ 637.7   1   In    0x6070		0x01     0x1A07    Input
+ 638.0   1   In    0x6080		0x01     0x1A08    Input
+ 638.1   1   In    0x6090		0x01     0x1A09    Input
+ 638.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 638.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 638.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 638.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 638.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 638.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 639.0   1   In    0x6000		0x01     0x1A00    Input
+ 639.1   1   In    0x6010		0x01     0x1A01    Input
+ 639.2   1   In    0x6020		0x01     0x1A02    Input
+ 639.3   1   In    0x6030		0x01     0x1A03    Input
+ 639.4   1   In    0x6040		0x01     0x1A04    Input
+ 639.5   1   In    0x6050		0x01     0x1A05    Input
+ 639.6   1   In    0x6060		0x01     0x1A06    Input
+ 639.7   1   In    0x6070		0x01     0x1A07    Input
+ 640.0   1   In    0x6080		0x01     0x1A08    Input
+ 640.1   1   In    0x6090		0x01     0x1A09    Input
+ 640.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 640.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 640.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 640.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 640.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 640.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 641.0   1   In    0x6000		0x01     0x1A00    Input
+ 641.1   1   In    0x6010		0x01     0x1A01    Input
+ 641.2   1   In    0x6020		0x01     0x1A02    Input
+ 641.3   1   In    0x6030		0x01     0x1A03    Input
+ 641.4   1   In    0x6040		0x01     0x1A04    Input
+ 641.5   1   In    0x6050		0x01     0x1A05    Input
+ 641.6   1   In    0x6060		0x01     0x1A06    Input
+ 641.7   1   In    0x6070		0x01     0x1A07    Input
+ 642.0   1   In    0x6080		0x01     0x1A08    Input
+ 642.1   1   In    0x6090		0x01     0x1A09    Input
+ 642.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 642.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 642.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 642.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 642.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 642.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 643.0   1   In    0x6000		0x01     0x1A00    Input
+ 643.1   1   In    0x6010		0x01     0x1A01    Input
+ 643.2   1   In    0x6020		0x01     0x1A02    Input
+ 643.3   1   In    0x6030		0x01     0x1A03    Input
+ 643.4   1   In    0x6040		0x01     0x1A04    Input
+ 643.5   1   In    0x6050		0x01     0x1A05    Input
+ 643.6   1   In    0x6060		0x01     0x1A06    Input
+ 643.7   1   In    0x6070		0x01     0x1A07    Input
+ 644.0   1   In    0x6080		0x01     0x1A08    Input
+ 644.1   1   In    0x6090		0x01     0x1A09    Input
+ 644.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 644.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 644.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 644.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 644.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 644.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 645.0   1   In    0x6000		0x01     0x1A00    Input
+ 645.1   1   In    0x6010		0x01     0x1A01    Input
+ 645.2   1   In    0x6020		0x01     0x1A02    Input
+ 645.3   1   In    0x6030		0x01     0x1A03    Input
+ 645.4   1   In    0x6040		0x01     0x1A04    Input
+ 645.5   1   In    0x6050		0x01     0x1A05    Input
+ 645.6   1   In    0x6060		0x01     0x1A06    Input
+ 645.7   1   In    0x6070		0x01     0x1A07    Input
+ 646.0   1   In    0x6080		0x01     0x1A08    Input
+ 646.1   1   In    0x6090		0x01     0x1A09    Input
+ 646.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 646.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 646.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 646.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 646.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 646.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 647.0   1   In    0x6000		0x01     0x1A00    Input
+ 647.1   1   In    0x6010		0x01     0x1A01    Input
+ 647.2   1   In    0x6020		0x01     0x1A02    Input
+ 647.3   1   In    0x6030		0x01     0x1A03    Input
+ 647.4   1   In    0x6040		0x01     0x1A04    Input
+ 647.5   1   In    0x6050		0x01     0x1A05    Input
+ 647.6   1   In    0x6060		0x01     0x1A06    Input
+ 647.7   1   In    0x6070		0x01     0x1A07    Input
+ 648.0   1   In    0x6080		0x01     0x1A08    Input
+ 648.1   1   In    0x6090		0x01     0x1A09    Input
+ 648.2   1   In    0x60A0		0x01     0x1A0A    Input
+ 648.3   1   In    0x60B0		0x01     0x1A0B    Input
+ 648.4   1   In    0x60C0		0x01     0x1A0C    Input
+ 648.5   1   In    0x60D0		0x01     0x1A0D    Input
+ 648.6   1   In    0x60E0		0x01     0x1A0E    Input
+ 648.7   1   In    0x60F0		0x01     0x1A0F    Input
+ 649.0   1   In    0x6000		0x01     0x1A00    Undervoltage
+ 649.1   1   In    0x6010		0x01     0x1A01    Undervoltage
+ 577.0   16   In    0x6000		0x01     0x1A00    Status
+ 579.0   16   In    0x6000		0x11     0x1A00    Value
+ 581.0   16   In    0x6010		0x01     0x1A02    Status
+ 583.0   16   In    0x6010		0x11     0x1A02    Value
+ 585.0   16   In    0x6020		0x01     0x1A04    Status
+ 587.0   16   In    0x6020		0x11     0x1A04    Value
+ 589.0   16   In    0x6030		0x01     0x1A06    Status
+ 591.0   16   In    0x6030		0x11     0x1A06    Value
+ 593.0   16   In    0x6000		0x01     0x1A00    Status
+ 595.0   16   In    0x6000		0x11     0x1A00    Value
+ 597.0   16   In    0x6010		0x01     0x1A02    Status
+ 599.0   16   In    0x6010		0x11     0x1A02    Value
+ 601.0   16   In    0x6020		0x01     0x1A04    Status
+ 603.0   16   In    0x6020		0x11     0x1A04    Value
+ 605.0   16   In    0x6030		0x01     0x1A06    Status
+ 607.0   16   In    0x6030		0x11     0x1A06    Value
+ 609.0   16   In    0x6000		0x01     0x1A00    Status
+ 611.0   16   In    0x6000		0x11     0x1A00    Value
+ 613.0   16   In    0x6010		0x01     0x1A02    Status
+ 615.0   16   In    0x6010		0x11     0x1A02    Value
+ 617.0   16   In    0x6020		0x01     0x1A04    Status
+ 619.0   16   In    0x6020		0x11     0x1A04    Value
+ 621.0   16   In    0x6030		0x01     0x1A06    Status
+ 623.0   16   In    0x6030		0x11     0x1A06    Value
+ 476.0   16   In    0x6041		0x00     0x1A01    Status word
+ 478.0   32   In    0x6064		0x00     0x1A01    Position actual value
+ 482.0   32   In    0x60FD		0x00     0x1A01    Digital Inputs
+ 486.0   32   In    0x60F4		0x00     0x1A01    Following error actual value
+ 490.0   16   In    0x603F		0x00     0x1A01    Error Code
+ 492.0   16   In    0x6041		0x00     0x1A01    Status word
+ 494.0   32   In    0x6064		0x00     0x1A01    Position actual value
+ 498.0   32   In    0x60FD		0x00     0x1A01    Digital Inputs
+ 502.0   32   In    0x60F4		0x00     0x1A01    Following error actual value
+ 506.0   16   In    0x603F		0x00     0x1A01    Error Code
+ 508.0   16   In    0x6041		0x00     0x1A01    Status word
+ 510.0   32   In    0x6064		0x00     0x1A01    Position actual value
+ 514.0   32   In    0x60FD		0x00     0x1A01    Digital Inputs
+ 518.0   32   In    0x60F4		0x00     0x1A01    Following error actual value
+ 522.0   16   In    0x603F		0x00     0x1A01    Error Code
+ 524.0   16   In    0x6041		0x00     0x1A01    Status word
+ 526.0   32   In    0x6064		0x00     0x1A01    Position actual value
+ 530.0   32   In    0x60FD		0x00     0x1A01    Digital Inputs
+ 534.0   32   In    0x60F4		0x00     0x1A01    Following error actual value
+ 538.0   16   In    0x603F		0x00     0x1A01    Error Code
+ 540.0   16   In    0x6041		0x00     0x1A01    Status word
+ 542.0   32   In    0x6064		0x00     0x1A01    Position actual value
+ 546.0   32   In    0x60FD		0x00     0x1A01    Digital Inputs
+ 550.0   32   In    0x60F4		0x00     0x1A01    Following error actual value
+ 554.0   16   In    0x603F		0x00     0x1A01    Error Code
+ 208.0   16   In    0x6010		0x00     0x1A00    Signal allocated to the input port
+ 210.0   16   In    0x6011		0x00     0x1A00    Controller information flag
+ 212.0   32   In    0x6020		0x00     0x1A00    Current position
+ 216.0   16   In    0x6021		0x00     0x1A00    Current speed
+ 218.0   16   In    0x6022		0x00     0x1A00    Current pushing force
+ 220.0   32   In    0x6023		0x00     0x1A00    Target position
+ 224.0   8   In    0x6030		0x01     0x1A00    Alarm1
+ 225.0   8   In    0x6030		0x02     0x1A00    Alarm2
+ 226.0   8   In    0x6030		0x03     0x1A00    Alarm3
+ 227.0   8   In    0x6030		0x04     0x1A00    Alarm4
+ 244.0   16   In    0x6010		0x00     0x1A00    Signal allocated to the input port
+ 246.0   16   In    0x6011		0x00     0x1A00    Controller information flag
+ 248.0   32   In    0x6020		0x00     0x1A00    Current position
+ 252.0   16   In    0x6021		0x00     0x1A00    Current speed
+ 254.0   16   In    0x6022		0x00     0x1A00    Current pushing force
+ 256.0   32   In    0x6023		0x00     0x1A00    Target position
+ 260.0   8   In    0x6030		0x01     0x1A00    Alarm1
+ 261.0   8   In    0x6030		0x02     0x1A00    Alarm2
+ 262.0   8   In    0x6030		0x03     0x1A00    Alarm3
+ 263.0   8   In    0x6030		0x04     0x1A00    Alarm4
+ 280.0   16   In    0x6010		0x00     0x1A00    Signal allocated to the input port
+ 282.0   16   In    0x6011		0x00     0x1A00    Controller information flag
+ 284.0   32   In    0x6020		0x00     0x1A00    Current position
+ 288.0   16   In    0x6021		0x00     0x1A00    Current speed
+ 290.0   16   In    0x6022		0x00     0x1A00    Current pushing force
+ 292.0   32   In    0x6023		0x00     0x1A00    Target position
+ 296.0   8   In    0x6030		0x01     0x1A00    Alarm1
+ 297.0   8   In    0x6030		0x02     0x1A00    Alarm2
+ 298.0   8   In    0x6030		0x03     0x1A00    Alarm3
+ 299.0   8   In    0x6030		0x04     0x1A00    Alarm4
+ 316.0   32   In    0x6000		0x01     0x1600    Command response1
+ 320.0   32   In    0x6000		0x02     0x1600    Command response2
+ 324.0   32   In    0x6000		0x04     0x1600    Command response3
+ 328.0   32   In    0x6000		0x04     0x1600    Command response4
+ 332.0   32   In    0x6000		0x09     0x1600    Feedback Position1
+ 336.0   32   In    0x6000		0x0A     0x1600    Reference Position1
+ 340.0   32   In    0x6000		0x0B     0x1600    Drive status1
+ 344.0   32   In    0x6000		0x0C     0x1600    GP data 1A
+ 348.0   32   In    0x6000		0x0D     0x1600    Feedback Position2
+ 352.0   32   In    0x6000		0x0E     0x1600    Reference Position2
+ 356.0   32   In    0x6000		0x0F     0x1600    Drive status2
+ 360.0   32   In    0x6000		0x10     0x1600    GP data 2A
+ 364.0   16   In    0x6000		0x19     0x1600    Drive Output1
+ 366.0   16   In    0x6000		0x1A     0x1600    Drive Output2
+ 368.0   16   In    0x6000		0x1D     0x1600    Digital inputs
+ 370.0   16   In    0x6000		0x1E     0x1600    FPGA status
+ 372.0   16   In    0x6000		0x1F     0x1600    Sync Counter
+ 834.0   32   In    0x7000		0x01     0x1601    DC1
+ 838.0   32   In    0x7000		0x01     0x1601    DC2
+ 842.0   32   In    0x7000		0x01     0x1601    DC3
+ 846.0   32   In    0x7000		0x01     0x1601    DC4
+ 850.0   32   In    0x7000		0x01     0x1601    DC5
+ 854.0   32   In    0x7000		0x01     0x1601    DC6
+ 858.0   32   In    0x7000		0x01     0x1601    DC7
+ 862.0   32   In    0x7000		0x01     0x1601    DC8
+ 866.0   32   In    0x7000		0x01     0x1601    DC9
+ 870.0   32   In    0x7000		0x01     0x1601    DC10
+ 874.0   32   In    0x7000		0x01     0x1601    DC11
+ 878.0   32   In    0x7000		0x01     0x1601    DC12
+ 882.0   32   In    0x7000		0x01     0x1601    DC13
+ 886.0   32   In    0x7000		0x01     0x1601    DC14
+ 890.0   32   In    0x7000		0x01     0x1601    DC15
+ 894.0   32   In    0x7000		0x01     0x1601    DC16
+ 898.0   32   In    0x7000		0x01     0x1601    DC17
+ 902.0   32   In    0x7000		0x01     0x1601    DC18
+ 906.0   32   In    0x7000		0x01     0x1601    DC19
+ 910.0   32   In    0x7000		0x01     0x1601    DC20
+ 914.0   32   In    0x7000		0x01     0x1601    DC21
+ 918.0   32   In    0x7000		0x01     0x1601    DC22
+ 922.0   32   In    0x7000		0x01     0x1601    DC23
+ 926.0   32   In    0x7000		0x01     0x1601    DC24
+ 930.0   32   In    0x7000		0x01     0x1601    DC25
+ 934.0   32   In    0x7000		0x01     0x1601    DC26
+ 938.0   32   In    0x7000		0x01     0x1601    DC27
+ 942.0   32   In    0x7000		0x01     0x1601    DC28
+ 946.0   32   In    0x7000		0x01     0x1601    DC29
+ 950.0   32   In    0x7000		0x01     0x1601    DC30
+ 954.0   32   In    0x7000		0x01     0x1601    DC31
+ 958.0   32   In    0x7000		0x01     0x1601    DC32
+ 962.0   32   In    0x7000		0x01     0x1601    DC33
+ 966.0   32   In    0x7000		0x01     0x1601    DC34
+ 970.0   32   In    0x7000		0x01     0x1601    DC35
+ 974.0   32   In    0x7000		0x01     0x1601    DC36
+ 978.0   32   In    0x7000		0x01     0x1601    DC37
+ 982.0   32   In    0x7000		0x01     0x1601    DC38
+ 986.0   32   In    0x7000		0x01     0x1601    DC39
+ 990.0   32   In    0x7000		0x01     0x1601    DC40
+ 556.0   8   In    0x10F3		0x04     0x1A01    Diag
+ 557.0   80   In    0x2000		0x01     0x1A01    In_Dataset1
+ 567.0   80   In    0x2000		0x02     0x1A01    In_Dataset2
+  72.0   16   Out   0x7000		0x01     0x1A00    Command1
+  74.0   16   Out   0x7000		0x02     0x1A00    Command2
+  76.0   16   Out   0x7000		0x03     0x1A00    Command3
+  78.0   16   Out   0x7000		0x04     0x1A00    Command4
+  80.0   16   Out   0x7000		0x05     0x1A00    Command5
+  82.0   16   Out   0x7000		0x06     0x1A00    Command6
+  84.0   16   Out   0x7000		0x07     0x1A00    Command7
+  86.0   16   Out   0x7000		0x08     0x1A00    Command8
+  88.0   32   Out   0x7000		0x09     0x1A00    Command Arg1
+  92.0   32   Out   0x7000		0x0A     0x1A00    Command Arg2
+  96.0   32   Out   0x7000		0x0B     0x1A00    Command Arg3
+ 100.0   32   Out   0x7000		0x0C     0x1A00    Command Arg4
+ 104.0   32   Out   0x7000		0x0D     0x1A00    Command Arg5
+ 108.0   32   Out   0x7000		0x0E     0x1A00    Command Arg6
+ 112.0   32   Out   0x7000		0x0F     0x1A00    Command Arg7
+ 116.0   32   Out   0x7000		0x10     0x1A00    Command Arg8
+ 120.0   32   Out   0x7000		0x11     0x1A00    Direct Command1
+ 124.0   32   Out   0x7000		0x12     0x1A00    Reference Acceleration1
+ 128.0   32   Out   0x7000		0x13     0x1A00    Reference Velocity1
+ 132.0   32   Out   0x7000		0x14     0x1A00    Reference Position1
+ 136.0   32   Out   0x7000		0x15     0x1A00    Controller status1
+ 140.0   32   Out   0x7000		0x16     0x1A00    Direct Command2
+ 144.0   32   Out   0x7000		0x17     0x1A00    Reference Acceleration2
+ 148.0   32   Out   0x7000		0x18     0x1A00    Reference Velocity2
+ 152.0   32   Out   0x7000		0x19     0x1A00    Reference Position2
+ 156.0   32   Out   0x7000		0x1A     0x1A00    Controller status2
+ 160.0   32   Out   0x7000		0x1B     0x1A00    Direct Command3
+ 164.0   32   Out   0x7000		0x1C     0x1A00    Reference Acceleration3
+ 168.0   32   Out   0x7000		0x1D     0x1A00    Reference Velocity3
+ 172.0   32   Out   0x7000		0x1E     0x1A00    Reference Position3
+ 176.0   32   Out   0x7000		0x1F     0x1A00    Controller status3
+ 180.0   32   Out   0x7000		0x20     0x1A00    Direct Command4
+ 184.0   32   Out   0x7000		0x21     0x1A00    Reference Acceleration4
+ 188.0   32   Out   0x7000		0x22     0x1A00    Reference Velocity4
+ 192.0   32   Out   0x7000		0x23     0x1A00    Reference Position4
+ 196.0   32   Out   0x7000		0x24     0x1A00    Controller status4
+ 200.0   16   Out   0x7000		0x25     0x1A00    analog output1
+ 202.0   16   Out   0x7000		0x26     0x1A00    analog output2
+ 204.0   16   Out   0x7000		0x27     0x1A00    digital output
+ 206.0   16   Out   0x7000		0x28     0x1A00    Sync Counter
+ 662.0   32   Out   0x7000		0x01     0x1A01    REV_DC1
+ 666.0   32   Out   0x7000		0x02     0x1A01    REV_DC2
+ 670.0   32   Out   0x7000		0x03     0x1A01    REV_DC3
+ 674.0   32   Out   0x7000		0x04     0x1A01    REV_DC4
+ 678.0   32   Out   0x7000		0x05     0x1A01    REV_DC5
+ 682.0   32   Out   0x7000		0x06     0x1A01    REV_DC6
+ 686.0   32   Out   0x7000		0x07     0x1A01    REV_DC7
+ 690.0   32   Out   0x7000		0x08     0x1A01    REV_DC8
+ 694.0   32   Out   0x7000		0x09     0x1A01    REV_DC9
+ 698.0   32   Out   0x7000		0x0A     0x1A01    REV_DC10
+ 702.0   32   Out   0x7000		0x0B     0x1A01    REV_DC11
+ 706.0   32   Out   0x7000		0x0C     0x1A01    REV_DC12
+ 710.0   32   Out   0x7000		0x0D     0x1A01    REV_DC13
+ 714.0   32   Out   0x7000		0x0E     0x1A01    REV_DC14
+ 718.0   32   Out   0x7000		0x0F     0x1A01    REV_DC15
+ 722.0   32   Out   0x7000		0x10     0x1A01    REV_DC16
+ 726.0   32   Out   0x7000		0x11     0x1A01    REV_DC17
+ 730.0   32   Out   0x7000		0x12     0x1A01    REV_DC18
+ 734.0   32   Out   0x7000		0x13     0x1A01    REV_DC19
+ 738.0   32   Out   0x7000		0x14     0x1A01    REV_DC20
+ 742.0   32   Out   0x7000		0x15     0x1A01    REV_DC21
+ 746.0   32   Out   0x7000		0x16     0x1A01    REV_DC22
+ 750.0   32   Out   0x7000		0x17     0x1A01    REV_DC23
+ 754.0   32   Out   0x7000		0x18     0x1A01    REV_DC24
+ 758.0   32   Out   0x7000		0x19     0x1A01    REV_DC25
+ 762.0   32   Out   0x7000		0x1A     0x1A01    REV_DC26
+ 766.0   32   Out   0x7000		0x1B     0x1A01    REV_DC27
+ 770.0   32   Out   0x7000		0x1C     0x1A01    REV_DC28
+ 774.0   32   Out   0x7000		0x1D     0x1A01    REV_DC29
+ 778.0   32   Out   0x7000		0x1E     0x1A01    REV_DC30
+ 782.0   32   Out   0x7000		0x1F     0x1A01    REV_DC31
+ 786.0   32   Out   0x7000		0x20     0x1A01    REV_DC32
+ 790.0   32   Out   0x7000		0x21     0x1A01    REV_DC33
+ 794.0   32   Out   0x7000		0x22     0x1A01    REV_DC34
+ 798.0   32   Out   0x7000		0x23     0x1A01    REV_DC35
+ 802.0   32   Out   0x7000		0x24     0x1A01    REV_DC36
+ 806.0   32   Out   0x7000		0x25     0x1A01    REV_DC37
+ 810.0   32   Out   0x7000		0x26     0x1A01    REV_DC38
+ 814.0   32   Out   0x7000		0x27     0x1A01    REV_DC39
+ 818.0   32   Out   0x7000		0x28     0x1A01    REV_DC40
+ 452.0   1   Out   0x7000		0x01     0x1600    Output
+ 452.1   1   Out   0x7010		0x01     0x1601    Output
+ 452.2   1   Out   0x7020		0x01     0x1602    Output
+ 452.3   1   Out   0x7030		0x01     0x1603    Output
+ 452.4   1   Out   0x7040		0x01     0x1604    Output
+ 452.5   1   Out   0x7050		0x01     0x1605    Output
+ 452.6   1   Out   0x7060		0x01     0x1606    Output
+ 452.7   1   Out   0x7070		0x01     0x1607    Output
+ 453.0   1   Out   0x7080		0x01     0x1608    Output
+ 453.1   1   Out   0x7090		0x01     0x1609    Output
+ 453.2   1   Out   0x70A0		0x01     0x160A    Output
+ 453.3   1   Out   0x70B0		0x01     0x160B    Output
+ 453.4   1   Out   0x70C0		0x01     0x160C    Output
+ 453.5   1   Out   0x70D0		0x01     0x160D    Output
+ 453.6   1   Out   0x70E0		0x01     0x160E    Output
+ 453.7   1   Out   0x70F0		0x01     0x160F    Output
+ 454.0   1   Out   0x7000		0x01     0x1600    Output
+ 454.1   1   Out   0x7010		0x01     0x1601    Output
+ 454.2   1   Out   0x7020		0x01     0x1602    Output
+ 454.3   1   Out   0x7030		0x01     0x1603    Output
+ 454.4   1   Out   0x7040		0x01     0x1604    Output
+ 454.5   1   Out   0x7050		0x01     0x1605    Output
+ 454.6   1   Out   0x7060		0x01     0x1606    Output
+ 454.7   1   Out   0x7070		0x01     0x1607    Output
+ 455.0   1   Out   0x7080		0x01     0x1608    Output
+ 455.1   1   Out   0x7090		0x01     0x1609    Output
+ 455.2   1   Out   0x70A0		0x01     0x160A    Output
+ 455.3   1   Out   0x70B0		0x01     0x160B    Output
+ 455.4   1   Out   0x70C0		0x01     0x160C    Output
+ 455.5   1   Out   0x70D0		0x01     0x160D    Output
+ 455.6   1   Out   0x70E0		0x01     0x160E    Output
+ 455.7   1   Out   0x70F0		0x01     0x160F    Output
+ 456.0   1   Out   0x7000		0x01     0x1600    Output
+ 456.1   1   Out   0x7010		0x01     0x1601    Output
+ 456.2   1   Out   0x7020		0x01     0x1602    Output
+ 456.3   1   Out   0x7030		0x01     0x1603    Output
+ 456.4   1   Out   0x7040		0x01     0x1604    Output
+ 456.5   1   Out   0x7050		0x01     0x1605    Output
+ 456.6   1   Out   0x7060		0x01     0x1606    Output
+ 456.7   1   Out   0x7070		0x01     0x1607    Output
+ 457.0   1   Out   0x7080		0x01     0x1608    Output
+ 457.1   1   Out   0x7090		0x01     0x1609    Output
+ 457.2   1   Out   0x70A0		0x01     0x160A    Output
+ 457.3   1   Out   0x70B0		0x01     0x160B    Output
+ 457.4   1   Out   0x70C0		0x01     0x160C    Output
+ 457.5   1   Out   0x70D0		0x01     0x160D    Output
+ 457.6   1   Out   0x70E0		0x01     0x160E    Output
+ 457.7   1   Out   0x70F0		0x01     0x160F    Output
+ 458.0   1   Out   0x7000		0x01     0x1600    Output
+ 458.1   1   Out   0x7010		0x01     0x1601    Output
+ 458.2   1   Out   0x7020		0x01     0x1602    Output
+ 458.3   1   Out   0x7030		0x01     0x1603    Output
+ 458.4   1   Out   0x7040		0x01     0x1604    Output
+ 458.5   1   Out   0x7050		0x01     0x1605    Output
+ 458.6   1   Out   0x7060		0x01     0x1606    Output
+ 458.7   1   Out   0x7070		0x01     0x1607    Output
+ 459.0   1   Out   0x7080		0x01     0x1608    Output
+ 459.1   1   Out   0x7090		0x01     0x1609    Output
+ 459.2   1   Out   0x70A0		0x01     0x160A    Output
+ 459.3   1   Out   0x70B0		0x01     0x160B    Output
+ 459.4   1   Out   0x70C0		0x01     0x160C    Output
+ 459.5   1   Out   0x70D0		0x01     0x160D    Output
+ 459.6   1   Out   0x70E0		0x01     0x160E    Output
+ 459.7   1   Out   0x70F0		0x01     0x160F    Output
+ 460.0   1   Out   0x7000		0x01     0x1600    Output
+ 460.1   1   Out   0x7010		0x01     0x1601    Output
+ 460.2   1   Out   0x7020		0x01     0x1602    Output
+ 460.3   1   Out   0x7030		0x01     0x1603    Output
+ 460.4   1   Out   0x7040		0x01     0x1604    Output
+ 460.5   1   Out   0x7050		0x01     0x1605    Output
+ 460.6   1   Out   0x7060		0x01     0x1606    Output
+ 460.7   1   Out   0x7070		0x01     0x1607    Output
+ 461.0   1   Out   0x7080		0x01     0x1608    Output
+ 461.1   1   Out   0x7090		0x01     0x1609    Output
+ 461.2   1   Out   0x70A0		0x01     0x160A    Output
+ 461.3   1   Out   0x70B0		0x01     0x160B    Output
+ 461.4   1   Out   0x70C0		0x01     0x160C    Output
+ 461.5   1   Out   0x70D0		0x01     0x160D    Output
+ 461.6   1   Out   0x70E0		0x01     0x160E    Output
+ 461.7   1   Out   0x70F0		0x01     0x160F    Output
+ 462.0   1   Out   0x7000		0x01     0x1600    Output
+ 462.1   1   Out   0x7010		0x01     0x1601    Output
+ 462.2   1   Out   0x7020		0x01     0x1602    Output
+ 462.3   1   Out   0x7030		0x01     0x1603    Output
+ 462.4   1   Out   0x7040		0x01     0x1604    Output
+ 462.5   1   Out   0x7050		0x01     0x1605    Output
+ 462.6   1   Out   0x7060		0x01     0x1606    Output
+ 462.7   1   Out   0x7070		0x01     0x1607    Output
+ 463.0   1   Out   0x7080		0x01     0x1608    Output
+ 463.1   1   Out   0x7090		0x01     0x1609    Output
+ 463.2   1   Out   0x70A0		0x01     0x160A    Output
+ 463.3   1   Out   0x70B0		0x01     0x160B    Output
+ 463.4   1   Out   0x70C0		0x01     0x160C    Output
+ 463.5   1   Out   0x70D0		0x01     0x160D    Output
+ 463.6   1   Out   0x70E0		0x01     0x160E    Output
+ 463.7   1   Out   0x70F0		0x01     0x160F    Output
+ 400.0   16   Out   0x7000		0x11     0x1600    Analog output
+ 402.0   16   Out   0x7010		0x11     0x1601    Analog output
+ 404.0   16   Out   0x7020		0x11     0x1602    Analog output
+ 406.0   16   Out   0x7030		0x11     0x1603    Analog output
+ 408.0   16   Out   0x6040		0x00     0x1601    Control word
+ 410.0   32   Out   0x607A		0x00     0x1601    Target position
+ 414.0   16   Out   0x6040		0x00     0x1601    Control word
+ 416.0   32   Out   0x607A		0x00     0x1601    Target position
+ 420.0   16   Out   0x6040		0x00     0x1601    Control word
+ 422.0   32   Out   0x607A		0x00     0x1601    Target position
+ 426.0   16   Out   0x6040		0x00     0x1601    Control word
+ 428.0   32   Out   0x607A		0x00     0x1601    Target position
+ 432.0   16   Out   0x6040		0x00     0x1601    Control word
+ 434.0   32   Out   0x607A		0x00     0x1601    Target position
+ 438.0   32   Out   0x60FE		0x01     0x1601    Digital Outputs
+ 208.0   16   Out   0x7010		0x00     0x1600    Output port to which signals are allcated
+ 210.0   16   Out   0x7011		0x00     0x1600    Numerical data flag
+ 212.0   8   Out   0x7012		0x00     0x1600    Start flag
+ 213.0   8   Out   0x7020		0x00     0x1600    Operation Method
+ 214.0   16   Out   0x7021		0x00     0x1600    Speed
+ 216.0   32   Out   0x7022		0x00     0x1600    Target position
+ 220.0   16   Out   0x7023		0x00     0x1600    Acceleration
+ 222.0   16   Out   0x7024		0x00     0x1600    Deceleration
+ 224.0   16   Out   0x7025		0x00     0x1600    Pushing force
+ 226.0   16   Out   0x7026		0x00     0x1600    Trigger LV
+ 228.0   16   Out   0x7027		0x00     0x1600    Pushing speed
+ 230.0   16   Out   0x7028		0x00     0x1600    Pushing force for positioning
+ 232.0   32   Out   0x7029		0x00     0x1600    Area1
+ 236.0   32   Out   0x702A		0x00     0x1600    Area2
+ 240.0   32   Out   0x702B		0x00     0x1600    Positioning width
+ 244.0   16   Out   0x7010		0x00     0x1600    Output port to which signals are allcated
+ 246.0   16   Out   0x7011		0x00     0x1600    Numerical data flag
+ 248.0   8   Out   0x7012		0x00     0x1600    Start flag
+ 249.0   8   Out   0x7020		0x00     0x1600    Operation Method
+ 250.0   16   Out   0x7021		0x00     0x1600    Speed
+ 252.0   32   Out   0x7022		0x00     0x1600    Target position
+ 256.0   16   Out   0x7023		0x00     0x1600    Acceleration
+ 258.0   16   Out   0x7024		0x00     0x1600    Deceleration
+ 260.0   16   Out   0x7025		0x00     0x1600    Pushing force
+ 262.0   16   Out   0x7026		0x00     0x1600    Trigger LV
+ 264.0   16   Out   0x7027		0x00     0x1600    Pushing speed
+ 266.0   16   Out   0x7028		0x00     0x1600    Pushing force for positioning
+ 268.0   32   Out   0x7029		0x00     0x1600    Area1
+ 272.0   32   Out   0x702A		0x00     0x1600    Area2
+ 276.0   32   Out   0x702B		0x00     0x1600    Positioning width
+ 280.0   16   Out   0x7010		0x00     0x1600    Output port to which signals are allcated
+ 282.0   16   Out   0x7011		0x00     0x1600    Numerical data flag
+ 284.0   8   Out   0x7012		0x00     0x1600    Start flag
+ 285.0   8   Out   0x7020		0x00     0x1600    Operation Method
+ 286.0   16   Out   0x7021		0x00     0x1600    Speed
+ 288.0   32   Out   0x7022		0x00     0x1600    Target position
+ 292.0   16   Out   0x7023		0x00     0x1600    Acceleration
+ 294.0   16   Out   0x7024		0x00     0x1600    Deceleration
+ 296.0   16   Out   0x7025		0x00     0x1600    Pushing force
+ 298.0   16   Out   0x7026		0x00     0x1600    Trigger LV
+ 300.0   16   Out   0x7027		0x00     0x1600    Pushing speed
+ 302.0   16   Out   0x7028		0x00     0x1600    Pushing force for positioning
+ 304.0   32   Out   0x7029		0x00     0x1600    Area1
+ 308.0   32   Out   0x702A		0x00     0x1600    Area2
+ 312.0   32   Out   0x702B		0x00     0x1600    Positioning width
+ 316.0   16   Out   0x7000		0x01     0x1A00    Command1
+ 318.0   16   Out   0x7000		0x02     0x1A00    Command2
+ 320.0   16   Out   0x7000		0x03     0x1A00    Command3
+ 322.0   16   Out   0x7000		0x04     0x1A00    Command4
+ 324.0   32   Out   0x7000		0x09     0x1A00    Command Arg1
+ 328.0   32   Out   0x7000		0x0A     0x1A00    Command Arg2
+ 332.0   32   Out   0x7000		0x0B     0x1A00    Command Arg3
+ 336.0   32   Out   0x7000		0x0C     0x1A00    Command Arg4
+ 340.0   32   Out   0x7000		0x11     0x1A00    Direct Command1
+ 344.0   32   Out   0x7000		0x12     0x1A00    Reference Acceleration1
+ 348.0   32   Out   0x7000		0x13     0x1A00    Reference Velocity1
+ 352.0   32   Out   0x7000		0x14     0x1A00    Reference Position1
+ 356.0   32   Out   0x7000		0x15     0x1A00    Controller status1
+ 360.0   32   Out   0x7000		0x16     0x1A00    Direct Command2
+ 364.0   32   Out   0x7000		0x17     0x1A00    Reference Acceleration2
+ 368.0   32   Out   0x7000		0x18     0x1A00    Reference Velocity2
+ 372.0   32   Out   0x7000		0x19     0x1A00    Reference Position2
+ 376.0   32   Out   0x7000		0x1A     0x1A00    Controller status2
+ 380.0   16   Out   0x7000		0x25     0x1A00    analog output1
+ 382.0   16   Out   0x7000		0x26     0x1A00    analog output2
+ 384.0   16   Out   0x7000		0x27     0x1A00    digital output
+ 386.0   16   Out   0x7000		0x28     0x1A00    Sync Counter
+ 834.0   32   Out   0x7000		0x01     0x1A01    REV_DC1
+ 838.0   32   Out   0x7000		0x02     0x1A01    REV_DC2
+ 842.0   32   Out   0x7000		0x03     0x1A01    REV_DC3
+ 846.0   32   Out   0x7000		0x04     0x1A01    REV_DC4
+ 850.0   32   Out   0x7000		0x05     0x1A01    REV_DC5
+ 854.0   32   Out   0x7000		0x06     0x1A01    REV_DC6
+ 858.0   32   Out   0x7000		0x07     0x1A01    REV_DC7
+ 862.0   32   Out   0x7000		0x08     0x1A01    REV_DC8
+ 866.0   32   Out   0x7000		0x09     0x1A01    REV_DC9
+ 870.0   32   Out   0x7000		0x0A     0x1A01    REV_DC10
+ 874.0   32   Out   0x7000		0x0B     0x1A01    REV_DC11
+ 878.0   32   Out   0x7000		0x0C     0x1A01    REV_DC12
+ 882.0   32   Out   0x7000		0x0D     0x1A01    REV_DC13
+ 886.0   32   Out   0x7000		0x0E     0x1A01    REV_DC14
+ 890.0   32   Out   0x7000		0x0F     0x1A01    REV_DC15
+ 894.0   32   Out   0x7000		0x10     0x1A01    REV_DC16
+ 898.0   32   Out   0x7000		0x11     0x1A01    REV_DC17
+ 902.0   32   Out   0x7000		0x12     0x1A01    REV_DC18
+ 906.0   32   Out   0x7000		0x13     0x1A01    REV_DC19
+ 910.0   32   Out   0x7000		0x14     0x1A01    REV_DC20
+ 914.0   32   Out   0x7000		0x15     0x1A01    REV_DC21
+ 918.0   32   Out   0x7000		0x16     0x1A01    REV_DC22
+ 922.0   32   Out   0x7000		0x17     0x1A01    REV_DC23
+ 926.0   32   Out   0x7000		0x18     0x1A01    REV_DC24
+ 930.0   32   Out   0x7000		0x19     0x1A01    REV_DC25
+ 934.0   32   Out   0x7000		0x1A     0x1A01    REV_DC26
+ 938.0   32   Out   0x7000		0x1B     0x1A01    REV_DC27
+ 942.0   32   Out   0x7000		0x1C     0x1A01    REV_DC28
+ 946.0   32   Out   0x7000		0x1D     0x1A01    REV_DC29
+ 950.0   32   Out   0x7000		0x1E     0x1A01    REV_DC30
+ 954.0   32   Out   0x7000		0x1F     0x1A01    REV_DC31
+ 958.0   32   Out   0x7000		0x20     0x1A01    REV_DC32
+ 962.0   32   Out   0x7000		0x21     0x1A01    REV_DC33
+ 966.0   32   Out   0x7000		0x22     0x1A01    REV_DC34
+ 970.0   32   Out   0x7000		0x23     0x1A01    REV_DC35
+ 974.0   32   Out   0x7000		0x24     0x1A01    REV_DC36
+ 978.0   32   Out   0x7000		0x25     0x1A01    REV_DC37
+ 982.0   32   Out   0x7000		0x26     0x1A01    REV_DC38
+ 986.0   32   Out   0x7000		0x27     0x1A01    REV_DC39
+ 990.0   32   Out   0x7000		0x28     0x1A01    REV_DC40
+ 442.0   80   Out   0x2001		0x01     0x1600    Out_Dataset1
+:

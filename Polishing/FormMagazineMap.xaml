@@ -1,0 +1,141 @@
+﻿<Window x:Class="WaferPolishingSystem.FormMagazineMap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaferPolishingSystem"
+        xmlns:UserInterface="clr-namespace:UserInterface" 
+        mc:Ignorable="d"
+        Title="MESSAGE" Height="640" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#ff414141" WindowStyle="None" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Label Content="MAGAZINE MAP" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="White"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Margin="3,3,3,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Magazine"    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Column="1" Content="Recipe Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black" PreviewMouseDoubleClick="Recipe_PreviewMouseDoubleClick"/>
+                <Label Grid.Column="2" Content="RFID"        HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" Margin="3,3,3,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Magazine"    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Column="1" Content="Recipe Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black" PreviewMouseDoubleClick="Recipe_PreviewMouseDoubleClick"/>
+                <Label Grid.Column="2" Content="RFID"        HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Padding="0" BorderThickness="1" BorderBrush="Black"/>
+            </Grid>
+            <Grid Grid.Column="0" Grid.RowSpan="2" Grid.Row="1" x:Name="Magz01" Margin="5"/>
+            <Grid Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" x:Name="Magz02" Margin="5"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <UniformGrid Columns="4">
+                <Button x:Name="btSave"     Content="SAVE"      FontSize="13" FontWeight="Bold" Click="btSave_Click"     Margin="5,2"/>
+                <Label Content=""/>
+                <Button x:Name="btAllClear" Content="Data All Clear" FontSize="13" FontWeight="Bold" Click="btAllClear_Click" Margin="5,2"/>
+                <Button x:Name="btClose"    Content="CLOSE"     FontSize="13" FontWeight="Bold" Click="btClose_Click"    Margin="5,2"/>
+            </UniformGrid>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Border Background="Gray" BorderBrush="DarkGray" BorderThickness="2,2,2,0"/>
+            <Label Content="RFID INFO" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="White"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Border Background="Gray" BorderBrush="DarkGray" BorderThickness="2,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+                    <Label Name="lbPlateId" Content="RF ID" Height="30" FontSize="13" FontWeight="Bold"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column='1' VerticalAlignment="Center">
+                    <Label Name="lbRcvTime" Content="Time" Height="30" FontSize="13" FontWeight="Bold"/>
+                </Grid>
+                
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20">
+                    <UniformGrid Rows="2">
+                        <GroupBox Header=" Specimen Info. " FontSize="15">
+                            <UniformGrid Rows="7" Columns="2" >
+                                <Label Name="lbItem01" Content="SizeX"   FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem01" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem02" Content="SizeY"   FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem02" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem03" Content="ShotPos" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem03" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem04" Content="ChipPos" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem04" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem05" Content="MatPos"  FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem05" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem06" Content="MatLoc"  FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem06" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem07" Content="Type"    FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem07" FontSize="12" VerticalContentAlignment="Center"/>
+                            </UniformGrid>
+                        </GroupBox>
+                        
+                        <GroupBox Header=" Wafer Info. " FontSize="15">
+                            <UniformGrid Rows="6" Columns="2">
+                                <Label Name="lbItem11" Content="Device"       FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem11" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem12" Content="Process Step" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem12" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem13" Content="Version"      FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem13" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem14" Content="Lot ID"       FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem14" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem15" Content="Wafer Number" FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem15" FontSize="12" VerticalContentAlignment="Center"/>
+                                <Label Name="lbItem16" Content="Angle"        FontSize="12" VerticalContentAlignment="Center"/> <TextBox x:Name="tbItem16" FontSize="12" VerticalContentAlignment="Center"/>
+                            </UniformGrid>
+                        </GroupBox>
+                    </UniformGrid>
+                </Grid>
+                
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Name="lbRFIDErr" Content="Error Msg" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="13" Foreground="White" Margin="7,2,1,1"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Border Background="Gray" BorderBrush="DarkGray" BorderThickness="2,0,2,2"/>
+            <UniformGrid Columns="2">
+                <StackPanel>
+                    <Label Name="lbCon" Content="Disconnected" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" Foreground="White" Background="Red" Margin="7,2,1,1"/>
+                    <Label Name="lbVer" Content="Version"      HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" Foreground="White"                  Margin="7,2,1,1"/>
+                </StackPanel>
+                <Button x:Name="btRead" Content="READ" IsEnabled="False" FontSize="13" FontWeight="Bold" Click="btRead_Click" Margin="5,2"/>
+            </UniformGrid>
+        </Grid>
+
+    </Grid>
+</Window>

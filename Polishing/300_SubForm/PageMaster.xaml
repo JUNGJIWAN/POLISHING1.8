@@ -1,0 +1,48 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageMaster"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:userinterface="clr-namespace:UserInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="824" d:DesignWidth="1280"
+      Title="PageMaster" Background="#ff414141" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" x:Name="GridSub">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <userinterface:UserButton x:Name="menuMotor"    Grid.Row="0" Content="MOTOR"       Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="0"/>
+            <userinterface:UserButton x:Name="menuOneCycle" Grid.Row="1" Content="ONE CYCLE"   Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="1"/>
+            <userinterface:UserButton x:Name="menuFlag"     Grid.Row="2" Content="FLAG"        Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="2"/>
+            <userinterface:UserButton x:Name="menuOption"   Grid.Row="3" Content="OPTION"      Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="3"/>
+            <userinterface:UserButton x:Name="menuDisplay"  Grid.Row="4" Content="ACS DATA"    Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="4"/>
+            <userinterface:UserButton x:Name="menuVision"   Grid.Row="4" Content="TOOL ALIGN"  Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuMotor_Click" Tag="5"/>
+            
+            <userinterface:UserButton x:Name="menuSave" Grid.Row="12" Content="SAVE" Margin="8,5,8,5" CornerRadius="10" FontSize="15" FontWeight="Bold" Click="menuSave_Click"    />
+        </Grid>
+        <Frame x:Name="frame" Grid.Column="1" Navigating="frame_Navigating"/>
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,183 @@
+﻿<Page x:Class="WaferPolishingSystem.Form.PageSetting_LampBuzz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      mc:Ignorable="d" 
+      d:DesignHeight="913" d:DesignWidth="1097"
+      Title="PageSetting_IO" Background="#FF414141" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Margin="1,10,0,1">
+                <Label    Name="lbTesting" Content="TEST..."  Margin="1,0,1,1" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30"/>
+                <Label    Name="lbTestRed" Content="RED"      Margin="1,0,1,0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="70"/>
+                <Label    Name="lbTestGrn" Content="GREEN"    Margin="1,1,1,0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="70"/>
+                <Label    Name="lbTestYel" Content="YELLOW"   Margin="1,1,1,0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="70"/>
+                <Label    Name="lbTestBuz" Content="Buzz_1"   Margin="1,1,1,0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50"/>
+                <Button x:Name="btTestEnd" Content="TEST END" Margin="1,10,1,0" Height="100" Click="btTestEnd_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="0" Background="LightSeaGreen" Margin="10,10,1,0" Grid.ColumnSpan="2">
+            <Label Content="LAMP / BUZZER SETTING" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <DataGrid Name="dg_LampBuzzData" RowHeight="35" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="LightCyan" AutoGenerateColumns="False" Margin="10" CanUserAddRows="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="50" RowHeaderWidth="40" HeadersVisibility="Column" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width ="5*" Header="KIND" CanUserSort="False"  IsReadOnly="True">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="1,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="VerticalContentAlignment"   Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Path=KIND}" FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightYellow"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width ="3*" Header="RED" CanUserSort="False">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbRed" Padding="15,0,0,0" FontSize="13" SelectedIndex="{Binding Path=RED, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                                    <ComboBoxItem Content="OFF"/>
+                                    <ComboBoxItem Content="ON"/>
+                                    <ComboBoxItem Content="FLICKING"/>
+                                </ComboBox>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width ="3*" Header="GREEN" CanUserSort="False" IsReadOnly="True">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbGreen" Padding="15,0,0,0" FontSize="13" SelectedIndex="{Binding Path=GREEN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                                    <ComboBoxItem Content="OFF"/>
+                                    <ComboBoxItem Content="ON"/>
+                                    <ComboBoxItem Content="FLICKING"/>
+                                </ComboBox>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width ="3*" Header="YELLOW" CanUserSort="False" IsReadOnly="True">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="cbYellow" Padding="15,0,0,0" FontSize="13" SelectedIndex="{Binding Path=YELLOW, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                                    <ComboBoxItem Content="OFF"/>
+                                    <ComboBoxItem Content="ON"/>
+                                    <ComboBoxItem Content="FLICKING"/>
+                                </ComboBox>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width ="3*" Header="BUZZER" CanUserSort="False" IsReadOnly="True">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Name="cbBuzz" Padding="15,0,0,0" FontSize="13" SelectedIndex="{Binding Path=BUZZER, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                                    <ComboBoxItem Content="OFF"/>
+                                    <ComboBoxItem Content="Buzzer 1"/>
+                                    <ComboBoxItem Content="Buzzer 2"/>
+                                    <ComboBoxItem Content="Buzzer 3"/>
+                                </ComboBox>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width ="3*" Header="TEST" CanUserSort="False" IsReadOnly="True">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background"                 Value="LightYellow"/>
+                                <Setter Property="BorderBrush"                Value="LightGray"/>
+                                <Setter Property="BorderThickness"            Value="0,1,1,1"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="FontSize"                   Value="14"/>
+                                <Setter Property="FontWeight"                 Value="Bold"/>
+
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="TEST" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</Page>

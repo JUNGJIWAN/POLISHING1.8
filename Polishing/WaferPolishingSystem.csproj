@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7ED81359-9756-4A10-9ABB-A55796BBA460}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WaferPolishingSystem</RootNamespace>
+    <AssemblyName>WaferPolishingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>030_Image\SMEC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WaferPolishingSystem.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACS.SPiiPlusNET, Version=2.70.0.26392, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>020_Library\ACS.SPiiPlusNET.dll</HintPath>
+    </Reference>
+    <Reference Include="Basler.Pylon, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e389355f398382ab, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>020_Library\Basler.Pylon.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlCore">
+      <HintPath>..\ControlCore\bin\Debug\netstandard2.0\ControlCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FUTEK_USB_DLL">
+      <HintPath>020_Library\FUTEK_USB_DLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>020_Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Samsung.PMC.Packet">
+      <HintPath>020_Library\Samsung.PMC.Packet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="010_CustomUI\ManualAlign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\Align.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\KeyPad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="010_CustomUI\UserButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\UserCombo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\UserGraph.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\UserIntCamSlider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="010_CustomUI\UserFloatCamSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="010_CustomUI\UserParam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="010_CustomUI\UserSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="010_CustomUI\UserToggle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="010_CustomUI\VisionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageMaster_ACS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageMaster_ACSData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageMaster_Flag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageMaster_OneShot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageMaster_Option.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageOperation_Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageOperation_MainVision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageOperation_Map.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe_Cleanning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe_Polishing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe_LoadingVision.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe_PolishingVision.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe_InspectionVision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Actr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_LampBuzz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_Loadcell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_PMC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_REST.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_RF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_Slurry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_Spindle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_Utility.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_Valve.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Manual_WHM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="300_SubForm\Vision Setting\PageToolStorage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormAlarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormJOG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormManualAlign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormMessage_Change.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormMsg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageMotion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageOperation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Error.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_IO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Motor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Option.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="300_SubForm\PageSetting_Vision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="FormLoad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="000_Define\FunctionVision.cs" />
+    <Compile Include="000_Define\OnDelay.cs" />
+    <Compile Include="000_Define\UserDefineVision.cs" />
+    <Compile Include="000_Define\UserDefine.cs" />
+    <Compile Include="000_Define\UserFile.cs" />
+    <Compile Include="000_Define\UserFunction.cs" />
+    <Compile Include="000_Define\UserMsgBox.cs" />
+    <Compile Include="010_CustomUI\ManualAlign.xaml.cs">
+      <DependentUpon>ManualAlign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\Align.xaml.cs">
+      <DependentUpon>Align.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\KeyPad.xaml.cs">
+      <DependentUpon>KeyPad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserButton.xaml.cs">
+      <DependentUpon>UserButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserCombo.xaml.cs">
+      <DependentUpon>UserCombo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserGraph.xaml.cs">
+      <DependentUpon>UserGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserIntCamSlider.xaml.cs">
+      <DependentUpon>UserIntCamSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserFloatCamSlider.xaml.cs">
+      <DependentUpon>UserFloatCamSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserParam.xaml.cs">
+      <DependentUpon>UserParam.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="010_CustomUI\UserSlider.xaml.cs">
+      <DependentUpon>UserSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\UserToggle.xaml.cs">
+      <DependentUpon>UserToggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="010_CustomUI\VisionControl.xaml.cs">
+      <DependentUpon>VisionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="000_Define\BytesTools.cs" />
+    <Compile Include="020_Library\OmronPLC\IFinsCommand.cs" />
+    <Compile Include="020_Library\OmronPLC\ITransport.cs" />
+    <Compile Include="020_Library\OmronPLC\OmronPLC.cs" />
+    <Compile Include="020_Library\OmronPLC\tcpFinsCommand.cs" />
+    <Compile Include="020_Library\OmronPLC\tcpTransport.cs" />
+    <Compile Include="020_Library\OmronPLC\udpTransport.cs" />
+    <Compile Include="100_BaseUnit\ACSControl.cs" />
+    <Compile Include="100_BaseUnit\ActuatorId.cs" />
+    <Compile Include="100_BaseUnit\ActuatorUnit.cs" />
+    <Compile Include="100_BaseUnit\AutoSupply.cs" />
+    <Compile Include="100_BaseUnit\AxisUnit.cs" />
+    <Compile Include="100_BaseUnit\ConsoleEQP.cs" />
+    <Compile Include="100_BaseUnit\DataManager.cs" />
+    <Compile Include="100_BaseUnit\ErrorId.cs" />
+    <Compile Include="100_BaseUnit\ErrorProcess.cs" />
+    <Compile Include="100_BaseUnit\FileManager.cs" />
+    <Compile Include="100_BaseUnit\FutekLoadcell.cs" />
+    <Compile Include="100_BaseUnit\IOMap.cs" />
+    <Compile Include="100_BaseUnit\IoUnit.cs" />
+    <Compile Include="100_BaseUnit\LampBuzz.cs" />
+    <Compile Include="100_BaseUnit\LogUnit.cs" />
+    <Compile Include="100_BaseUnit\LotUnit.cs" />
+    <Compile Include="100_BaseUnit\Magazine.cs" />
+    <Compile Include="100_BaseUnit\ManProcess.cs" />
+    <Compile Include="100_BaseUnit\ManualId.cs" />
+    <Compile Include="100_BaseUnit\Pin.cs" />
+    <Compile Include="100_BaseUnit\Plate.cs" />
+    <Compile Include="100_BaseUnit\PlateRFIDInfo.cs" />
+    <Compile Include="100_BaseUnit\PMCUnit.cs" />
+    <Compile Include="100_BaseUnit\RESTUnit.cs" />
+    <Compile Include="100_BaseUnit\RFIDUnit.cs" />
+    <Compile Include="100_BaseUnit\SMCControl.cs" />
+    <Compile Include="100_BaseUnit\SpcManger.cs" />
+    <Compile Include="100_BaseUnit\Storage.cs" />
+    <Compile Include="100_BaseUnit\SysMotor.cs" />
+    <Compile Include="100_BaseUnit\ThreadUnit.cs" />
+    <Compile Include="100_BaseUnit\Tool.cs" />
+    <Compile Include="200_Unit\SeqCleaning.cs" />
+    <Compile Include="200_Unit\SeqPolishing.cs" />
+    <Compile Include="200_Unit\SeqSpindle.cs" />
+    <Compile Include="200_Unit\SeqStorage.cs" />
+    <Compile Include="200_Unit\SeqTransfer.cs" />
+    <Compile Include="100_BaseUnit\SequenceUnit.cs" />
+    <Compile Include="250_VisionClass\CameraManager.cs" />
+    <Compile Include="250_VisionClass\ImageProcessing.cs" />
+    <Compile Include="250_VisionClass\LightControllerManager.cs" />
+    <Compile Include="250_VisionClass\Recipe_Cleanning.cs" />
+    <Compile Include="250_VisionClass\Recipe_MillingData.cs" />
+    <Compile Include="250_VisionClass\Recipe_SelectROI.cs" />
+    <Compile Include="250_VisionClass\ToolStorageAlign.cs" />
+    <Compile Include="250_VisionClass\VisionManager.cs" />
+    <Compile Include="300_SubForm\PageMaster_ACS.xaml.cs">
+      <DependentUpon>PageMaster_ACS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMaster_ACSData.xaml.cs">
+      <DependentUpon>PageMaster_ACSData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMaster_Flag.xaml.cs">
+      <DependentUpon>PageMaster_Flag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMaster_OneShot.xaml.cs">
+      <DependentUpon>PageMaster_OneShot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMaster_Option.xaml.cs">
+      <DependentUpon>PageMaster_Option.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageOperation_Main.xaml.cs">
+      <DependentUpon>PageOperation_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageOperation_MainVision.xaml.cs">
+      <DependentUpon>PageOperation_MainVision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageOperation_Map.xaml.cs">
+      <DependentUpon>PageOperation_Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe_LoadingVision.xaml.cs">
+      <DependentUpon>PageRecipe_LoadingVision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe_PolishingVision.xaml.cs">
+      <DependentUpon>PageRecipe_PolishingVision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Actr.xaml.cs">
+      <DependentUpon>PageSetting_Actr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_LampBuzz.xaml.cs">
+      <DependentUpon>PageSetting_LampBuzz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual.xaml.cs">
+      <DependentUpon>PageSetting_Manual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe_Cleanning.xaml.cs">
+      <DependentUpon>PageRecipe_Cleanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe_Polishing.xaml.cs">
+      <DependentUpon>PageRecipe_Polishing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe_InspectionVision.xaml.cs">
+      <DependentUpon>PageRecipe_InspectionVision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_Loadcell.xaml.cs">
+      <DependentUpon>PageSetting_Manual_Loadcell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_PMC.xaml.cs">
+      <DependentUpon>PageSetting_Manual_PMC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_REST.xaml.cs">
+      <DependentUpon>PageSetting_Manual_REST.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_RF.xaml.cs">
+      <DependentUpon>PageSetting_Manual_RF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_Slurry.xaml.cs">
+      <DependentUpon>PageSetting_Manual_Slurry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_Spindle.xaml.cs">
+      <DependentUpon>PageSetting_Manual_Spindle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_Utility.xaml.cs">
+      <DependentUpon>PageSetting_Manual_Utility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_Valve.xaml.cs">
+      <DependentUpon>PageSetting_Manual_Valve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Manual_WHM.xaml.cs">
+      <DependentUpon>PageSetting_Manual_WHM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\Vision Setting\PageToolStorage.xaml.cs">
+      <DependentUpon>PageToolStorage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="250_VisionClass\AlignManager.cs" />
+    <Compile Include="250_VisionClass\RecipeManagerVision.cs" />
+    <Compile Include="FormAlarm.xaml.cs">
+      <DependentUpon>FormAlarm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormJOG.xaml.cs">
+      <DependentUpon>FormJOG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormManualAlign.xaml.cs">
+      <DependentUpon>FormManualAlign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage_Change.xaml.cs">
+      <DependentUpon>FormMessage_Change.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormMsg.xaml.cs">
+      <DependentUpon>FormMsg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageLog.xaml.cs">
+      <DependentUpon>PageLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMaster.xaml.cs">
+      <DependentUpon>PageMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageMotion.xaml.cs">
+      <DependentUpon>PageMotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageOperation.xaml.cs">
+      <DependentUpon>PageOperation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageRecipe.xaml.cs">
+      <DependentUpon>PageRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting.xaml.cs">
+      <DependentUpon>PageSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Error.xaml.cs">
+      <DependentUpon>PageSetting_Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_IO.xaml.cs">
+      <DependentUpon>PageSetting_IO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Motor.xaml.cs">
+      <DependentUpon>PageSetting_Motor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Option.xaml.cs">
+      <DependentUpon>PageSetting_Option.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="300_SubForm\PageSetting_Vision.xaml.cs">
+      <DependentUpon>PageSetting_Vision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormLoad.xaml.cs">
+      <DependentUpon>FormLoad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.xaml.cs">
+      <DependentUpon>FormMain.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="FormPass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormMagazineMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormToolStorageMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="FormUpdateList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormPass.xaml.cs">
+      <DependentUpon>FormPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormMagazineMap.xaml.cs">
+      <DependentUpon>FormMagazineMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormToolStorageMap.xaml.cs">
+      <DependentUpon>FormToolStorageMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateList.xaml.cs">
+      <DependentUpon>FormUpdateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="..\bin\System\Actuator.ini">
+      <Link>Bin\Actuator.ini</Link>
+    </None>
+    <None Include="..\bin\System\Error.ini">
+      <Link>Bin\Error.ini</Link>
+    </None>
+    <None Include="..\bin\System\IO_Input.ini">
+      <Link>Bin\IO_Input.ini</Link>
+    </None>
+    <None Include="..\bin\System\IO_Output.ini">
+      <Link>Bin\IO_Output.ini</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="020_Library\ACS.SPiiPlusNET.dll" />
+    <Content Include="020_Library\Basler.Pylon.dll" />
+    <Content Include="020_Library\Newtonsoft.Json.dll" />
+    <Resource Include="030_Image\mute.png" />
+    <Resource Include="030_Image\volume.png" />
+    <Resource Include="030_Image\broken-link.png" />
+    <Resource Include="030_Image\link.png" />
+    <Resource Include="030_Image\tilt_N.png" />
+    <Resource Include="030_Image\tilt_P.png" />
+    <Resource Include="030_Image\stop.ico" />
+    <Resource Include="030_Image\motion.ico" />
+    <Resource Include="030_Image\Down.ico" />
+    <Resource Include="030_Image\exit.ico" />
+    <Resource Include="030_Image\Left.ico" />
+    <Resource Include="030_Image\LOG.ico" />
+    <Resource Include="030_Image\Master.ico" />
+    <Resource Include="030_Image\Master1.ico" />
+    <Resource Include="030_Image\Operator.ico" />
+    <Resource Include="030_Image\Recipe.ico" />
+    <Resource Include="030_Image\Right.ico" />
+    <Resource Include="030_Image\Setting.ico" />
+    <Resource Include="030_Image\Up.ico" />
+    <Resource Include="030_Image\SamsungLogo.png" />
+    <Resource Include="030_Image\CAM-SPINDLE.png" />
+    <Resource Include="030_Image\Edge.png" />
+    <Resource Include="030_Image\Milling.png" />
+    <Resource Include="030_Image\Pattern.png" />
+    <Resource Include="030_Image\Error.bmp" />
+    <Resource Include="030_Image\Off.bmp" />
+    <Resource Include="030_Image\On.bmp" />
+    <Resource Include="030_Image\TOOL STORAGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="030_Image\SMEC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="030_Image\SMEC_IMG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="030_Image\keyIcon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

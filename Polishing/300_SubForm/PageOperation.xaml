@@ -1,0 +1,73 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageOperation"
+      mc:Ignorable="d" 
+      d:DesignHeight="826" d:DesignWidth="1280"
+      Title="PageOperation" Loaded="Page_Loaded" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"/>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Background="Ivory">
+                    <Label                    x:Name="lbAuto"  Content="AUTO"  Margin="10,5,10,5" FontSize="15" FontWeight="Bold" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" MouseUp="lbAuto_MouseUp"/>
+                    <UserInterface:UserButton x:Name="btRun"   Content="RUN"   Margin="10,5,10,5" FontSize="15" FontWeight="Bold" Height="60" Click="btReset_Click"/>
+                    <UserInterface:UserButton x:Name="btStop"  Content="STOP"  Margin="10,5,10,5" FontSize="15" FontWeight="Bold" Height="60" Click="btReset_Click"/>
+                    <UserInterface:UserButton x:Name="btReset" Content="RESET" Margin="10,5,10,5" FontSize="15" FontWeight="Bold" Height="60" Click="btReset_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Background="Linen">
+                    <UserInterface:UserButton x:Name="btLevel"   Content="LEVEL"     Margin="10,10,10,5" Background="Yellow"    FontSize="15" FontWeight="Bold" Grid.Column="0" Height="68" Click="btLevel_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <Label                      Name="lbAllHome" Content="ALL HOME"  Margin="10,10,10,5" Background="Brown"     FontSize="15" FontWeight="Bold" Grid.Column="0" Height="68" BorderBrush="Black"   BorderThickness="1"                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseDoubleClick="lbAllHome_MouseDoubleClick"/>
+                    <Label                      Name="lbRun"     Content="RUN"       Margin="10,10,10,5" Background="LightCyan" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="68"                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Chocolate" />
+                </StackPanel>
+
+                <WrapPanel Grid.Row="2" Background="Ivory" HorizontalAlignment="Center">
+                    <UserInterface:UserButton x:Name="btMap"    Width="150" Content="MAP"           Margin="10,15,10,5" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="50" Click="btMap_Click"/>
+
+                    <UserInterface:UserButton x:Name="btDoor_O"  Width="150" Content="DOOR OPEN"    Margin="10,3,10,3" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="50" Click="btDoor_M_Click" />
+                    <UserInterface:UserButton x:Name="btDoor_C"  Width="150" Content="DOOR CLOSE"   Margin="10,3,10,3" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="50" Click="btDoor_M_Click" />
+                    <!--
+                    <UserInterface:UserButton x:Name="btSDoor_O" Width="150" Content="S.DOOR OPEN"  Margin="10,3,10,3" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="40" Click="btDoor_M_Click" />
+                    <UserInterface:UserButton x:Name="btSDoor_C" Width="150" Content="S.DOOR CLOSE" Margin="10,3,10,3" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="40" Click="btDoor_M_Click" />
+                    -->
+                    <UserInterface:UserButton x:Name="btLight"   Width="150" Content="LIGHT"        Margin="10,3,10,3" FontSize="15" FontWeight="Bold" Grid.Column="0" Height="50" Click="btLight_Click"  />
+
+                </WrapPanel>
+
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                <Frame x:Name="frame" Margin="0,0,10,0" Navigating="frame_Navigating"/>
+            </Grid>
+
+    </Grid>
+
+
+
+
+    </Grid>
+</Page>

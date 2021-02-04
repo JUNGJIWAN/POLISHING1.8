@@ -1,0 +1,65 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaferPolishingSystem.Form"
+      xmlns:UserInterface="clr-namespace:UserInterface" x:Class="WaferPolishingSystem.Form.PageSetting_Manual"
+      mc:Ignorable="d" 
+      d:DesignHeight="848" d:DesignWidth="1097"
+      Title="PageSetting_Manual" Background="#fff7f7f7" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Fill="LightYellow" />
+            <Rectangle Grid.Column="1" Fill="LightYellow" />
+            <Rectangle Grid.Column="2" Fill="LightYellow" />
+            <Rectangle Grid.Column="3" Fill="LightYellow" />
+            <Rectangle Grid.Column="4" Fill="LightYellow" />
+            <UserInterface:UserButton x:Name="bnManu01" Grid.Column="0" Content="SPINDLE" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu02" Grid.Column="1" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu03" Grid.Column="2" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu04" Grid.Column="3" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu05" Grid.Column="4" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Fill="LightYellow" />
+            <Rectangle Grid.Column="1" Fill="LightYellow" />
+            <Rectangle Grid.Column="2" Fill="LightYellow" />
+            <Rectangle Grid.Column="3" Fill="LightYellow" />
+            <Rectangle Grid.Column="4" Fill="LightYellow" />
+            <UserInterface:UserButton x:Name="bnManu06" Grid.Column="0" Content="SPINDLE" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu07" Grid.Column="1" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu08" Grid.Column="2" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu09" Grid.Column="3" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            <UserInterface:UserButton x:Name="bnManu10" Grid.Column="4" Content="UTILITY" FontSize="14" FontWeight="Bold" Margin="8" Click="fn_PageSwitch"/>
+            
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Frame x:Name="frame" Margin="10" BorderBrush="Black" BorderThickness="1" Navigating="frame_Navigating"/>
+        </Grid>
+    </Grid>
+</Page>

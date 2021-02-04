@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="UserInterface.ManualAlign"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserInterface"
+             mc:Ignorable="d" 
+             d:DesignHeight="282" d:DesignWidth="407" BorderBrush="Black">
+    <UserControl.Resources>
+        <VisualBrush x:Key="MyVisualBrush" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" Viewbox="0,0,20,20" ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+                <Grid Background="White">
+                    <Path Data="M 0 20 L 20 0" Stroke="LightGray" />
+                    <Path Data="M 0 0 L 20 20" Stroke="LightGray" />
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Column="0" Name="lb_Scale" Content="x 0.00"/>
+            <Slider Grid.Column="1" Name="sl_Scale" Minimum="0.001" Maximum="2.0" TickFrequency="0.01" SmallChange="0.1" LargeChange="0.5" ValueChanged="sl_Scale_ValueChanged"/>
+            <Button Grid.Column="2" Name="bn_Scale" Content="Fit" Click="bn_Scale_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" x:Name="ctrl_Grid" Background="{StaticResource MyVisualBrush}">
+            <ScrollViewer  x:Name="lib_ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Canvas x:Name="lib_Canvas" PreviewMouseUp="onMouseUp" PreviewMouseMove="onMouseMove">
+                    <Canvas.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform x:Name="myScaleTransform" />
+                            <RotateTransform x:Name="myRotateTransform" />
+                        </TransformGroup>
+                    </Canvas.LayoutTransform>
+                </Canvas>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>
