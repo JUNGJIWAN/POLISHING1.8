@@ -2856,19 +2856,6 @@ namespace WaferPolishingSystem.Unit
 					dStartTH      = vresult.stRecipeList[m_nPoliCnt].dPosTH      ;
 					dStartTI	  = vresult.stRecipeList[m_nPoliCnt].dTilt       ;
 
-
-					IO.DATA_EQ_TO_ACS[20] = dStartXPos;
-                    IO.DATA_EQ_TO_ACS[21] = dEndXPos  ;
-                    IO.DATA_EQ_TO_ACS[22] = dStartYPos;
-                    IO.DATA_EQ_TO_ACS[23] = dEndYPos  ;
-                    IO.DATA_EQ_TO_ACS[24] = dYDistance;  // Y Step
-                    IO.DATA_EQ_TO_ACS[25] = 1         ;  // Direction
-					IO.DATA_EQ_TO_ACS[26] = dXSpeed   ;  // X Speed
-
-					IO.DATA_EQ_TO_ACS[27] = (int)EN_MOTR_ID.miPOL_Y;  //Axis-2
-
-					IO.fn_DataEqToAcs();
-
 					Console.WriteLine($"---------- MILL : {m_nPoliCnt + 1} / {nTotalStep} ---------- ");
 					Console.WriteLine($"      dStartXPos  :{dStartXPos}");
                     Console.WriteLine($"      dEndXPos    :{dEndXPos  }");
@@ -2890,21 +2877,37 @@ namespace WaferPolishingSystem.Unit
                     fn_WriteLog($"      StartTI   : {dStartTI  }"                         , EN_LOG_TYPE.ltLot);
                     fn_WriteLog($"      Cycle Cnt : {m_nPolCycle+1}/{m_nTotalCycle}"      , EN_LOG_TYPE.ltLot);
 
+					//Check Min/Max Position
+					if (!fn_CheckPolishingPos(dStartXPos, dEndXPos, dStartYPos, dEndYPos, dYDistance, dXSpeed))
+					{
+						//Error
+						EPU.fn_SetErr(EN_ERR_LIST.ERR_0449); //Polishing Data Error
+
+						m_nPolishStep = 0;
+                        Flag = false;
+                        return true;
+
+                    }
+
+                    //
+					IO.DATA_EQ_TO_ACS[20] = dStartXPos;
+                    IO.DATA_EQ_TO_ACS[21] = dEndXPos  ;
+                    IO.DATA_EQ_TO_ACS[22] = dStartYPos;
+                    IO.DATA_EQ_TO_ACS[23] = dEndYPos  ;
+                    IO.DATA_EQ_TO_ACS[24] = dYDistance;  // Y Step
+                    IO.DATA_EQ_TO_ACS[25] = 1         ;  // Direction
+					IO.DATA_EQ_TO_ACS[26] = dXSpeed   ;  // X Speed
+
+					IO.DATA_EQ_TO_ACS[27] = (int)EN_MOTR_ID.miPOL_Y;  //Axis-2
+
+					IO.fn_DataEqToAcs();
+
 					//Cleaning Data Setting
 					//m_dDisX_PCtoPS =  dStartXPos            - MOTR[(int)EN_MOTR_ID.miSPD_X].MP.dPosn[(int)m_iCmdX         ] ; //Distance Polishing Center to Polishing Start
 					//m_dDisY_PCtoPS = (dStartYPos - dTOffset)- MOTR[(int)EN_MOTR_ID.miPOL_Y].MP.dPosn[(int)EN_COMD_ID.User1] ;
                     //
 					//Console.WriteLine($" dStartYPos = {dStartYPos } / dTOffset = {dTOffset} / POL POS = {MOTR[(int)EN_MOTR_ID.miPOL_Y].MP.dPosn[(int)EN_COMD_ID.User1]}");
 					//Console.WriteLine($" m_dDisX_PCtoPS = {m_dDisX_PCtoPS } / m_dDisY_PCtoPS = {m_dDisY_PCtoPS}");
-
-
-					//Check Min/Max
-
-
-
-
-
-
 
 					//Data Setting
 					MOTR[(int)EN_MOTR_ID.miSPD_X ].MP.dPosn[(int)EN_POSN_ID.CalPos] = dStartXPos;
@@ -10000,6 +10003,14 @@ namespace WaferPolishingSystem.Unit
             }
         }
 
+		//---------------------------------------------------------------------------
+		private bool fn_CheckPolishingPos(double StartXPos, double EndXPos, double StartYPos, double EndYPos, double YDistance, double XSpeed)
+        {
+
+
+
+			return true; 
+        }
 	}
 
 }
