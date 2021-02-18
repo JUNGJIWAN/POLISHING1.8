@@ -88,9 +88,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>020_Library\Basler.Pylon.dll</HintPath>
     </Reference>
-    <Reference Include="ControlCore">
-      <HintPath>..\ControlCore\bin\Debug\netstandard2.0\ControlCore.dll</HintPath>
-    </Reference>
     <Reference Include="FUTEK_USB_DLL">
       <HintPath>020_Library\FUTEK_USB_DLL.dll</HintPath>
     </Reference>

@@ -1581,7 +1581,12 @@ namespace WaferPolishingSystem.BaseUnit
                 return false;
             }
 
-            return true;
+
+			//JUNG/210209
+			MOTR[(int)EN_MOTR_ID.miCLN_R].MP.dPosn[(int)EN_POSN_ID.User11] = 0;
+			MOTR[(int)EN_MOTR_ID.miCLN_R].MP.dPosn[(int)EN_POSN_ID.User12] = 0;
+
+			return true;
 
 		}
 		//---------------------------------------------------------------------------

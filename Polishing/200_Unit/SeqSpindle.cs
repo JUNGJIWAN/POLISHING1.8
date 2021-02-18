@@ -2856,6 +2856,7 @@ namespace WaferPolishingSystem.Unit
 					dStartTH      = vresult.stRecipeList[m_nPoliCnt].dPosTH      ;
 					dStartTI	  = vresult.stRecipeList[m_nPoliCnt].dTilt       ;
 
+					//
 					Console.WriteLine($"---------- MILL : {m_nPoliCnt + 1} / {nTotalStep} ---------- ");
 					Console.WriteLine($"      dStartXPos  :{dStartXPos}");
                     Console.WriteLine($"      dEndXPos    :{dEndXPos  }");
@@ -2877,37 +2878,30 @@ namespace WaferPolishingSystem.Unit
                     fn_WriteLog($"      StartTI   : {dStartTI  }"                         , EN_LOG_TYPE.ltLot);
                     fn_WriteLog($"      Cycle Cnt : {m_nPolCycle+1}/{m_nTotalCycle}"      , EN_LOG_TYPE.ltLot);
 
-					//Check Min/Max Position
-					if (!fn_CheckPolishingPos(dStartXPos, dEndXPos, dStartYPos, dEndYPos, dYDistance, dXSpeed))
+                    //JUNG/210208/Check Min/Max
+					if(!fn_IsWorkingArea(dStartXPos, dEndXPos, dStartYPos, dEndYPos, dXSpeed))
 					{
-						//Error
-						EPU.fn_SetErr(EN_ERR_LIST.ERR_0449); //Polishing Data Error
+						EPU.fn_SetErr(EN_ERR_LIST.ERR_0449);
 
-						m_nPolishStep = 0;
+                        m_nPolishStep = 0;
                         Flag = false;
                         return true;
-
                     }
 
-                    //
-					IO.DATA_EQ_TO_ACS[20] = dStartXPos;
-                    IO.DATA_EQ_TO_ACS[21] = dEndXPos  ;
+
+					//Data Send to Acs
+                    IO.DATA_EQ_TO_ACS[20] = dStartXPos;
+                    IO.DATA_EQ_TO_ACS[21] = dEndXPos;
                     IO.DATA_EQ_TO_ACS[22] = dStartYPos;
-                    IO.DATA_EQ_TO_ACS[23] = dEndYPos  ;
+                    IO.DATA_EQ_TO_ACS[23] = dEndYPos;
                     IO.DATA_EQ_TO_ACS[24] = dYDistance;  // Y Step
-                    IO.DATA_EQ_TO_ACS[25] = 1         ;  // Direction
-					IO.DATA_EQ_TO_ACS[26] = dXSpeed   ;  // X Speed
+                    IO.DATA_EQ_TO_ACS[25] = 1;  // Direction
+                    IO.DATA_EQ_TO_ACS[26] = dXSpeed;  // X Speed
 
-					IO.DATA_EQ_TO_ACS[27] = (int)EN_MOTR_ID.miPOL_Y;  //Axis-2
+                    IO.DATA_EQ_TO_ACS[27] = (int)EN_MOTR_ID.miPOL_Y;  //Axis-2
 
-					IO.fn_DataEqToAcs();
+                    IO.fn_DataEqToAcs();
 
-					//Cleaning Data Setting
-					//m_dDisX_PCtoPS =  dStartXPos            - MOTR[(int)EN_MOTR_ID.miSPD_X].MP.dPosn[(int)m_iCmdX         ] ; //Distance Polishing Center to Polishing Start
-					//m_dDisY_PCtoPS = (dStartYPos - dTOffset)- MOTR[(int)EN_MOTR_ID.miPOL_Y].MP.dPosn[(int)EN_COMD_ID.User1] ;
-                    //
-					//Console.WriteLine($" dStartYPos = {dStartYPos } / dTOffset = {dTOffset} / POL POS = {MOTR[(int)EN_MOTR_ID.miPOL_Y].MP.dPosn[(int)EN_COMD_ID.User1]}");
-					//Console.WriteLine($" m_dDisX_PCtoPS = {m_dDisX_PCtoPS } / m_dDisY_PCtoPS = {m_dDisY_PCtoPS}");
 
 					//Data Setting
 					MOTR[(int)EN_MOTR_ID.miSPD_X ].MP.dPosn[(int)EN_POSN_ID.CalPos] = dStartXPos;
@@ -4036,9 +4030,10 @@ namespace WaferPolishingSystem.Unit
 			int    nRPM, nPath  ;
 			int    nTotalStep = g_VisionManager.CurrentRecipe.CleaningCount;
 			bool   bTESTData  = false;
+			bool   bUseCalPos = FM.m_stMasterOpt.nUseCleanPos == 1;
 
-            //
-            m_iCmdX = EN_COMD_ID.User2;
+			//
+			m_iCmdX = EN_COMD_ID.User2;
             m_iCmdZ = EN_COMD_ID.User2;
 
 
@@ -4090,8 +4085,11 @@ namespace WaferPolishingSystem.Unit
                     //Move Cleaning-Y Axis Work Position
                     SEQ_CLEAN.fn_ReqMoveMotr(EN_MOTR_ID.miCLN_Y , EN_COMD_ID.User1);
 
-					//Move Cleaning - TH Axis Align Position
-					SEQ_CLEAN.fn_ReqMoveMotr(EN_MOTR_ID.miCLN_R, EN_COMD_ID.CalPos);
+					if (bUseCalPos) //JUNG/210209
+					{
+						//Move Cleaning - TH Axis Align Position
+						SEQ_CLEAN.fn_ReqMoveMotr(EN_MOTR_ID.miCLN_R, EN_COMD_ID.CalPos);
+					}
 
 					m_tDelayTime.Clear();
 
@@ -4111,7 +4109,7 @@ namespace WaferPolishingSystem.Unit
                     //Move Cleaning bath to ready position
                     r1 = SEQ_CLEAN.fn_ReqMoveMotr (EN_MOTR_ID.miCLN_Y, EN_COMD_ID.User1 );
 					r2 =           fn_MoveMotr    (m_iMotrXId, m_iCmdX                  ); //Main-X Cleaning Position
-					r3 = SEQ_CLEAN.fn_ReqMoveMotr (EN_MOTR_ID.miCLN_R, EN_COMD_ID.CalPos);
+					r3 = bUseCalPos? SEQ_CLEAN.fn_ReqMoveMotr (EN_MOTR_ID.miCLN_R, EN_COMD_ID.CalPos) : true;
 					r4 = SEQ_CLEAN.fn_MoveCylClamp(ccFwd); //JUNG/200515
 					if (!r1 || !r2 || !r3 || !r4) return false;
 
@@ -4174,8 +4172,10 @@ namespace WaferPolishingSystem.Unit
                         //
                         EPU.fn_SetErr(EN_ERR_LIST.ERR_0438);
 
-                        //
-                        Flag = false;
+						fn_WriteLog($"CLEANING - Cleaning Data Error : nPath({nPath}) / dXSpeed({dXSpeed}) / dYDistance({dYDistance})");
+
+						//
+						Flag = false;
                         m_nCleanStep = 0;
                         return true;
 
@@ -6991,8 +6991,9 @@ namespace WaferPolishingSystem.Unit
 
                     fn_MoveCylClamp(ccFwd);
 
-					//g_VisionManager._AlginMainCtrl.fn_ClearResult(); //JUNG/210127
-					g_VisionManager.delUpdateMainresultClear?.Invoke();
+					
+					//g_VisionManager.delUpdateMainresultClear?.Invoke();
+
 					//
 					fn_WriteSeqLog($"[START] Place Plate to {enPlateId.ToString()}");
 
@@ -8826,8 +8827,12 @@ namespace WaferPolishingSystem.Unit
             Msg += sTemp = string.Format($"m_nMagzPickStep   = {m_nMagzPickStep  }\r\n");
             Msg += sTemp = string.Format($"m_nMagzPlaceStep  = {m_nMagzPlaceStep }\r\n");
 			Msg += sTemp = string.Format($"m_nCupMoveStep    = {m_nCupMoveStep   }\r\n");
-			
 
+            //JUNG/210207
+            Msg += sTemp = string.Format($"Tool Pick Info    = R:{ToolPickInfo.nFindRow} / C:{ToolPickInfo.nFindCol}\r\n");
+            Msg += sTemp = string.Format($"Spindle X Enc.    = {GetEncPos_X()}\r\n");
+            Msg += sTemp = string.Format($"Spindle Z Enc.    = {GetEncPos_Z()}\r\n");
+            Msg += sTemp = string.Format($"Storage Y Enc.    = {SEQ_STORG.GetEncPos_Y()}\r\n");
 
 		}
         //---------------------------------------------------------------------------
@@ -10002,16 +10007,40 @@ namespace WaferPolishingSystem.Unit
                     return false;
             }
         }
+		//-------------------------------------------------------------------------------------------------
+		private bool fn_IsWorkingArea(double startX, double endX, double startY, double endY, double speed)
+		{
+			bool   bErr = false;
+			double dCenterPos = MOTR[(int)EN_MOTR_ID.miSPD_X].GetPosToCmdId(EN_COMD_ID.User1); //Polishing Center position
+			double dXOffset   = 7.0;
+			double dYOffset   = 7.0;
 
-		//---------------------------------------------------------------------------
-		private bool fn_CheckPolishingPos(double StartXPos, double EndXPos, double StartYPos, double EndYPos, double YDistance, double XSpeed)
-        {
+			//
+			if (startX < dCenterPos - dXOffset || startX > dCenterPos + dXOffset)
+            {
+                fn_WriteLog($"Start X InPosition Error.{startX}", EN_LOG_TYPE.ltLot);
+                bErr = true;
+            }
+            if (endX < dCenterPos - dXOffset || endX > dCenterPos + dXOffset)
+            {
+                fn_WriteLog($"End X InPosition Error.{endX}", EN_LOG_TYPE.ltLot);
+                bErr = true;
+            }
+            if (startY < dCenterPos - dYOffset || startY > dCenterPos + dYOffset)
+            {
+                fn_WriteLog($"Start Y InPosition Error.{startY}", EN_LOG_TYPE.ltLot);
+                bErr = true;
+            }
+            if (endY < dCenterPos - dYOffset || endY > dCenterPos + dYOffset)
+            {
+                fn_WriteLog($"End Y InPosition Error.{endY}", EN_LOG_TYPE.ltLot);
+                bErr = true;
+            }
 
+			return bErr;
 
-
-			return true; 
-        }
-	}
+		}
+    }
 
 }
 

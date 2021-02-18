@@ -182,6 +182,7 @@
                     <CheckBox x:Name="cbUseOnlyDI"           Content="Use DI @ Polishing(for Test)"           ClickMode="Press"/>
                     <CheckBox x:Name="cbEPDOnlyMeasure"      Content="EPD Only Measure(EPD Always false)"     ClickMode="Press"/>
                     <CheckBox x:Name="cbUseMOC"              Content="Use Model Optic Condition"              ClickMode="Press"/>
+                    <CheckBox x:Name="cbUseCleanPos"         Content="Use Cleaning Cal. Pos."                 ClickMode="Press"/>
                 </StackPanel>
             </GroupBox>
 

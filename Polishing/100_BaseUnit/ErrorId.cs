@@ -1081,7 +1081,7 @@ namespace WaferPolishingSystem.BaseUnit
             "" , //ERR_0446,
             "" , //ERR_0447,
             "" , //ERR_0448,
-            "" , //ERR_0449,
+            "Polishing Position Data Error(check vision data)" , //ERR_0449,
             "" , //ERR_0450, //
             "" , //ERR_0451, //
             "" , //ERR_0452, //

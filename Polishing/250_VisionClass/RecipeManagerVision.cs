@@ -240,14 +240,16 @@ namespace WaferPolishingSystem.Vision
                 g_VisionManager._RecipeModel.Model[idx].Algorithm =         (EN_ALGORITHM)fn_Load(strApp, "Algorithm"               , 0     , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].Enable                          = fn_Load(strApp, "ModelEnable"             , 0     , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].strName                         = fn_Load(strApp, "ModelName"               , ""    , strFullPath);
-                g_VisionManager._RecipeModel.Model[idx].strImgPath                      = fn_Load(strApp, "ModelImagePath"          , strModelPath, strFullPath);
+                //g_VisionManager._RecipeModel.Model[idx].strImgPath                      = fn_Load(strApp, "ModelImagePath"          , strModelPath, strFullPath);
+                g_VisionManager._RecipeModel.Model[idx].strImgPath                      = strModelPath;
                 g_VisionManager._RecipeModel.Model[idx].SearchIndex                     = fn_Load(strApp, "SearchIndex"             , 0     , strFullPath);
 
                 g_VisionManager._RecipeModel.Model[idx].LoadingTheta                    = fn_Load(strApp, "LoadingTheta"            , 0.0   , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].LoadingThetaEnable              = fn_Load(strApp, "LoadingThetaEnable"      , 0     , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].LoadingMarkWidth                = fn_Load(strApp, "LoadingMarkWidth"        , 0     , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].LoadingMarkHeight               = fn_Load(strApp, "LoadingMarkHeight"       , 0     , strFullPath);
-                g_VisionManager._RecipeModel.Model[idx].strLoadingPath                  = fn_Load(strApp, "LoadingImagePath"        , strLoadingPath, strFullPath);
+                //g_VisionManager._RecipeModel.Model[idx].strLoadingPath                  = fn_Load(strApp, "LoadingImagePath"        , strLoadingPath, strFullPath);
+                g_VisionManager._RecipeModel.Model[idx].strLoadingPath                  = strLoadingPath;
                 g_VisionManager._RecipeModel.Model[idx].LoadingParam.DetailLevel        = fn_Load(strApp, "L_DetailLevel"           , 0     , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].LoadingParam.Acceptance         = fn_Load(strApp, "L_Acceptance"            , 70.0   , strFullPath);
                 g_VisionManager._RecipeModel.Model[idx].LoadingParam.Certainty          = fn_Load(strApp, "L_Certainty"             , 90.0   , strFullPath);

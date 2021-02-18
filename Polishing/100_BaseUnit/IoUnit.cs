@@ -180,8 +180,7 @@ namespace WaferPolishingSystem.BaseUnit
             fn_Init();
 
             ACS_IO = new Api();
-            
-          
+
             //IO Read Buffer
             m_nNumOfIn  = MAX_INPUT_COUNT_D  / 8;
             m_nNumOfOut = MAX_OUTPUT_COUNT_D / 8;
@@ -245,11 +244,11 @@ namespace WaferPolishingSystem.BaseUnit
             }
 
             m_bDrngReboot = false;
-            m_nRebootStep = 0; 
-    }
-    //---------------------------------------------------------------------------
-    //초기화
-    private void fn_Init()
+            m_nRebootStep = 0;
+        }
+        //---------------------------------------------------------------------------
+        //초기화
+        private void fn_Init()
         {
 
         	//Init IO Data.
@@ -257,7 +256,7 @@ namespace WaferPolishingSystem.BaseUnit
         	{
         		XV   [i] = false;
         		XInv [i] = 0; 
-        		XA   [i] = string.Format($"X{i+1:D4}"); 
+                XA   [i] = string.Format($"X{i + 1:D4}");
         		XName[i] = string.Format($"X{i:D4}");
                 XAdd [i] = 0;
             }
@@ -266,23 +265,23 @@ namespace WaferPolishingSystem.BaseUnit
         	{
         		YV   [i] = false;
         		YInv [i] = 0;
-        		YA   [i] = string.Format($"Y{i+1:D4}");
+                YA   [i] = string.Format($"Y{i + 1:D4}");
                 YName[i] = string.Format($"Y{i:D4}");
                 YAdd [i] = 0;
             }
 
             //Analog
-            for (int i = 0 ; i < MAX_INPUT_COUNT_A; i++)
+            for (int i = 0; i < MAX_INPUT_COUNT_A; i++)
             {
                 AIName[i] = string.Format($"AI{i:D4}");
             }
 
             for (int i = 0; i < MAX_OUTPUT_COUNT_A; i++)
             {
-                AOName[i] = string.Format($"AO{i:D4}"); 
-                
+                AOName[i] = string.Format($"AO{i:D4}");
+
             }
-                
+
 
 
             //JUNG/200416/Always On
@@ -290,7 +289,7 @@ namespace WaferPolishingSystem.BaseUnit
 
             for (int i = 0; i < MAX_INPUT_COUNT_A; i++)
             {
-                AI[i] = 0; 
+                AI[i] = 0;
             }
 
         }
@@ -330,7 +329,7 @@ namespace WaferPolishingSystem.BaseUnit
                     ACS_IO.OpenCommSimulator();
                     m_bConnectAsSim = true;
                 }
-                
+
                 //
                 m_bConnect = true;
 
@@ -373,7 +372,7 @@ namespace WaferPolishingSystem.BaseUnit
             else                 ACS_IO.CloseComm     ();
 
             fn_WriteLog("ACS IO Close");
-            return true; 
+            return true;
         }
         //---------------------------------------------------------------------------
         void fn_SetInvX(int n, int Data)
@@ -397,7 +396,7 @@ namespace WaferPolishingSystem.BaseUnit
         @author    정지완(JUNGJIWAN)
         @date      2019/9/4  19:10
         */
-        
+
         public void fn_Update()
         {
             try
@@ -440,9 +439,9 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         private void fn_UpdateIO()
         {
-        	
-        	if (!m_bConnect) return;
-            
+
+            if (!m_bConnect) return;
+
             try
             {
                 //Digital Read
@@ -485,7 +484,7 @@ namespace WaferPolishingSystem.BaseUnit
 
                 ACS_IO.WriteVariable(m_nOut, "EC_OUT");
 
-                
+
                 //Analog Write
                 ACS_IO.WriteVariable(AO, "EC_AOUT");
 
@@ -520,7 +519,7 @@ namespace WaferPolishingSystem.BaseUnit
                 for (int x = 0; x < 8; x++)
                 {
                     XV[(n * 8) + x] = (m_nIn[n] & MaskBit) != 0 ? true : false;
-                    
+
                     //Inverse Check
                     if (XInv[(n * 8) + x] == 1) XV[(n * 8) + x] = !XV[(n * 8) + x];
 
@@ -544,18 +543,18 @@ namespace WaferPolishingSystem.BaseUnit
             ACS_IO.WriteVariable(DATA_EQ_TO_ACS, "DATA_EQ_TO_ACS");
 
             //Read Data
-            objVar  = ACS_IO.ReadVariable("DATA_ACS_TO_EQ");
+            objVar = ACS_IO.ReadVariable("DATA_ACS_TO_EQ");
             Array arInput = objVar as Array;
             Array.Copy(arInput, DATA_ACS_TO_EQ, DATA_ACS_TO_EQ.Length);
 
-            
+
             //SMC Data
             ACS_IO.WriteVariable(DATA_EQ_TO_SMC, "DATA_EQ_TO_SMC");
 
             objVar = ACS_IO.ReadVariable("DATA_SMC_TO_EQ");
             arInput = objVar as Array;
             Array.Copy(arInput, DATA_SMC_TO_EQ, DATA_SMC_TO_EQ.Length);
-            
+
 
             //PLC Data
             objVar = ACS_IO.ReadVariable("EC_PLCIN");
@@ -574,7 +573,7 @@ namespace WaferPolishingSystem.BaseUnit
         {
             //The method is used to retrieve the last EtherCAT error code.
             m_nACS_STATE = ACS_IO.GetEtherCATError();
-            
+
             /*
             6000 General EtherCAT Error
             6001 EtherCAT cable not connected
@@ -595,13 +594,13 @@ namespace WaferPolishingSystem.BaseUnit
             6019 EtherCAT Master won't enter SAFEOP state
             6020 EtherCAT Master won't enter OP state
             */
-            
+
             //상태에 따라 Reboot
             switch (m_nACS_STATE)
             {
                 case 6004: //EtherCAT Slave Error
                 case 6007: //
-                    m_bReqReboot = true; 
+                    m_bReqReboot = true;
                     break;
 
                 default:
@@ -649,8 +648,8 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public bool fn_Z2Unlock(bool on)
         {
-            YV[(int)EN_OUTPUT_ID.yMOTR_Z2_Unlock] = on; 
-            return true; 
+            YV[(int)EN_OUTPUT_ID.yMOTR_Z2_Unlock] = on;
+            return true;
         }
         //---------------------------------------------------------------------------
         public bool fn_TRZUnlock(bool on)
@@ -672,7 +671,7 @@ namespace WaferPolishingSystem.BaseUnit
             m_tDelayTimer[3].OnDelay(DATA_EQ_TO_SMC[60 + (int)EN_SMC_WRITE.FAULT_RESET] == 1, 1000); if (m_tDelayTimer[3].Out) DATA_EQ_TO_SMC[60 + (int)EN_SMC_WRITE.FAULT_RESET] = 0;
 
             if (!SEQ._bRun)
-            { 
+            {
                 //JUNG/200602/Valve On Time Check
                 m_tDelayTimer[5 ].OnDelay(YV[(int)EN_OUTPUT_ID.yPLS_Valve_Si1    ], 7000); if (m_tDelayTimer[5 ].Out) SEQ_POLIS.fn_StopUtil(EN_UTIL_KIND.Silica01); //YV[(int)EN_OUTPUT_ID.yPLS_Valve_Si1    ] = false;
                 m_tDelayTimer[6 ].OnDelay(YV[(int)EN_OUTPUT_ID.yPLS_Valve_Si2    ], 7000); if (m_tDelayTimer[6 ].Out) SEQ_POLIS.fn_StopUtil(EN_UTIL_KIND.Silica02); //YV[(int)EN_OUTPUT_ID.yPLS_Valve_Si2    ] = false;
@@ -705,8 +704,8 @@ namespace WaferPolishingSystem.BaseUnit
         public void fn_LoadIO(bool bLoad)
         {
             //Local Var.
-	        string  sIniPath, sTemp;
-            
+            string sIniPath, sTemp;
+
             //Input
             try
             {
@@ -717,11 +716,11 @@ namespace WaferPolishingSystem.BaseUnit
                 m_bDrngLoad = true;
 
                 if (bLoad)
-	            {
-        	    	//Digital
+                {
+                    //Digital
                     for (int i = 0; i < MAX_INPUT_COUNT_D; i++)
-        	    	{
-        	    		sTemp = string.Format($"INPUT({i+1:D4})");
+                    {
+                        sTemp      = string.Format($"INPUT({i + 1:D4})");
                         XName  [i] = UserINI.fn_Load("INPUT NAME", sTemp, XName[i], sIniPath); 
         	    		XInv   [i] = UserINI.fn_Load("INPUT INVS", sTemp, 0       , sIniPath); 
         	    		XA     [i] = UserINI.fn_Load("INPUT ADDR", sTemp, XA[i]   , sIniPath);
@@ -731,17 +730,17 @@ namespace WaferPolishingSystem.BaseUnit
                     
                     //Analog
                     for (int i = 0; i < MAX_INPUT_COUNT_A; i++)
-        	    	{
-        	    		sTemp = string.Format($"INPUT_A({i+1:D4})");
+                    {
+                        sTemp     = string.Format($"INPUT_A({i + 1:D4})");
                         AIName[i] = UserINI.fn_Load("INPUT NAME ANALOG", sTemp, AIName[i], sIniPath); 
-        	    	}
-	            }
-	            else 
-	            {
+                    }
+                }
+                else
+                {
                     //Digital
                     for (int i = 0; i < MAX_INPUT_COUNT_D; i++)
-        	    	{
-        	    		sTemp = string.Format($"INPUT({i+1:D4})");
+                    {
+                        sTemp = string.Format($"INPUT({i + 1:D4})");
                         UserINI.fn_Save("INPUT NAME", sTemp, XName  [i], sIniPath); 
         	    		UserINI.fn_Save("INPUT INVS", sTemp, XInv   [i], sIniPath); 
         	    		UserINI.fn_Save("INPUT ADDR", sTemp, XA     [i], sIniPath);
@@ -754,26 +753,26 @@ namespace WaferPolishingSystem.BaseUnit
 
                     //Analog
                     for (int i = 0; i < MAX_INPUT_COUNT_A; i++)
-        	    	{
-        	    		sTemp = string.Format($"INPUT_A({i+1:D4})");
+                    {
+                        sTemp = string.Format($"INPUT_A({i + 1:D4})");
                         UserINI.fn_Save("INPUT NAME ANALOG", sTemp, AIName[i], sIniPath);
-        	    	}
-	            }
+                    }
+                }
 
                 m_bDrngLoad = false;
 
                 //Output
                 sIniPath = fn_GetExePath() + "SYSTEM\\IO_Output.ini";
-                
+
                 if (!fn_CheckFileExist(sIniPath) && bLoad) return;
 
                 m_bDrngLoad = true;
 
                 if (bLoad)
-	            {
-        	    	for (int i = 0; i < MAX_OUTPUT_COUNT_D; i++)
-        	    	{
-        	    		sTemp = string.Format($"OUTPUT({i+1:D4})");
+                {
+                    for (int i = 0; i < MAX_OUTPUT_COUNT_D; i++)
+                    {
+                        sTemp = string.Format($"OUTPUT({i + 1:D4})");
                         YName  [i] = UserINI.fn_Load("OUTPUT NAME", sTemp, YName[i], sIniPath); 
         	    		YInv   [i] = UserINI.fn_Load("OUTPUT INVS", sTemp, 0       , sIniPath); 
         	    		YA     [i] = UserINI.fn_Load("OUTPUT ADDR", sTemp, YA[i]   , sIniPath);
@@ -782,7 +781,7 @@ namespace WaferPolishingSystem.BaseUnit
                             YAdd[i] = Convert.ToInt32(YA[i].Substring(1, YA[i].Length - 1));
                         }
                     }
-                    
+
                     //Analog
                     for (int i = 0; i < MAX_OUTPUT_COUNT_A; i++)
                     {
@@ -791,11 +790,11 @@ namespace WaferPolishingSystem.BaseUnit
                     }
 
                 }
-                else 
-	            {
+                else
+                {
                     for (int i = 0; i < MAX_OUTPUT_COUNT_D; i++)
-        	    	{
-        	    		sTemp = string.Format($"OUTPUT({i+1:D4})");
+                    {
+                        sTemp = string.Format($"OUTPUT({i + 1:D4})");
                         UserINI.fn_Save("OUTPUT NAME", sTemp, YName  [i], sIniPath); 
         	    		UserINI.fn_Save("OUTPUT INVS", sTemp, YInv   [i], sIniPath); 
         	    		UserINI.fn_Save("OUTPUT ADDR", sTemp, YA     [i], sIniPath);
@@ -822,10 +821,10 @@ namespace WaferPolishingSystem.BaseUnit
             m_bDrngLoad = false;
         }
         //---------------------------------------------------------------------------
-        
+
         public int fn_GetUTLevelValue()
         {
-            
+
             //double MAX_OUT   = 1024.0; //AD 0~20V 출력 0~4095 // 250ohm 저항 장착시 1024가 최대 출력값 현재 235ohm 장착
             //double LEVEL_REF = 235.0 ; //연결된 저항값과 같음
             //double rtnvalue  = 0.0   ;
@@ -845,10 +844,10 @@ namespace WaferPolishingSystem.BaseUnit
             double dOffset   = FM.m_stMasterOpt.dUtilOffset ; //
             double dMinValue = 0  ;
             double dMaxValue = 200;
-            
-            
-            if (nInput < nMinValue ) return (int)dRtn      ;
-            if (nInput > nMaxValue ) return (int)dMaxValue ;
+
+
+            if (nInput < nMinValue) return (int)dRtn;
+            if (nInput > nMaxValue) return (int)dMaxValue;
 
             dCal = ((nInput - nMinValue) / (double)(nMaxValue - nMinValue)) * (dMaxValue - dMinValue) + dMinValue;
             dCal = Math.Round(dCal, 1) + dOffset;
@@ -867,14 +866,14 @@ namespace WaferPolishingSystem.BaseUnit
                 m_dAvgValue = Enumerable.Average(m_queSumUTLevel);
                 m_queSumUTLevel.Dequeue();
             }
-            else m_dAvgValue = dMaxValue; 
+            else m_dAvgValue = dMaxValue;
 
             return (int)m_dAvgValue;
         }
         //-------------------------------------------------------------------------------------------------
         public double fn_GetUTAvgValue()
         {
-            return Math.Round(m_dAvgValue,1);
+            return Math.Round(m_dAvgValue, 1);
         }
         //---------------------------------------------------------------------------
         public bool fn_IsUTLevelDone()
@@ -887,7 +886,7 @@ namespace WaferPolishingSystem.BaseUnit
 
             if (dValue < dUserSet + dOffset) return true;
 
-            return false; 
+            return false;
         }
         //-------------------------------------------------------------------------------------------------
         public void fn_ClearUTQue()
@@ -896,7 +895,7 @@ namespace WaferPolishingSystem.BaseUnit
         }
         public int fn_GetUTQueQty()
         {
-            return m_queSumUTLevel.Count; 
+            return m_queSumUTLevel.Count;
         }
 
 
@@ -918,12 +917,12 @@ namespace WaferPolishingSystem.BaseUnit
             double dMaxValue = 4.0;
 
 
-            if (nInput < nMinValue ) return dRtn     ;
-            if (nInput > nMaxValue ) return dMaxValue;
+            if (nInput < nMinValue) return dRtn;
+            if (nInput > nMaxValue) return dMaxValue;
 
 
-            dRtn = ((nInput - nMinValue) / (double)(nMaxValue - nMinValue)) * (dMaxValue - dMinValue) + dMinValue; 
-            
+            dRtn = ((nInput - nMinValue) / (double)(nMaxValue - nMinValue)) * (dMaxValue - dMinValue) + dMinValue;
+
             return dRtn;
         }
 
@@ -934,7 +933,7 @@ namespace WaferPolishingSystem.BaseUnit
         public void fn_SetTopOffset()
         {
             //m_dTopLoadCellOffSet = m_dTopLoadCelValueOrg; // fn_GetTopLoadCell(); 
-            m_bSetTopLDCOffset = true; 
+            m_bSetTopLDCOffset = true;
             //fn_WriteLog(string.Format($"[LOADCELL] Top Load cell Offset Save : {m_dTopLoadCellOffSet}"));
 
             //
@@ -960,7 +959,7 @@ namespace WaferPolishingSystem.BaseUnit
             double dValue            = (m_dTopLoadCelValue * dYSlope) + dIntercept;
             
             if (dValue < 0) dValue = 0;
-            
+
             //Cal. Value
             double dRtn = bNT ? Math.Round(dValue * ONEGRAM_TO_NEWTON, 2) : Math.Round(dValue, 4);
 
@@ -992,17 +991,17 @@ namespace WaferPolishingSystem.BaseUnit
             if (nInput < nMinValue ) return dRtn     ;
             if (nInput > nMaxValue ) return dMaxValue;
 
-            dLb  = ((nInput - nMinValue) / (double)(nMaxValue - nMinValue)) * (dMaxValue - dMinValue) + dMinValue;
-            
-            dRtn = (dLb * 453.59237) ;
+            dLb = ((nInput - nMinValue) / (double)(nMaxValue - nMinValue)) * (dMaxValue - dMinValue) + dMinValue;
+
+            dRtn = (dLb * 453.59237);
 
             //Return -> g
-            return Math.Round(dRtn, 4); 
+            return Math.Round(dRtn, 4);
 
         }
 
         //---------------------------------------------------------------------------
-        
+
         public double fn_UpdateTopLDC()
         {
             //20ms 마다 Data Average
@@ -1029,7 +1028,7 @@ namespace WaferPolishingSystem.BaseUnit
 
                 dTopValue = dTopValue / (double)count;
 
-                if(m_bSetTopLDCOffset) //JUNG/200901
+                if (m_bSetTopLDCOffset) //JUNG/200901
                 {
                     m_bSetTopLDCOffset = false;
                     m_dTopLoadCellOffSet = dTopValue;
@@ -1040,13 +1039,13 @@ namespace WaferPolishingSystem.BaseUnit
 
                 }
 
-                m_dTopLoadCelValueOrg = Math.Round(dTopValue,4);
+                m_dTopLoadCelValueOrg = Math.Round(dTopValue, 4);
                 m_dTopLoadCelValue = m_dTopLoadCellOffSet - Math.Round(dTopValue, 4); //JUNG/200819
                 if (m_dTopLoadCelValue < 0) m_dTopLoadCelValue = 0.0;
 
                 m_QueDataTopLDC.Clear();
             }
-            
+
             return dTopValue;
 
 
@@ -1065,8 +1064,8 @@ namespace WaferPolishingSystem.BaseUnit
 
             //fn_ACSReboot();
 
-            return true; 
-                
+            return true;
+
         }
         //---------------------------------------------------------------------------
         public void fn_ACSReboot(bool bDo = false)
@@ -1093,13 +1092,13 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public void fn_SetACSReboot()
         {
-            m_bReqReboot = true; 
+            m_bReqReboot = true;
         }
         //---------------------------------------------------------------------------
         public void fn_UpdateACSReboot()
         {
             //
-            if(m_bReqReboot)
+            if (m_bReqReboot)
             {
                 m_tDelayTimer[14].Clear();
 
@@ -1107,7 +1106,7 @@ namespace WaferPolishingSystem.BaseUnit
                 m_bReqReboot  = false;
                 
                 m_nRebootStep = 10;
-                return; 
+                return;
             }
 
             //
@@ -1134,7 +1133,7 @@ namespace WaferPolishingSystem.BaseUnit
                         m_tDelayTimer[14].Clear();
                         m_nRebootStep++;
                         return;
-                        
+
                     case 12:
                         if (!m_tDelayTimer[14].OnDelay(true, 3000)) return;
 
@@ -1224,7 +1223,7 @@ namespace WaferPolishingSystem.BaseUnit
             {
                 rtn = fn_IsBuffRun(BFNo_14_FORCECHECK);
             }
-            
+
 
             return rtn;
         }
@@ -1232,7 +1231,7 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public bool fn_SMCHome(EN_MOTR_ID id, bool bon = false)
         {
-            int nIndex = ((int)id-(int)EN_MOTR_ID.miSPD_Z1) * 30;
+            int nIndex = ((int)id - (int)EN_MOTR_ID.miSPD_Z1) * 30;
 
             if (bon)
             {
@@ -1247,16 +1246,16 @@ namespace WaferPolishingSystem.BaseUnit
                 REQ_EQ_TO_SMC[nIndex + (int)EN_SMC_WRITE.HOME] = 0; //Home
             }
 
-            return true; 
+            return true;
         }
         //-------------------------------------------------------------------------------------------------
         public void fn_SMCHomeClear()
         {
-            for (EN_MOTR_ID m = EN_MOTR_ID.miSPD_Z1; m<=EN_MOTR_ID.miTRF_Z; m++)
+            for (EN_MOTR_ID m = EN_MOTR_ID.miSPD_Z1; m <= EN_MOTR_ID.miTRF_Z; m++)
             {
                 fn_SMCHome(m, false);
             }
-            
+
         }
         //-------------------------------------------------------------------------------------------------
         public void fn_SMCJOGClear()
@@ -1283,7 +1282,7 @@ namespace WaferPolishingSystem.BaseUnit
 
             try
             {
-                if (bOn) 
+                if (bOn)
                     ACS_IO.RunBuffer((ProgramBuffer)nBuffNo, null);
                 else
                     ACS_IO.StopBuffer((ProgramBuffer)nBuffNo);
@@ -1304,15 +1303,15 @@ namespace WaferPolishingSystem.BaseUnit
                 if (i == BFNo_09_XSEG_COUNT) continue;
                 fn_RunBuffer(i, false);
             }
-            
-            return true; 
+
+            return true;
         }
         //---------------------------------------------------------------------------
         public bool fn_StopAllHomeBuffer()
         {
             for (int i = 0; i <= MAX_HOMEBUFF; i++)
             {
-                if(fn_IsBuffRun(i)) fn_RunBuffer(i, false);
+                if (fn_IsBuffRun(i)) fn_RunBuffer(i, false);
             }
 
             return true;
@@ -1320,7 +1319,7 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public bool fn_StopBuffer(int buff)
         {
-            if (!m_bConnect) return false; 
+            if (!m_bConnect) return false;
 
             return fn_RunBuffer(buff, false);
         }
@@ -1360,7 +1359,6 @@ namespace WaferPolishingSystem.BaseUnit
             //}
 
             return fn_SetSoftwareLimit(Axis, drPOS, set, dLimitPos);
-            
         }
         //---------------------------------------------------------------------------
         public bool fn_SetForceBuffData(double landpos) //Force Buffer Start
@@ -1382,7 +1380,7 @@ namespace WaferPolishingSystem.BaseUnit
 
             fn_WriteLog(string.Format($"[BUFF RUN] SET DCOM : {dSetRatio:F2}"), EN_LOG_TYPE.ltLot);
 
-            return true; 
+            return true;
         }
 
 
@@ -1405,7 +1403,7 @@ namespace WaferPolishingSystem.BaseUnit
 
                 return false;
             }
-            return true; 
+            return true;
         }
         //---------------------------------------------------------------------------
         public bool fn_ForceBufferRunforCal(double landpos, double DCOM)
@@ -1438,7 +1436,7 @@ namespace WaferPolishingSystem.BaseUnit
             try
             {
                 ACS_IO.Command(sCmd);
-                
+
                 fn_WriteLog(string.Format($"[END] SET DCOM : {dSetRatio:F2} [{FM.m_stMasterOpt.dDCOMRatio}%] / CYCLE : {SEQ_SPIND.fn_GetCurrMillCnt()}"), EN_LOG_TYPE.ltLot);
             }
             catch (System.Exception ex)
@@ -1446,7 +1444,7 @@ namespace WaferPolishingSystem.BaseUnit
                 Console.WriteLine(ex);
             }
 
-            
+
         }
         //---------------------------------------------------------------------------
         public void fn_SetDCOM(double set)
@@ -1472,12 +1470,12 @@ namespace WaferPolishingSystem.BaseUnit
             double dSetRatio  = 0.0;
             double dOffset    = 0.36;
 
-            dSetRatio = (Target + 139) / 123.8235  + dOffset;
+            dSetRatio = (Target + 139) / 123.8235 + dOffset;
 
             try
             {
                 ACS_IO.WriteVariable(dSetRatio, "TARGET_FORCE");
-                
+
                 //ACS Buffer Run
                 fn_RunBuffer(11, true);
 
@@ -1518,7 +1516,7 @@ namespace WaferPolishingSystem.BaseUnit
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
         }
 
         //---------------------------------------------------------------------------
@@ -1527,16 +1525,16 @@ namespace WaferPolishingSystem.BaseUnit
             //Set Force Ratio
             SEQ_SPIND._dForceRatio = Forcetratio;
 
-            return true; 
+            return true;
         }
 
 
         //---------------------------------------------------------------------------
         public void fn_UpdatePLCINData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[20, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[20, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1553,7 +1551,7 @@ namespace WaferPolishingSystem.BaseUnit
 
             //
             string sTemp = string.Empty;
-            EN_PLC_IN enPIn; 
+            EN_PLC_IN enPIn;
             for (int nRow = 0; nRow < EC_PLCIN.Length; nRow++)
             {
                 enPIn = (EN_PLC_IN)nRow;
@@ -1562,7 +1560,7 @@ namespace WaferPolishingSystem.BaseUnit
                 Items[nRow, 1].Content = EC_PLCIN[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1585,9 +1583,9 @@ namespace WaferPolishingSystem.BaseUnit
 			{
 				for (int c = 0; c < 2; c++)
 				{
-					grd.Children.Add(Items[r,c]);
-					Grid.SetRow   (Items[r, c], r);
-					Grid.SetColumn(Items[r, c], c);
+					grd.Children.Add(Items[r, c]);
+					Grid.SetRow     (Items[r, c], r);
+					Grid.SetColumn  (Items[r, c], c);
 				}
             }
         }
@@ -1595,9 +1593,9 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public void fn_UpdatePLCOutData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[20, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[20, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1623,7 +1621,7 @@ namespace WaferPolishingSystem.BaseUnit
                 Items[nRow, 1].Content = EC_PLCOUT[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1647,17 +1645,17 @@ namespace WaferPolishingSystem.BaseUnit
 				for (int c = 0; c < 2; c++)
 				{
 					grd.Children.Add(Items[r,c]);
-					Grid.SetRow   (Items[r, c], r);
-					Grid.SetColumn(Items[r, c], c);
+					Grid.SetRow     (Items[r, c], r);
+					Grid.SetColumn  (Items[r, c], c);
 				}
             }
         }
         //---------------------------------------------------------------------------
         public void fn_UpdateSMCtoEQData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[DATA_SMC_TO_EQ.Length, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[DATA_SMC_TO_EQ.Length, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1675,20 +1673,20 @@ namespace WaferPolishingSystem.BaseUnit
             //
             string sTemp = string.Empty;
             string sMotr = string.Empty;
-            EN_SMC_READ readadd; 
+            EN_SMC_READ readadd;
             for (int nRow = 0; nRow < DATA_SMC_TO_EQ.Length; nRow++)
             {
                 if      (nRow / 30 < 1) sMotr = "[SP-Z1]";
                 else if (nRow / 30 < 2) sMotr = "[TR- Z]";
                 else if (nRow / 30 > 1) sMotr = "[LD- T]";
 
-                readadd = (EN_SMC_READ)(nRow%30);
-                sTemp = string.Format($"[{nRow:D2}] {sMotr} {readadd.ToString()}"); 
+                readadd = (EN_SMC_READ)(nRow % 30);
+                sTemp = string.Format($"[{nRow:D2}] {sMotr} {readadd.ToString()}");
                 Items[nRow, 0].Content = sTemp;
                 Items[nRow, 1].Content = DATA_SMC_TO_EQ[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1720,9 +1718,9 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public void fn_UpdateEQtoSMCData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[DATA_EQ_TO_SMC.Length, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[DATA_EQ_TO_SMC.Length, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1731,7 +1729,7 @@ namespace WaferPolishingSystem.BaseUnit
                 Items[n1, 0].BorderThickness = new Thickness(1);
                 Items[n1, 0].BorderBrush = System.Windows.Media.Brushes.LightGray;
                 Items[n1, 0].FontSize = 11;
-                
+
                 Items[n1, 1].BorderThickness = new Thickness(1);
                 Items[n1, 1].BorderBrush = System.Windows.Media.Brushes.LightGray;
                 Items[n1, 1].FontSize = 11;
@@ -1749,12 +1747,12 @@ namespace WaferPolishingSystem.BaseUnit
                 else if (nRow / 30 > 1) sMotr = "[LD- T]";
 
                 writeadd = (EN_SMC_WRITE)(nRow % 30);
-                sTemp = string.Format($"[{nRow:D2}] {sMotr} {writeadd.ToString()}"); 
+                sTemp = string.Format($"[{nRow:D2}] {sMotr} {writeadd.ToString()}");
                 Items[nRow, 0].Content = sTemp;
                 Items[nRow, 1].Content = DATA_EQ_TO_SMC[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1763,7 +1761,7 @@ namespace WaferPolishingSystem.BaseUnit
             {
                 grd.RowDefinitions.Add(new RowDefinition());
             }
-            
+
             ColumnDefinition columnDefinition = new ColumnDefinition();
             columnDefinition.Width = new GridLength(2, GridUnitType.Star);//columnDefinition.Width = new GridLength(1, GridUnitType.Auto);
 
@@ -1787,9 +1785,9 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public void fn_UpdateEQtoACSData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[DATA_EQ_TO_ACS.Length, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[DATA_EQ_TO_ACS.Length, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1815,7 +1813,7 @@ namespace WaferPolishingSystem.BaseUnit
                 Items[nRow, 1].Content = DATA_EQ_TO_ACS[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1847,9 +1845,9 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public void fn_UpdateACStoEQData(ref Grid grd)
         {
-			if (grd == null) return;
-            
-			Label[,] Items = new Label[DATA_ACS_TO_EQ.Length, 2];
+            if (grd == null) return;
+
+            Label[,] Items = new Label[DATA_ACS_TO_EQ.Length, 2];
             for (int n1 = 0; n1 <= Items.GetUpperBound(0); n1++)
             {
                 Items[n1, 0] = new Label();
@@ -1870,12 +1868,12 @@ namespace WaferPolishingSystem.BaseUnit
             for (int nRow = 0; nRow < DATA_ACS_TO_EQ.Length; nRow++)
             {
                 enAtE = (EN_ACS_TO_EQ)nRow;
-                sTemp = string.Format($"[{nRow:D2}] {enAtE.ToString()}"); 
+                sTemp = string.Format($"[{nRow:D2}] {enAtE.ToString()}");
                 Items[nRow, 0].Content = sTemp;
                 Items[nRow, 1].Content = DATA_ACS_TO_EQ[nRow].ToString();
             }
 
-			grd.Children.Clear();
+            grd.Children.Clear();
             grd.Background = System.Windows.Media.Brushes.White;
             grd.ColumnDefinitions.Clear();
             grd.RowDefinitions.Clear();
@@ -1907,7 +1905,7 @@ namespace WaferPolishingSystem.BaseUnit
         //-------------------------------------------------------------------------------------------------
         public int fn_GetIndexNo(EN_MOTR_ID motor)
         {
-            int nRtn   = -1;
+            int nRtn = -1;
             int nMotor = (int)EN_MOTR_ID.miSPD_Z1;
 
             if (motor < EN_MOTR_ID.miSPD_Z1) return 0;
@@ -1929,11 +1927,11 @@ namespace WaferPolishingSystem.BaseUnit
         //-------------------------------------------------------------------------------------------------
         public void fn_SetSMCData(EN_MOTR_ID motr, EN_SMC_WRITE add, int value)
         {
-            if (motr < EN_MOTR_ID.miSPD_Z1) return ;
+            if (motr < EN_MOTR_ID.miSPD_Z1) return;
 
             int nAdd = fn_GetIndexNo(motr) + (int)add;
             //DATA_EQ_TO_SMC[nAdd] = value;
-            
+
             if (fn_IsNeedDirect(add, value))
             {
                 DATA_EQ_TO_SMC[nAdd] = value;
@@ -1953,7 +1951,7 @@ namespace WaferPolishingSystem.BaseUnit
             if (add == EN_SMC_WRITE.HOLD                  ) return true; 
             if (add == EN_SMC_WRITE.SERVO_ON && value != 1) return true; 
 
-            return false; 
+            return false;
 
         }
         //-------------------------------------------------------------------------------------------------
@@ -1975,7 +1973,7 @@ namespace WaferPolishingSystem.BaseUnit
             }
 
             //fn_WriteLog("Close Loop Done : " + motr.ToString());
-            return true; 
+            return true;
         }
         //-------------------------------------------------------------------------------------------------
         public void fn_ClearPos(EN_MOTR_ID motr)
@@ -2021,7 +2019,7 @@ namespace WaferPolishingSystem.BaseUnit
 
         }
         //---------------------------------------------------------------------------
-        
+
         public bool fn_ACSCommand(string cmd)
         {
             try
@@ -2060,7 +2058,7 @@ namespace WaferPolishingSystem.BaseUnit
         //---------------------------------------------------------------------------
         public bool fn_GetPLCIN(int index)
         {
-            return EC_PLCIN[index] == 1; 
+            return EC_PLCIN[index] == 1;
         }
         //---------------------------------------------------------------------------
         public bool fn_SetAutoKey(bool force = false)
@@ -2080,7 +2078,7 @@ namespace WaferPolishingSystem.BaseUnit
                 YV[(int)EN_OUTPUT_ID.ySW_AutoUse] = !bDoorOpen && bAllHome && yOutOff && !bSICKErr;
             }
 
-            return true; 
+            return true;
         }
         //---------------------------------------------------------------------------
         public bool fn_GetDoorSignalErr()
@@ -2088,12 +2086,12 @@ namespace WaferPolishingSystem.BaseUnit
             //SICK Door Signal 
             bool bErr = IO.EC_PLCIN[(int)EN_PLC_IN.SICK_DOOR_1] == 0 || IO.EC_PLCIN[(int)EN_PLC_IN.SICK_DOOR_2] == 0;
 
-            return bErr; 
+            return bErr;
         }
         //---------------------------------------------------------------------------
         public void fn_CloseCLNValve()
         {
-            YV[(int)EN_OUTPUT_ID.yCLN_Valve_DIWater] = false; 
+            YV[(int)EN_OUTPUT_ID.yCLN_Valve_DIWater] = false;
         }
         //---------------------------------------------------------------------------
         public void fn_SetTestDCOMValue(double value)
@@ -2139,17 +2137,17 @@ namespace WaferPolishingSystem.BaseUnit
                     if (objVar != null) dValue = Convert.ToDouble(objVar);
 
                     m_bACSNetErr = (dValue != 0);
-                    
+
                 }
                 catch (System.Exception ex)
                 {
-                    m_bACSNetErr = true; 
+                    m_bACSNetErr = true;
 
                     Console.WriteLine(ex);
-                    
+
                 }
 
-                
+
             }
 
             return m_bACSNetErr;
@@ -2159,20 +2157,20 @@ namespace WaferPolishingSystem.BaseUnit
         public double fn_GetVoltage(bool AI, int add)
         {
             if (add < 0) return 0.0;
-            
+
             if (AI)
             {
                 if (add >= MAX_INPUT_COUNT_A) return 0.0;
-                
+
                 return Math.Round((IO.AI[add] / 32767.0) * 10.0, 2);
             }
             else
             {
                 if (add >= MAX_OUTPUT_COUNT_A) return 0.0;
-                
+
                 return Math.Round((IO.AO[add] / 32767.0) * 10.0, 2);
             }
-           
+
         }
         //---------------------------------------------------------------------------
         public void fn_SetTopLoadCellOffset(double set)

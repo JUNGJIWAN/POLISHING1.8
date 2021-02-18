@@ -114,7 +114,7 @@ namespace WaferPolishingSystem.Define
                 Dst.InspectionCameraExposureTime = this.InspectionCameraExposureTime;
                 Dst.InspectionCameraGain         = this.InspectionCameraGain        ;
 
-                Dst.Inspection           = this.Inspection;
+                Dst.Inspection                   = this.Inspection;
 
                 for (int i = 0; i < this.Milling.Length; i++)
                 {

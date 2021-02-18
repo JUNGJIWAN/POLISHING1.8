@@ -557,6 +557,8 @@ namespace WaferPolishingSystem.BaseUnit
                 m_stMasterOpt.nUseRESTApi       = fn_Load("OPTION"  , "UseRESTApi"       , 0    , sIniPath);
                 m_stMasterOpt.nEPDOnlyMeasure   = fn_Load("OPTION"  , "EPDOnlyMeasure"   , 0    , sIniPath);
                 m_stMasterOpt.nUseMOC           = fn_Load("OPTION"  , "UseMOC"           , 0    , sIniPath);
+                m_stMasterOpt.nUseCleanPos      = fn_Load("OPTION"  , "UseCleanPos"      , 0    , sIniPath);
+                
 
                 m_stMasterOpt.nUsePMC           = fn_Load("OPTION"  , "UsePMC"           , 0    , sIniPath);
                 m_stMasterOpt.nUseDCOMReset     = fn_Load("OPTION"  , "UseDCOMReset"     , 0    , sIniPath);
@@ -665,6 +667,8 @@ namespace WaferPolishingSystem.BaseUnit
                                                        
                 fn_Save("OPTION"  , "UtilMaxTime"      , m_stMasterOpt.nUtilMaxTime      , sIniPath);
                 fn_Save("OPTION"  , "UseMOC"           , m_stMasterOpt.nUseMOC           , sIniPath);
+                fn_Save("OPTION"  , "UseCleanPos"      , m_stMasterOpt.nUseCleanPos      , sIniPath);
+                
 
                 MOTR.SetTransferPPOffset(m_stMasterOpt.dPickOffset, m_stMasterOpt.dPlaceOffset);
 
@@ -1394,12 +1398,16 @@ namespace WaferPolishingSystem.BaseUnit
             sHistory[n++] = "[210128][정지완][정지완] Pre-Align Retry 수정";
 
             sHistory[n++] = "[210203][정지완][정지완] Alarm Sub Page 추가";
+            sHistory[n++] = "[210208][선경규][선경규] DLL Over Search 처리.";
 
+            sHistory[n++] = "[210208][정지완][정지완] Vision Inspect Check Logic 추가 / Timeout Log 추가";
+            sHistory[n++] = "[210209][정지완][정지완] Cleaning R-Axis Min/Max Check 삭제";
+            sHistory[n++] = "[210209][정지완][정지완] Cleaning Calibration Position Option 처리";
 
             //
             m_nHisCnt = n;
             //
-            m_sVersion = "VER : 1.0.00.210203_15H";
+            m_sVersion = "VER : 1.0.00.210209_14H";
         }
 
 

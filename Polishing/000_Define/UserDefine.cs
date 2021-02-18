@@ -1757,6 +1757,7 @@ namespace WaferPolishingSystem.Define
         public double  dLDCBtmOffset    ; //Bottom Load cell Offset (%)
         public int     nEPDOnlyMeasure  ; // EPD Only Measure (EPD Always return false)
         public int     nUseMOC          ; //Model 별 광학 조건
+        public int     nUseCleanPos     ; //Polishing Vision Calibration Position 사용
 
         public bool[] bAutoOff;
 
@@ -1817,8 +1818,9 @@ namespace WaferPolishingSystem.Define
             nUseDCOMReset     = 0;
             nDCOMCnt          = 0;
             nUseMOC           = 0;
+            nUseCleanPos      = 0 ;
             dDCOMRatio        = 0.0;
-            
+
             dLDCBtmOffset     = 0.0;
 
             bAutoOff = new bool[MAX_SEQ_PART];

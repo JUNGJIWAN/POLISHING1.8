@@ -2572,8 +2572,9 @@ namespace WaferPolishingSystem.BaseUnit
         public bool  CheckMinMaxP(double P)
         {
             //Check.
-            if (m_iNoUseMotr == 1                     ) return true;
-            if ((GetMaxPos() < P) || (GetMinPos() > P)) return false;
+            if (m_iNoUseMotr == 1                       ) return true ;
+            if (m_iAxis      == (int)EN_MOTR_ID.miCLN_R ) return true ; //JUNG/210209/Cleaning R Skip...
+            if ((GetMaxPos() < P) || (GetMinPos() > P)  ) return false;
 
             //Ok.
             return true;

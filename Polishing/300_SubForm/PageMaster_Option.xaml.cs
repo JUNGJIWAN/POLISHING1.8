@@ -153,6 +153,7 @@ namespace WaferPolishingSystem.Form
             cbUseOnlyDI     .IsChecked  = (FM.m_stMasterOpt.nUseDI            == 1) ? true : false;
             cbEPDOnlyMeasure.IsChecked  = (FM.m_stMasterOpt.nEPDOnlyMeasure   == 1) ? true : false;
             cbUseMOC        .IsChecked  = (FM.m_stMasterOpt.nUseMOC           == 1) ? true : false;
+            cbUseCleanPos   .IsChecked  = (FM.m_stMasterOpt.nUseCleanPos      == 1) ? true : false;
 
             cbUsePMC     .IsChecked  = (FM.m_stMasterOpt.nUsePMC           == 1) ? true : false;
             cbUseDCOMRst .IsChecked  = (FM.m_stMasterOpt.nUseDCOMReset     == 1) ? true : false;
@@ -225,7 +226,7 @@ namespace WaferPolishingSystem.Form
             FM.m_stMasterOpt.nUseDI            = cbUseOnlyDI     .IsChecked == true ? 1 : 0;
             FM.m_stMasterOpt.nEPDOnlyMeasure   = cbEPDOnlyMeasure.IsChecked == true ? 1 : 0;
             FM.m_stMasterOpt.nUseMOC           = cbUseMOC        .IsChecked == true ? 1 : 0;
-           
+            FM.m_stMasterOpt.nUseCleanPos      = cbUseCleanPos   .IsChecked == true ? 1 : 0;
 
             FM.m_stMasterOpt.nUsePMC           = cbUsePMC     .IsChecked == true ? 1 : 0;
             FM.m_stMasterOpt.nUseDCOMReset     = cbUseDCOMRst .IsChecked == true ? 1 : 0;

@@ -1054,6 +1054,9 @@ namespace WaferPolishingSystem.Unit
 
 						EPU.fn_SetErr(EN_ERR_LIST.ERR_0439);
 
+						//
+						fn_WriteLog($"DEHYDRATE - Cleaning Data Error : dTime({dTime}) / dPos({dPos}) / dSpd({dSpd})");
+
 						Flag = false;
 
                         m_nCleaningStep = 0;
@@ -1065,9 +1068,9 @@ namespace WaferPolishingSystem.Unit
 					if (!r1) return false;
 
 					sLogMsg = string.Format($"DEHYDRATION 01 - {dPos} / RPM = {g_VisionManager.CurrentRecipe.Cleaning[0].PreWashingRPM} / SPD = {dSpd}");
-					Console.WriteLine(sLogMsg);
 					fn_WriteLog(sLogMsg, EN_LOG_TYPE.ltLot);
-					
+					Console.WriteLine(sLogMsg);
+
 					m_tDelayTimer.Clear();
 					m_nCleaningStep++;
                     return false;
@@ -1232,8 +1235,9 @@ namespace WaferPolishingSystem.Unit
                     dSpd  =    fn_GetRPMtoSPD(g_VisionManager.CurrentRecipe.Cleaning[0].PreWashingRPM);
 
 					//
-					MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.CalPos] = dPos;
+					MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.User11] = dPos;
 					MOTR[(int)m_iMotrTHId].MP.dVel[(int)EN_MOTR_VEL.User1 ] = dSpd;
+
 					//MOTR[(int)m_iMotrTHId].MP.dAcc[(int)EN_MOTR_VEL.User1 ] = dSpd;
                     //MOTR[(int)m_iMotrTHId].MP.dDec[(int)EN_MOTR_VEL.User1 ] = dSpd;
 
@@ -1244,7 +1248,10 @@ namespace WaferPolishingSystem.Unit
 
 						EPU.fn_SetErr(EN_ERR_LIST.ERR_0439);
 
-						Flag = false;
+                        //
+                        fn_WriteLog($"DEHYDRATE - Cleaning Data Error : dTime({dTime}) / dPos({dPos}) / dSpd({dSpd})");
+
+                        Flag = false;
 
                         m_nCleaningStep = 0;
                         return true;
@@ -1276,13 +1283,13 @@ namespace WaferPolishingSystem.Unit
                     fn_SetDrain();
 
 					//Cleaning - 1 : Low Speed with DI
-					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.CalPos, EN_MOTR_VEL.User1);
+					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.User11, EN_MOTR_VEL.User1);
 					if (!r1) return false;
 
 					fn_SetDIWaterValve(vvClose);
 
 					//
-					MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.CalPos] = dPos + GetEncPos_TH();  //JUNG/200915
+					MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.User11] = dPos + GetEncPos_TH();  //JUNG/200915
 
 					m_tDelayTimer.Clear();
 					m_nCleaningStep++;
@@ -1308,7 +1315,7 @@ namespace WaferPolishingSystem.Unit
 					if (!m_tDelayTimer.OnDelay(true, 1000)) return false;
 
 					//Cleaning - 2 : Low Speed without DI
-					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.CalPos, EN_MOTR_VEL.User1);
+					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.User11, EN_MOTR_VEL.User1);
                     if (!r1) return false;
 
 					sLogMsg = string.Format("DEHYDRATION 02");
@@ -1343,7 +1350,7 @@ namespace WaferPolishingSystem.Unit
                     dSpd  =   fn_GetRPMtoSPD(g_VisionManager.CurrentRecipe.Cleaning[0].DehydrationRPM);
 
                     //
-                    MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.CalPos] = dPos; //JUNG/200915/현재 위치 +
+                    MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.User12] = dPos; //JUNG/200915/현재 위치 +
 					MOTR[(int)m_iMotrTHId].MP.dVel[(int)EN_MOTR_VEL.User2 ] = dSpd;
 					//MOTR[(int)m_iMotrTHId].MP.dAcc[(int)EN_MOTR_VEL.User2 ] = dSpd;
                     //MOTR[(int)m_iMotrTHId].MP.dDec[(int)EN_MOTR_VEL.User2 ] = dSpd;
@@ -1373,7 +1380,7 @@ namespace WaferPolishingSystem.Unit
                     fn_SetDrain();
 
 					//Cleaning - 3 : High Speed without DI
-					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.CalPos, EN_MOTR_VEL.User2);
+					r1 = fn_MoveMotr(m_iMotrTHId, EN_COMD_ID.User12, EN_MOTR_VEL.User2);
                     if (!r1) return false;
                     
 					m_tDelayTimer.Clear();
@@ -1899,7 +1906,10 @@ namespace WaferPolishingSystem.Unit
 
             MOTR[(int)m_iMotrTHId].MP.dPosn[(int)EN_POSN_ID.CalPos] = m_dAlignPosTH + dRWaitPos;
 
-            Console.WriteLine(string.Format($"Set Cleaning TH-Align pos(polishing) : Offset = {pos} / Position = {m_dAlignPosTH + dRWaitPos}"));
+			string sTemp = string.Format($"Set Cleaning TH-Align pos(polishing) : Offset = {pos} / Position = {m_dAlignPosTH + dRWaitPos}");
+
+			Console.WriteLine(sTemp);
+			fn_WriteLog(sTemp);
 
         }
 		//---------------------------------------------------------------------------

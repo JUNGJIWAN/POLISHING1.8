@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaferPolishingSystem", "Polishing\WaferPolishingSystem.csproj", "{7ED81359-9756-4A10-9ABB-A55796BBA460}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5FD88388-8C03-4D78-BF07-75EBCAD6081B}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolishingAlignCore", "PolishingAlignCore\PolishingAlignCore.vcxproj", "{933B9B36-C94F-4120-8625-67DD0FB0CE0B}"
 EndProject
 Global

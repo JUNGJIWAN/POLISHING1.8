@@ -1376,6 +1376,8 @@ namespace WaferPolishingSystem.Unit
 			Msg += sTemp = string.Format($"ToolPickInfo.dXpos    = {ToolPickInfo.dXpos   }\r\n");
 			Msg += sTemp = string.Format($"ToolPickInfo.dYpos    = {ToolPickInfo.dYpos   }\r\n");
 
+			Msg += sTemp = string.Format($"Storage Y Enc.        = {GetEncPos_Y()        }\r\n");
+
 
 		}
 

@@ -31,8 +31,6 @@ using static WaferPolishingSystem.BaseUnit.Magazine;
 using static WaferPolishingSystem.BaseUnit.ERRID;
 using static WaferPolishingSystem.BaseUnit.ManualId;
 
-using ControlCore;
-
 namespace WaferPolishingSystem.Form
 {
     /// <summary>
@@ -1427,9 +1425,6 @@ namespace WaferPolishingSystem.Form
             //double dTemp = SEQ_POLIS.GetEncPos_TH();
             //bool rtn = MOTR.CheckMinMaxP(EN_MOTR_ID.miPOL_TH, dTemp);
             
-            Class1 test = new ControlCore.Class1();
-
-            test.fn_Test("Test");
         }
 
         //---------------------------------------------------------------------------

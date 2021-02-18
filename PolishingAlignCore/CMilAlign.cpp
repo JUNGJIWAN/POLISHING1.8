@@ -356,6 +356,7 @@ void CMilAlign::m_fn_GetResultModelFinder()
 	char strName[1024] = { 0, };
 
 	long NumOfFound;
+	long Count = 0;
 	double posX[MODELS_MAX_OCCURRENCES] = { 0, };
 	double posY[MODELS_MAX_OCCURRENCES] = { 0, }; 
 	double score[MODELS_MAX_OCCURRENCES] = { 0, }; 
@@ -367,8 +368,9 @@ void CMilAlign::m_fn_GetResultModelFinder()
 	MmodGetResult(Mod_Result, M_GENERAL, M_NUMBER + M_TYPE_LONG, &NumOfFound);
 
 	m_stResult.NumOfFound = NumOfFound;
+	Count = NumOfFound >= MODELS_MAX_OCCURRENCES ? MODELS_MAX_OCCURRENCES : NumOfFound;
 	//if ((NumOfFound >= 1) && (NumOfFound <= MODELS_MAX_OCCURRENCES))
-	if (NumOfFound > 0)
+	if (Count > 0)
 	{
 		// Get the result for each model
 		MmodGetResult(Mod_Result, M_DEFAULT, M_INDEX + M_TYPE_MIL_INT, Models);
@@ -383,7 +385,7 @@ void CMilAlign::m_fn_GetResultModelFinder()
 
 		// Check Search ROI InPosition
 		// Result가 Search ROI에서 벗어나면 Score Zero 처리.
- 		for (int i = 0; i < NumOfFound; i++)
+ 		for (int i = 0; i < Count; i++)
  		{
  			if (!m_fn_CheckSearchROI(posX[i], posY[i], SizeX, SizeY))
  			{
@@ -399,7 +401,7 @@ void CMilAlign::m_fn_GetResultModelFinder()
 		cv::Point pntScore;
 		char strScore[1024] = { 0, };
 		int j = 0;
-		for (int i = 0; i < NumOfFound; i++)
+		for (int i = 0; i < Count; i++)
 		{
 			if (score[i] <= 0)
 				continue;
@@ -643,6 +645,7 @@ void CMilAlign::m_fn_GetResultPatternMatching()
 	char strName[1024] = { 0, };
 
 	long NumOfFound;
+	long Count = 0;
 	double posX[MODELS_MAX_OCCURRENCES] = { 0, };
 	double posY[MODELS_MAX_OCCURRENCES] = { 0, };
 	double score[MODELS_MAX_OCCURRENCES] = { 0, };
@@ -653,8 +656,9 @@ void CMilAlign::m_fn_GetResultPatternMatching()
 	MpatGetResult(Pat_Result, M_ALL, M_POSITION_Y, posY);
 	MpatGetResult(Pat_Result, M_GENERAL, M_NUMBER + M_TYPE_LONG, &NumOfFound);
 	m_stResult.NumOfFound = NumOfFound;
+	Count = NumOfFound >= MODELS_MAX_OCCURRENCES ? MODELS_MAX_OCCURRENCES : NumOfFound;
 	//if ((NumOfFound >= 1) && (NumOfFound <= MODELS_MAX_OCCURRENCES))
-	if (NumOfFound > 0)
+	if (Count > 0)
 	{
 		// Get the result for each model
 		MpatGetResult(Pat_Result, M_ALL, M_POSITION_X, posX);
@@ -665,7 +669,7 @@ void CMilAlign::m_fn_GetResultPatternMatching()
 		MpatInquire(Pat_Context, 0, M_ALLOC_SIZE_X, &SizeX);
 		MpatInquire(Pat_Context, 0, M_ALLOC_SIZE_Y, &SizeY);
 
-		for (int i = 0; i < NumOfFound; i++)
+		for (int i = 0; i < Count; i++)
 		{
 			if (!m_fn_CheckSearchROI(posX[i], posY[i], SizeX, SizeY, false))
 			{
@@ -681,7 +685,7 @@ void CMilAlign::m_fn_GetResultPatternMatching()
 		cv::Point pntScore;
 		char strScore[1024] = { 0, };
 		int j = 0;
-		for (int i = 0; i < NumOfFound; i++)
+		for (int i = 0; i < Count; i++)
 		{
 			if (score[i] <= 0)
 				continue;

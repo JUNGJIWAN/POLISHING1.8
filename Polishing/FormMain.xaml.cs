@@ -282,9 +282,10 @@ namespace WaferPolishingSystem
                 lbUTIL2.Content = "Not Used";
             }
 
-            lbWarm.Visibility = (MAN._bStartWarm || MAN._bDrngWarm) && SEQ._bFlick1 ? Visibility.Visible : Visibility.Hidden;
-            lbWarm.Content    = MAN._bDrngWarm ? "Warming up now..." : "Wait Warming up";
-            lbWarm.Background = MAN._bDrngWarm ? Brushes.Aquamarine : Brushes.Gray;
+            bool isOperPage = m_nPageSel == (int)EN_PAGE_NO.Oper;
+            lbWarm.Visibility = isOperPage && (MAN._bStartWarm || MAN._bDrngWarm) && SEQ._bFlick1 ? Visibility.Visible : Visibility.Hidden;
+            lbWarm.Content    =  MAN._bDrngWarm ? "Warming up now..." : "Wait Warming up";
+            lbWarm.Background =  MAN._bDrngWarm ? Brushes.Aquamarine : Brushes.Gray;
 
 
 
